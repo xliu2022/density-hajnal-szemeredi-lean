@@ -1,0 +1,18 @@
+con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
+con-ron: parse done: 60146 fold records — 60138 declarations after the 8 built-in prelude records (8 stream copies of prelude records dropped) t=2.441s (parse 2.441s)
+con-ron: install 0/60146 basis t=2.441s
+con-ron: install 10000/60146 thm Filter.eventually_principal t=6.307s
+con-ron: install 20000/60146 thm Equiv.Perm.IsCycleOn.pow_apply_eq_pow_apply t=8.010s
+con-ron: install 30000/60146 def AddMonoidHom.snd t=10.529s
+con-ron: install 40000/60146 thm OrderDual.instLocallyFiniteOrder._proof_4 t=13.567s
+con-ron: install 50000/60146 thm MeasureTheory.Measure.addHaarMeasure_self t=17.345s
+con-ron: install 60000/60146 thm Finset.le_card_sdiff t=22.043s
+con-ron: install done: 60146/60146 declarations installed, 59082 checks pending t=22.052s (install 19.611s)
+con-ron: check 10000/59082 theorem GaloisCoinsertion.liftSemilatticeSup._proof_4 t=24.831s
+con-ron: check 20000/59082 theorem MonoidHom.id._proof_2 t=29.517s
+con-ron: check 30000/59082 theorem mul_smul_comm t=37.641s
+con-ron: check 40000/59082 definition List.zipWith_self._f t=54.545s
+con-ron: check 50000/59082 theorem Finset.prod_subtype t=63.227s
+con-ron: check done: 59082/59082 t=82.963s (check 60.911s)
+con-ron: done: parse 2.441s, install 19.611s, check 60.911s, 2 workers t=82.964s
+con-ron: accepted 60116 declarations (--verified)

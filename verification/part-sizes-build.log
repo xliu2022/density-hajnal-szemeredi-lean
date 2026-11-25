@@ -1,0 +1,84 @@
+✖ [3092/3092] Building DensityHS.Stability.PartSizes (1.9s)
+trace: .> LEAN_PATH=/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/Cli/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/batteries/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/Qq/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/aesop/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/importGraph/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/plausible/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/mathlib/.lake/build/lib/lean:/workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean /workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/lean /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/DensityHS/Stability/PartSizes.lean -o /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean/DensityHS/Stability/PartSizes.olean -i /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean/DensityHS/Stability/PartSizes.ilean -c /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/ir/DensityHS/Stability/PartSizes.c --setup /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/ir/DensityHS/Stability/PartSizes.setup.json --json
+warning: DensityHS/Stability/PartSizes.lean:29:0: automatically included section variable(s) unused in theorem `DensityHS.Stability.sum_fiberCount`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Stability/PartSizes.lean:34:0: automatically included section variable(s) unused in theorem `DensityHS.Stability.fiberCount_comp_equiv`:
+  [DecidableEq V]
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+error: DensityHS/Stability/PartSizes.lean:41:46: unsolved goals
+V : Type u_1
+I : Type u_2
+inst✝³ : Fintype V
+inst✝² : DecidableEq V
+inst✝¹ : Fintype I
+inst✝ : DecidableEq I
+q : I → ℕ
+hq : ∑ i, q i = Fintype.card V
+e : V ≃ (i : I) × Fin (q i) := Fintype.equivOfCardEq ⋯
+i : I
+⊢ ∑ x, #(if x = i then univ else ∅) = q i
+warning: DensityHS/Stability/PartSizes.lean:51:13: This simp argument is unused:
+  Finset.sum_ite_irrel
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_const, Finset.sum_const_zero, Finset.card_univ, Fintype.card_fin, smul_eq_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Stability/PartSizes.lean:51:34: This simp argument is unused:
+  Finset.sum_const
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_irrel, Finset.sum_const_zero, Finset.card_univ, Fintype.card_fin, smul_eq_mul,
+    mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Stability/PartSizes.lean:51:51: This simp argument is unused:
+  Finset.sum_const_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_irrel, Finset.sum_const, Finset.card_univ, Fintype.card_fin, smul_eq_mul, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Stability/PartSizes.lean:52:4: This simp argument is unused:
+  Finset.card_univ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_irrel, Finset.sum_const, Finset.sum_const_zero, Fintype.card_fin, smul_eq_mul,
+    mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Stability/PartSizes.lean:52:21: This simp argument is unused:
+  Fintype.card_fin
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_irrel, Finset.sum_const, Finset.sum_const_zero, Finset.card_univ, smul_eq_mul,
+    mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Stability/PartSizes.lean:52:38: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_irrel, Finset.sum_const, Finset.sum_const_zero, Finset.card_univ, Fintype.card_fin,
+    mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Stability/PartSizes.lean:52:50: This simp argument is unused:
+  mul_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_irrel, Finset.sum_const, Finset.sum_const_zero, Finset.card_univ, Fintype.card_fin,
+    smul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Some required targets logged failures:
+- DensityHS.Stability.PartSizes
+error: build failed

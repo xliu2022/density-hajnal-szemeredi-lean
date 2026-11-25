@@ -1,0 +1,278 @@
+⚠ [3157/3298] Replayed DensityHS.Finite.MatrixProjection
+warning: DensityHS/Finite/MatrixProjection.lean:41:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:46:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:36:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.fiber_card_mul_average`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:70:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:66:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.projection_eq_of_fiber_const`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:78:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.projection_nonneg`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:85:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:82:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.projection_le_one`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:92:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.energy_nonneg`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:143:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.residual_test_refinement`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:207:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/MatrixProjection.lean:211:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [3160/3298] Replayed DensityHS.Finite.EqualChunks
+warning: DensityHS/Finite/EqualChunks.lean:42:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/EqualChunks.lean:44:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/EqualChunks.lean:65:66: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Finite/EqualChunks.lean:67:66: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+⚠ [3167/3298] Replayed DensityHS.Finite.PartitionEnergy
+warning: DensityHS/Finite/PartitionEnergy.lean:97:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.pairAverage_nonneg`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:102:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.pairAverage_le_one`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:111:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.card_mul_pairAverage`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:214:27: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/PartitionEnergy.lean:215:28: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Finite/PartitionEnergy.lean:235:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.not_isUniform_iff`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:242:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.pairAverage_indicator`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8934/8940] Replayed DensityHS.Basic.WeightedGraph
+warning: DensityHS/Basic/WeightedGraph.lean:62:0: automatically included section variable(s) unused in theorem `DensityHS.constant_clique_cover`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/WeightedGraph.lean:72:0: automatically included section variable(s) unused in theorem `DensityHS.IsCliqueCover.truncate`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/WeightedGraph.lean:103:0: automatically included section variable(s) unused in theorem `DensityHS.isCompact_coverCube`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8936/8940] Replayed DensityHS.Basic.Envelope
+warning: DensityHS/Basic/Envelope.lean:228:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Basic/Envelope.lean:322:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8937/8940] Replayed DensityHS.Weighted.Peeling
+warning: DensityHS/Weighted/Peeling.lean:35:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:62:13: Variable name `hx0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: DensityHS/Weighted/Peeling.lean:88:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:129:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:137:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:171:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: DensityHS/Weighted/Peeling.lean:171:10: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: DensityHS/Weighted/Peeling.lean:223:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:379:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: DensityHS/Weighted/Peeling.lean:379:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8938/8940] Replayed DensityHS.Weighted.UniversalPeeling
+warning: DensityHS/Weighted/UniversalPeeling.lean:33:0: automatically included section variable(s) unused in theorem `DensityHS.deleteWeight_nonneg`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Weighted/UniversalPeeling.lean:135:0: automatically included section variable(s) unused in theorem `DensityHS.universal_zero_cover_restrict`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8939/8940] Replayed DensityHS.Finite.ReducedGraph
+warning: DensityHS/Finite/ReducedGraph.lean:101:0: automatically included section variable(s) unused in theorem `DensityHS.Regularity.probability_fiberMass`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/ReducedGraph.lean:111:0: automatically included section variable(s) unused in theorem `DensityHS.Regularity.edgeMass_comap`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/ReducedGraph.lean:154:0: automatically included section variable(s) unused in theorem `DensityHS.Regularity.uniformWeight_probability`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/ReducedGraph.lean:159:0: automatically included section variable(s) unused in theorem `DensityHS.Regularity.edgeMass_one`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/ReducedGraph.lean:218:34: This simp argument is unused:
+  hc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [fiberMass, uniformWeight, clusterWeight, div_eq_mul_inv]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Finite/ReducedGraph.lean:253:0: automatically included section variable(s) unused in theorem `DensityHS.Regularity.edgeMass_mono`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8940/8940] Built DensityHS.Finite.RegularStep (4.7s)
+warning: DensityHS/Finite/RegularStep.lean:30:0: automatically included section variable(s) unused in theorem `DensityHS.Regularity.indicatorMatrix_nonneg`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/RegularStep.lean:33:0: automatically included section variable(s) unused in theorem `DensityHS.Regularity.indicatorMatrix_le_one`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/RegularStep.lean:36:0: automatically included section variable(s) unused in theorem `DensityHS.Regularity.indicatorMatrix_symm`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/RegularStep.lean:44:22: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mul_one] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Build completed successfully (8940 jobs).

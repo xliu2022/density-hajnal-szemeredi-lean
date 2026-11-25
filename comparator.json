@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "DensityHSSubmission.weighted_matching_base",
+    "DensityHSSubmission.weighted_clique_density",
+    "DensityHSSubmission.finite_clique_density_upper",
+    "DensityHSSubmission.finite_density_theorem",
+    "DensityHSSubmission.rainbow_clique_factor",
+    "DensityHSSubmission.finite_stability",
+    "DensityHSSubmission.graphon_density_theorem",
+    "DensityHSSubmission.graphon_equality_classification",
+    "DensityHSSubmission.graphon_L1_stability"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

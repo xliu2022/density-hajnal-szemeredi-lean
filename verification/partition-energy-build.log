@@ -1,0 +1,167 @@
+⚠ [3158/3168] Replayed DensityHS.Finite.MatrixProjection
+warning: DensityHS/Finite/MatrixProjection.lean:41:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:46:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:36:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.fiber_card_mul_average`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:70:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:66:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.projection_eq_of_fiber_const`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:78:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.projection_nonneg`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:85:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:82:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.projection_le_one`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:92:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.energy_nonneg`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:143:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.residual_test_refinement`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:207:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/MatrixProjection.lean:211:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [3161/3168] Replayed DensityHS.Finite.EqualChunks
+warning: DensityHS/Finite/EqualChunks.lean:42:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/EqualChunks.lean:44:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/EqualChunks.lean:65:66: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Finite/EqualChunks.lean:67:66: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+✖ [3168/3168] Building DensityHS.Finite.PartitionEnergy (3.1s)
+trace: .> LEAN_PATH=/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/Cli/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/batteries/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/Qq/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/aesop/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/importGraph/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/plausible/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/mathlib/.lake/build/lib/lean:/workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean /workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/lean /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/DensityHS/Finite/PartitionEnergy.lean -o /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean/DensityHS/Finite/PartitionEnergy.olean -i /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean/DensityHS/Finite/PartitionEnergy.ilean -c /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/ir/DensityHS/Finite/PartitionEnergy.c --setup /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/ir/DensityHS/Finite/PartitionEnergy.setup.json --json
+warning: DensityHS/Finite/PartitionEnergy.lean:97:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.pairAverage_nonneg`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:102:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.pairAverage_le_one`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:111:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.card_mul_pairAverage`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:214:27: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+error: DensityHS/Finite/PartitionEnergy.lean:213:8: unsolved goals
+case pos
+V : Type u_1
+C : Type u_2
+inst✝³ : Fintype V
+inst✝² : DecidableEq V
+inst✝¹ : Fintype C
+inst✝ : DecidableEq C
+P Q : Finpartition univ
+hQP : Q ≤ P
+F : C → V → V → ℝ
+c : C
+H : V → V → ℝ
+hH : ∀ (x y x' y' : V), partIndex Q x = partIndex Q x' → partIndex Q y = partIndex Q y' → H x y = H x' y'
+hHsq : ∀ (x y : V), H x y ^ 2 ≤ 1
+a : C × V × V → ℝ := fun z => F z.1 z.2.1 z.2.2
+T : C × V × V → ℝ := fun z => if z.1 = c then H z.2.1 z.2.2 else 0
+hconst : ∀ (z z' : C × V × V), matrixLabel Q z = matrixLabel Q z' → T z = T z'
+b : C × ↥Q.parts × ↥Q.parts → ℝ := fiberAverage (matrixLabel Q) T
+hb : ∀ (z : C × V × V), b (matrixLabel Q z) = T z
+he :
+  (∑ x, (a x - blockProjection (matrixLabel P) a x) * T x) ^ 2 ≤
+    (energy (matrixLabel Q) a - energy (matrixLabel P) a) * ∑ x, T x ^ 2
+a✝ : c ∈ univ
+⊢ ∑ x, ∑ x_1, (F c x x_1 - pairAverage (F c) (P.part x) (P.part x_1)) * H x x_1 =
+    if True then ∑ x, ∑ x_1, (F c x x_1 - pairAverage (F c) (P.part x) (P.part x_1)) * H x x_1 else 0
+warning: DensityHS/Finite/PartitionEnergy.lean:215:28: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Finite/PartitionEnergy.lean:235:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.not_isUniform_iff`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:242:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.pairAverage_indicator`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Some required targets logged failures:
+- DensityHS.Finite.PartitionEnergy
+error: build failed

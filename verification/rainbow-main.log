@@ -1,0 +1,1562 @@
+⚠ [3157/3207] Replayed DensityHS.Finite.MatrixProjection
+warning: DensityHS/Finite/MatrixProjection.lean:41:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:46:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:36:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.fiber_card_mul_average`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:70:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:66:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.projection_eq_of_fiber_const`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:78:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.projection_nonneg`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:85:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/MatrixProjection.lean:82:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.projection_le_one`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:92:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.energy_nonneg`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:143:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.residual_test_refinement`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/MatrixProjection.lean:207:21: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/MatrixProjection.lean:211:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [3160/3207] Replayed DensityHS.Finite.EqualChunks
+warning: DensityHS/Finite/EqualChunks.lean:42:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/EqualChunks.lean:44:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/EqualChunks.lean:65:66: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Finite/EqualChunks.lean:67:66: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+⚠ [3167/3207] Replayed DensityHS.Finite.PartitionEnergy
+warning: DensityHS/Finite/PartitionEnergy.lean:97:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.pairAverage_nonneg`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:102:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.pairAverage_le_one`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:111:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.card_mul_pairAverage`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:214:27: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/PartitionEnergy.lean:215:28: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Finite/PartitionEnergy.lean:235:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.not_isUniform_iff`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/PartitionEnergy.lean:242:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.pairAverage_indicator`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3168/3207] Replayed DensityHS.Finite.RegularityWitness
+warning: DensityHS/Finite/RegularityWitness.lean:36:24: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/RegularityWitness.lean:45:0: automatically included section variable(s) unused in theorem `DensityHS.MatrixRegularity.mem_badPairs`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/RegularityWitness.lean:143:8: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/RegularityWitness.lean:143:17: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/RegularityWitness.lean:147:8: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: DensityHS/Finite/RegularityWitness.lean:147:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: DensityHS/Finite/RegularityWitness.lean:192:15: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [3172/3207] Replayed DensityHS.Finite.SimultaneousRegularity
+warning: DensityHS/Finite/SimultaneousRegularity.lean:186:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [3564/3793] Replayed DensityHS.Rainbow.AbsorberSelection
+warning: DensityHS/Rainbow/AbsorberSelection.lean:52:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.selectedCount_nonneg`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:86:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.selectedConflictCount_nonneg`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:122:53: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:131:71: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:146:73: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:252:67: This simp argument is unused:
+  h₁
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [selectionCoin, h₂]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:252:71: This simp argument is unused:
+  h₂
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [selectionCoin, h₁]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:276:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.exists_conflict_free_subselection`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:296:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.inter_card_le_subselection_add`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3565/3793] Replayed DensityHS.Rainbow.RandomOrientation
+warning: DensityHS/Rainbow/RandomOrientation.lean:43:78: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/RandomOrientation.lean:44:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [3583/3793] Replayed DensityHS.Basic.WeightedGraph
+warning: DensityHS/Basic/WeightedGraph.lean:62:0: automatically included section variable(s) unused in theorem `DensityHS.constant_clique_cover`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/WeightedGraph.lean:72:0: automatically included section variable(s) unused in theorem `DensityHS.IsCliqueCover.truncate`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/WeightedGraph.lean:103:0: automatically included section variable(s) unused in theorem `DensityHS.isCompact_coverCube`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3585/3793] Replayed DensityHS.Basic.FiniteDuality
+warning: DensityHS/Basic/FiniteDuality.lean:61:8: automatically included section variable(s) unused in theorem `DensityHS.finiteLoadMap_apply`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/FiniteDuality.lean:79:0: automatically included section variable(s) unused in theorem `DensityHS.functional_nonneg_of_orthant_lowerBound`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/FiniteDuality.lean:106:8: automatically included section variable(s) unused in theorem `DensityHS.finiteLoadMap_single`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/FiniteDuality.lean:127:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Basic/FiniteDuality.lean:282:0: automatically included section variable(s) unused in theorem `DensityHS.IsOptimalCover.cost_eq_number`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3586/3793] Replayed DensityHS.Basic.UniformHypergraph
+warning: DensityHS/Basic/UniformHypergraph.lean:93:0: automatically included section variable(s) unused in theorem `DensityHS.normalize_family_cover`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8944/9017] Replayed DensityHS.Rainbow.AbsorberParameters
+warning: DensityHS/Rainbow/AbsorberParameters.lean:38:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: DensityHS/Rainbow/AbsorberParameters.lean:38:6: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: DensityHS/Rainbow/AbsorberParameters.lean:99:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: DensityHS/Rainbow/AbsorberParameters.lean:99:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8945/9017] Replayed DensityHS.Finite.RegularEmbedding
+warning: DensityHS/Finite/RegularEmbedding.lean:149:0: automatically included section variable(s) unused in theorem `DensityHS.Regularity.transversal_image_isNClique`:
+  [DecidableRel G.Adj]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableRel G.Adj] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8947/9017] Replayed DensityHS.Rainbow.ColoredGraph
+warning: DensityHS/Rainbow/ColoredGraph.lean:90:13: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8948/9017] Replayed DensityHS.Finite.ClusterEmbedding
+warning: DensityHS/Finite/ClusterEmbedding.lean:72:49: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/ClusterEmbedding.lean:80:44: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8949/9017] Replayed DensityHS.Finite.Rounding
+warning: DensityHS/Finite/Rounding.lean:31:0: automatically included section variable(s) unused in theorem `DensityHS.Regularity.request_decrement`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/Rounding.lean:93:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: DensityHS/Finite/Rounding.lean:69:0: automatically included section variable(s) unused in theorem `DensityHS.Regularity.pack_requests_of_embedding`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/Rounding.lean:248:48: This simp argument is unused:
+  Fintype.card_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finset.sum_add_distrib]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8952/9017] Replayed DensityHS.Weighted.CoverPerturbation
+warning: DensityHS/Weighted/CoverPerturbation.lean:37:93: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/CoverPerturbation.lean:53:43: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8953/9017] Replayed DensityHS.Weighted.CoverMass
+warning: DensityHS/Weighted/CoverMass.lean:31:91: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8954/9017] Replayed DensityHS.Weighted.SupportCertificates
+warning: DensityHS/Weighted/SupportCertificates.lean:82:49: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/SupportCertificates.lean:83:50: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8955/9017] Replayed DensityHS.Weighted.Optimization
+warning: DensityHS/Weighted/Optimization.lean:110:37: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Optimization.lean:172:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: DensityHS/Weighted/Optimization.lean:215:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: DensityHS/Weighted/Optimization.lean:306:10: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: DensityHS/Weighted/Optimization.lean:306:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: DensityHS/Weighted/Optimization.lean:323:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Weighted/Optimization.lean:326:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8956/9017] Replayed DensityHS.Weighted.CompactOptimization
+warning: DensityHS/Weighted/CompactOptimization.lean:35:8: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  continuous_finset_̵s̵S̲um
+warning: DensityHS/Weighted/CompactOptimization.lean:37:8: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+
+Hint: Replace the deprecated name:
+  continuous_finset_̵s̵S̲um
+warning: DensityHS/Weighted/CompactOptimization.lean:44:7: `stdSimplex` has been deprecated: Use `Convexity.StdSimplex` instead
+
+Note: The updated constant has a different type:
+  (R : Type u) → [LE R] → [AddCommMonoid R] → [One R] → Type v → Type (max u v)
+instead of
+  (𝕜 : Type u_2) → (ι : Type u_1) → [Semiring 𝕜] → [PartialOrder 𝕜] → [Fintype ι] → Set (ι → 𝕜)
+warning: DensityHS/Weighted/CompactOptimization.lean:47:51: `stdSimplex` has been deprecated: Use `Convexity.StdSimplex` instead
+
+Note: The updated constant has a different type:
+  (R : Type u) → [LE R] → [AddCommMonoid R] → [One R] → Type v → Type (max u v)
+instead of
+  (𝕜 : Type u_2) → (ι : Type u_1) → [Semiring 𝕜] → [PartialOrder 𝕜] → [Fintype ι] → Set (ι → 𝕜)
+warning: DensityHS/Weighted/CompactOptimization.lean:51:10: `isCompact_stdSimplex` has been deprecated: Use `Convexity.StdSimplex.compactSpace` instead
+
+Note: The updated constant has a different type:
+  ∀ (R : Type u_1) (M : Type u_2) [inst : Ring R] [inst_1 : TopologicalSpace R] [IsTopologicalRing R]
+    [inst_3 : PartialOrder R] [inst_4 : IsStrictOrderedRing R] [CompactIccSpace R] [OrderClosedTopology R] [Finite M],
+    CompactSpace (Convexity.StdSimplex R M)
+instead of
+  ∀ (𝕜 : Type u_1) (ι : Type u_2) [inst : Fintype ι] [inst_1 : TopologicalSpace 𝕜] [inst_2 : Semiring 𝕜]
+    [inst_3 : PartialOrder 𝕜] [OrderClosedTopology 𝕜] [ContinuousAdd 𝕜] [CompactIccSpace 𝕜] [IsOrderedAddMonoid 𝕜],
+    IsCompact (stdSimplex 𝕜 ι)
+⚠ [8957/9017] Replayed DensityHS.Weighted.SupportGraphs
+warning: DensityHS/Weighted/SupportGraphs.lean:100:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Weighted/SupportGraphs.lean:119:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8958/9017] Replayed DensityHS.Weighted.SupportP3
+warning: DensityHS/Weighted/SupportP3.lean:48:0: automatically included section variable(s) unused in theorem `DensityHS.Weighted.Support.not_universal_of_complement_adj`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Weighted/SupportP3.lean:54:0: automatically included section variable(s) unused in theorem `DensityHS.Weighted.Support.common_neighbors_universal_of_dominating_complement`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Weighted/SupportP3.lean:66:0: automatically included section variable(s) unused in theorem `DensityHS.Weighted.Support.cover_pair_bound_of_universal_clique`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Weighted/SupportP3.lean:175:0: automatically included section variable(s) unused in theorem `DensityHS.Weighted.Support.cliquePathBlowup_of_complete_cross`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8959/9017] Replayed DensityHS.Weighted.Saturation
+warning: DensityHS/Weighted/Saturation.lean:56:0: automatically included section variable(s) unused in theorem `DensityHS.old_clique_of_added_edge_endpoint_absent`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8960/9017] Replayed DensityHS.Basic.Restriction
+warning: DensityHS/Basic/Restriction.lean:29:0: automatically included section variable(s) unused in theorem `DensityHS.IsCliqueCover.restrict`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/Restriction.lean:81:0: automatically included section variable(s) unused in theorem `DensityHS.zero_of_not_positive`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/Restriction.lean:112:2: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [hv]
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: DensityHS/Basic/Restriction.lean:123:8: automatically included section variable(s) unused in theorem `DensityHS.extendCover_coe`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8961/9017] Replayed DensityHS.Weighted.SupportCoverLevels
+warning: DensityHS/Weighted/SupportCoverLevels.lean:99:0: automatically included section variable(s) unused in theorem `DensityHS.Weighted.Support.tight_clique_exchange_le`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Weighted/SupportCoverLevels.lean:185:0: automatically included section variable(s) unused in theorem `DensityHS.Weighted.Support.threeLevelDirections_injective`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Weighted/SupportCoverLevels.lean:192:30: This simp argument is unused:
+  huv
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [threeLevelDirections, huw, hvw, Ne.symm huv, Ne.symm huw, Ne.symm hvw] at h₀ h₁ h₂
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/SupportCoverLevels.lean:192:35: This simp argument is unused:
+  huw
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [threeLevelDirections, huv, hvw, Ne.symm huv, Ne.symm huw, Ne.symm hvw] at h₀ h₁ h₂
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/SupportCoverLevels.lean:192:40: This simp argument is unused:
+  hvw
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [threeLevelDirections, huv, huw, Ne.symm huv, Ne.symm huw, Ne.symm hvw] at h₀ h₁ h₂
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8962/9017] Replayed DensityHS.Rainbow.Absorption
+warning: DensityHS/Rainbow/Absorption.lean:89:39: Variable name `hr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8963/9017] Replayed DensityHS.Graphon.Basic
+warning: DensityHS/Graphon/Basic.lean:139:8: automatically included section variable(s) unused in theorem `DensityHS.Graphon.sampleCover_apply`:
+  [MeasurableSpace Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableSpace Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8965/9017] Replayed DensityHS.Graphon.SamplingMoments
+warning: DensityHS/Graphon/SamplingMoments.lean:51:0: automatically included section variable(s) unused in theorem `DensityHS.Graphon.sampleMean_mem_Icc`:
+  [MeasurableSpace Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableSpace Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Graphon/SamplingMoments.lean:154:0: automatically included section variable(s) unused in theorem `DensityHS.Graphon.samplePairDensity_mem_Icc`:
+  [MeasurableSpace Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableSpace Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Graphon/SamplingMoments.lean:293:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8966/9017] Replayed DensityHS.Graphon.Sampling
+warning: DensityHS/Graphon/Sampling.lean:33:0: automatically included section variable(s) unused in theorem `DensityHS.Graphon.coverCost_sampleWeight`:
+  [MeasurableSpace Ω]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableSpace Ω] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Graphon/Sampling.lean:52:10: This simp argument is unused:
+  sampleGraph_adj
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Graphon/Sampling.lean:60:17: This simp argument is unused:
+  hpos
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hij, hzero, sampleGraph_adj]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8967/9017] Replayed DensityHS.Rainbow.LocalAbsorbers
+warning: DensityHS/Rainbow/LocalAbsorbers.lean:118:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/LocalAbsorbers.lean:118:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/LocalAbsorbers.lean:118:57: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8969/9017] Replayed DensityHS.Basic.Envelope
+warning: DensityHS/Basic/Envelope.lean:228:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Basic/Envelope.lean:322:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8970/9017] Replayed DensityHS.Weighted.Peeling
+warning: DensityHS/Weighted/Peeling.lean:35:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:62:13: Variable name `hx0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: DensityHS/Weighted/Peeling.lean:88:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:129:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:137:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:171:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: DensityHS/Weighted/Peeling.lean:171:10: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: DensityHS/Weighted/Peeling.lean:223:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:379:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: DensityHS/Weighted/Peeling.lean:379:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8971/9017] Replayed DensityHS.Weighted.UniversalPeeling
+warning: DensityHS/Weighted/UniversalPeeling.lean:33:0: automatically included section variable(s) unused in theorem `DensityHS.deleteWeight_nonneg`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Weighted/UniversalPeeling.lean:135:0: automatically included section variable(s) unused in theorem `DensityHS.universal_zero_cover_restrict`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8972/9017] Replayed DensityHS.Rainbow.Digraph
+warning: DensityHS/Rainbow/Digraph.lean:63:8: automatically included section variable(s) unused in theorem `DensityHS.Digraph.mem_outNeighbors`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/Digraph.lean:75:0: automatically included section variable(s) unused in theorem `DensityHS.Digraph.outDegree_eq_sum`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/Digraph.lean:85:0: automatically included section variable(s) unused in theorem `DensityHS.Digraph.induce_outDegree_eq_sum`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/Digraph.lean:118:22: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Rainbow/Digraph.lean:148:8: automatically included section variable(s) unused in theorem `DensityHS.Digraph.mem_tileFamily`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/Digraph.lean:158:0: automatically included section variable(s) unused in theorem `DensityHS.Digraph.insert_isTile`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8973/9017] Replayed DensityHS.Rainbow.PairOrientation
+warning: DensityHS/Rainbow/PairOrientation.lean:40:34: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:41:35: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:41:44: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:42:35: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:42:44: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:43:34: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:33:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.pairScore_binary`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/PairOrientation.lean:49:51: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:52:36: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:49:13: This simp argument is unused:
+  sum_ite_irrel
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sum_ite_eq', mem_univ, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Rainbow/PairOrientation.lean:69:71: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:83:48: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:83:57: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:83:48: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:83:57: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:83:48: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:83:57: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:83:48: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:83:57: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:85:91: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:88:36: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: DensityHS/Rainbow/PairOrientation.lean:85:53: This simp argument is unused:
+  sum_ite_irrel
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sum_add_distrib, Fintype.sum_prod_type, sum_ite_eq', mem_univ, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8974/9017] Replayed DensityHS.Rainbow.PairStates
+warning: DensityHS/Rainbow/PairStates.lean:34:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.forwardState_binary`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/PairStates.lean:39:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.backwardState_binary`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/PairStates.lean:44:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.pairStates_zero`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/PairStates.lean:48:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.forwardState_spec`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/PairStates.lean:54:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.backwardState_spec`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/PairStates.lean:61:10: `Symmetric` has been deprecated: Use `Std.Symm` instead
+
+Hint: Replace the deprecated name:
+  S̵y̵m̵m̵e̵t̵r̵i̵c̵S̲t̲d̲.̲S̲y̲m̲m̲
+⚠ [8976/9017] Replayed DensityHS.Rainbow.ReducedOrientation
+warning: DensityHS/Rainbow/ReducedOrientation.lean:40:58: `Symmetric` has been deprecated: Use `Std.Symm` instead
+
+Hint: Replace the deprecated name:
+  S̵y̵m̵m̵e̵t̵r̵i̵c̵S̲t̲d̲.̲S̲y̲m̲m̲
+warning: DensityHS/Rainbow/ReducedOrientation.lean:40:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.densityState_means_lower`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/ReducedOrientation.lean:61:65: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [eligibleSingle, eligibleDouble, forwardState, backwardState, densityProbability, binaryMean,
+    selectionCoin, hij, hgood, hgood', hdouble, hforward, hback, ite_true, ite_false, and_true, and_false,
+    Bool.not_true, Bool.not_false, Bool.false_eq_true, mul_one, mul_zero, add_zero, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Rainbow/ReducedOrientation.lean:70:56: `Symmetric` has been deprecated: Use `Std.Symm` instead
+
+Hint: Replace the deprecated name:
+  S̵y̵m̵m̵e̵t̵r̵i̵c̵S̲t̲d̲.̲S̲y̲m̲m̲
+warning: DensityHS/Rainbow/ReducedOrientation.lean:119:49: `Symmetric` has been deprecated: Use `Std.Symm` instead
+
+Hint: Replace the deprecated name:
+  S̵y̵m̵m̵e̵t̵r̵i̵c̵S̲t̲d̲.̲S̲y̲m̲m̲
+warning: DensityHS/Rainbow/ReducedOrientation.lean:146:16: `Symmetric` has been deprecated: Use `Std.Symm` instead
+
+Hint: Replace the deprecated name:
+  S̵y̵m̵m̵e̵t̵r̵i̵c̵S̲t̲d̲.̲S̲y̲m̲m̲
+⚠ [8977/9017] Replayed DensityHS.Rainbow.DegreePruning
+warning: DensityHS/Rainbow/DegreePruning.lean:31:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.sum_missingPartners`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8978/9017] Replayed DensityHS.Rainbow.DirectedMatrices
+warning: DensityHS/Rainbow/DirectedMatrices.lean:38:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.exclusiveMatrix_bounds`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/DirectedMatrices.lean:43:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.doubleMatrix_bounds`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/DirectedMatrices.lean:48:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.doubleMatrix_symm`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/DirectedMatrices.lean:51:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.arcMatrix_eq_states`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/DirectedMatrices.lean:56:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.directed_states_partition`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/DirectedMatrices.lean:61:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.pairAverage_add`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/DirectedMatrices.lean:65:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.pairAverage_transpose`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/DirectedMatrices.lean:70:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.pairAverage_congr_on`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/DirectedMatrices.lean:97:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.clusterUnion_card`:
+  [Fintype V]
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/DirectedMatrices.lean:104:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.equal_cluster_average_row`:
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8979/9017] Replayed DensityHS.Rainbow.RegularStateMask
+warning: DensityHS/Rainbow/RegularStateMask.lean:33:4: `Symmetric` has been deprecated: Use `Std.Symm` instead
+
+Hint: Replace the deprecated name:
+  S̵y̵m̵m̵e̵t̵r̵i̵c̵S̲t̲d̲.̲S̲y̲m̲m̲
+warning: DensityHS/Rainbow/RegularStateMask.lean:32:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.regularStateMask_symm`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype I]
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype I] [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/RegularStateMask.lean:37:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.regularStateMask_irrefl`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype I]
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype I] [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/RegularStateMask.lean:43:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.regularStateMask_missing_card`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8980/9017] Replayed DensityHS.Rainbow.RegularStateModel
+warning: DensityHS/Rainbow/RegularStateModel.lean:90:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: DensityHS/Rainbow/RegularStateModel.lean:59:0: PANIC at Lean.Meta.whnfEasyCases Lean.Meta.WHNF:391:22: loose bvar in expression
+backtrace:
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(+0x962cb85) [0x7f0fe142cb85]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(+0x9623727) [0x7f0fe1423727]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(lean_panic_fn_borrowed+0x2b) [0x7f0fe142380b]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.whnfEasyCases spec at Lean.Meta.whnfCore.go+0x1a52) [0x7f0fdbf57192]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.whnfCoreAtDefEq [private]+0x291) [0x7f0fe0ece9e1]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(lean_is_expr_def_eq+0x265c) [0x7f0fe0e4adcc]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(WellFounded.opaqueFix₃ [λ, arity↓] spec at Lean.Meta.isDefEqArgsFirstPass+0x74) [0x7f0fe0e58084]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(WellFounded.opaqueFix₃ [arity↓] spec at Lean.Meta.isDefEqArgsFirstPass+0x8a8) [0x7f0fe0e58d48]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.isDefEqArgsFirstPass [private]+0x93) [0x7f0fe0e5aa73]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.isDefEqArgs [private]+0x18a) [0x7f0fe0e621fa]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.checkpointDefEq spec at Lean.Meta.tryHeuristic+0x506) [0x7f0fe0ea55c6]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.isDefEqApp [private]+0x25d) [0x7f0fe0ec642d]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.isExprDefEqExpensive [private]+0x11da) [0x7f0fe0ecac5a]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(lean_is_expr_def_eq+0x5b18) [0x7f0fe0e4e288]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.checkpointDefEq spec at Lean.Meta.isExprDefEq+0x498) [0x7f0fdbe523c8]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.isExprDefEq+0x48c) [0x7f0fdbe5356c]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Array.findSomeRevM?.find [arity↓, private] spec at Lean.PersistentArray.findSomeRevM? spec at Lean.LocalContext.findDeclRevM? spec at Lean.Meta.SplitIf.discharge?+0x1b0) [0x7f0fdce526c0]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.PersistentArray.findSomeRevMAux spec at Lean.PersistentArray.findSomeRevM? spec at Lean.LocalContext.findDeclRevM? spec at Lean.Meta.SplitIf.discharge?+0x57) [0x7f0fdce53397]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Array.findSomeRevM?.find [arity↓, private] spec at Lean.PersistentArray.findSomeRevMAux spec at Lean.PersistentArray.findSomeRevM? spec at Lean.LocalContext.findDeclRevM? spec at Lean.Meta.SplitIf.discharge?+0x93) [0x7f0fdce530c3]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.PersistentArray.findSomeRevM? spec at Lean.LocalContext.findDeclRevM? spec at Lean.Meta.SplitIf.discharge?+0x1bb) [0x7f0fdce53a8b]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.SplitIf.discharge? [boxed, private]+0x3a) [0x7f0fdce5507a]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/9>+0xb22) [0x7f0fe143cfb2]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.discharge?' [λ]+0x652) [0x7f0fdcd17cc2]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.discharge?'+0x467) [0x7f0fdcd1c177]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Array.forIn'Unsafe.loop [private] spec at Lean.Meta.Simp.synthesizeArgs+0x996) [0x7f0fdcd21376]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.synthesizeArgs+0xd2) [0x7f0fdcd22032]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.tryTheoremCore.go [private]+0x6ac) [0x7f0fdcd2312c]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.tryTheoremCore [private]+0x2f7) [0x7f0fdcd25cc7]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.tryTheoremWithExtraArgs? [λ]+0x504) [0x7f0fdcd275d4]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.tryTheoremWithExtraArgs? [boxed, λ]+0x34) [0x7f0fdcd27984]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/8>+0x5de) [0x7f0fe143b84e]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withNewMCtxDepth [boxed, λ, arity↓] spec at Lean.Meta.Simp.tryTheoremWithExtraArgs?+0x64) [0x7f0fdcd26b44]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/5>+0x59e) [0x7f0fe143749e]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withNewMCtxDepthImp [arity↓, private]+0x213) [0x7f0fdbe2ed33]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withNewMCtxDepth [arity↓] spec at Lean.Meta.Simp.tryTheoremWithExtraArgs?+0xb9) [0x7f0fdcd26cb9]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Array.forIn'Unsafe.loop [private] spec at Lean.Meta.Simp.rewrite?.rewriteUsingIndex?+0x29a) [0x7f0fdcd2b12a]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.rewrite?.rewriteUsingIndex? [private]+0x57c) [0x7f0fdcd2d5fc]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Array.forIn'Unsafe.loop [private] spec at Lean.Meta.Simp.rewritePost+0xa9) [0x7f0fdcd3c369]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.rewritePost+0x55) [0x7f0fdcd3cc05]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.postDefault+0x6f) [0x7f0fdcd4e0ef]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.postDefault [boxed]+0x35) [0x7f0fdcd4e565]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/9>+0x833) [0x7f0fe143ccc3]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpLoop.visitPost [private]+0x106) [0x7f0fdccdce86]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpLoop+0xc9c) [0x7f0fdccdefcc]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(lean_simp+0xe8d) [0x7f0fdcca52fd]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpAppUsingCongr.visit [private]+0x112d) [0x7f0fdcc034ad]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpAppUsingCongr+0x1e5) [0x7f0fdcc043e5]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.congrDefault+0x58a) [0x7f0fdccce3ca]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpStep+0x1c1) [0x7f0fdccd9571]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpLoop.visitPreContinue [private]+0x1ca) [0x7f0fdccdda1a]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpLoop+0xc9c) [0x7f0fdccdefcc]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(lean_simp+0xe8d) [0x7f0fdcca52fd]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [λ]+0xd4) [0x7f0fdccad454]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [boxed, λ]+0x43) [0x7f0fdccadc93]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/8>+0x477) [0x7f0fe143b6e7]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.withNewLemmas [arity↓]+0xb02) [0x7f0fdcca2ec2]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [λ]+0x133) [0x7f0fdccadf43]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [boxed, λ]+0x44) [0x7f0fdccae014]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/9>+0x624) [0x7f0fe143cab4]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDecl [λ, arity↓] spec at Lean.Meta.Simp.lambdaTelescopeDSimp.go+0x9f) [0x7f0fdcc9f1cf]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDecl [boxed, λ, arity↓] spec at Lean.Meta.Simp.lambdaTelescopeDSimp.go+0x31) [0x7f0fdcc9f281]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/6>+0x40f) [0x7f0fe1438b8f]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withNewFVar [arity↓, private]+0x321) [0x7f0fdbe25f31]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDeclImp [arity↓, private]+0x2fa) [0x7f0fdbe2647a]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDeclImp [private]+0x32) [0x7f0fdbe268c2]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDecl [arity↓] spec at Lean.Meta.Simp.lambdaTelescopeDSimp.go+0xd0) [0x7f0fdcc9f4a0]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall+0x146d) [0x7f0fdccb0dbd]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpStep+0x162) [0x7f0fdccd9512]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpLoop.visitPreContinue [private]+0x1ca) [0x7f0fdccdda1a]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpLoop+0xc9c) [0x7f0fdccdefcc]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(lean_simp+0xe8d) [0x7f0fdcca52fd]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [λ]+0xd4) [0x7f0fdccad454]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [boxed, λ]+0x43) [0x7f0fdccadc93]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/8>+0x477) [0x7f0fe143b6e7]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.withNewLemmas [arity↓]+0xb02) [0x7f0fdcca2ec2]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [λ]+0x133) [0x7f0fdccadf43]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [boxed, λ]+0x44) [0x7f0fdccae014]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/9>+0x624) [0x7f0fe143cab4]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDecl [λ, arity↓] spec at Lean.Meta.Simp.lambdaTelescopeDSimp.go+0x9f) [0x7f0fdcc9f1cf]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDecl [boxed, λ, arity↓] spec at Lean.Meta.Simp.lambdaTelescopeDSimp.go+0x31) [0x7f0fdcc9f281]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/6>+0x40f) [0x7f0fe1438b8f]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withNewFVar [arity↓, private]+0x321) [0x7f0fdbe25f31]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDeclImp [arity↓, private]+0x2fa) [0x7f0fdbe2647a]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDeclImp [private]+0x32) [0x7f0fdbe268c2]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDecl [arity↓] spec at Lean.Meta.Simp.lambdaTelescopeDSimp.go+0xd0) [0x7f0fdcc9f4a0]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall+0x146d) [0x7f0fdccb0dbd]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpStep+0x162) [0x7f0fdccd9512]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpLoop.visitPreContinue [private]+0x1ca) [0x7f0fdccdda1a]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpLoop+0xc9c) [0x7f0fdccdefcc]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(lean_simp+0xe8d) [0x7f0fdcca52fd]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [λ]+0xd4) [0x7f0fdccad454]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [boxed, λ]+0x43) [0x7f0fdccadc93]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/8>+0x477) [0x7f0fe143b6e7]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.withNewLemmas [arity↓]+0xb02) [0x7f0fdcca2ec2]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [λ]+0x133) [0x7f0fdccadf43]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.Simp.simpForall [boxed, λ]+0x44) [0x7f0fdccae014]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/9>+0x624) [0x7f0fe143cab4]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDecl [λ, arity↓] spec at Lean.Meta.Simp.lambdaTelescopeDSimp.go+0x9f) [0x7f0fdcc9f1cf]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(Lean.Meta.withLocalDecl [boxed, λ, arity↓] spec at Lean.Meta.Simp.lambdaTelescopeDSimp.go+0x31) [0x7f0fdcc9f281]
+/workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/../lib/lean/libleanshared.so(<apply/6>+0x40f) [0x7f0fe1438b8f]
+⚠ [8983/9017] Replayed DensityHS.Rainbow.ColorDigraph
+warning: DensityHS/Rainbow/ColorDigraph.lean:78:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8985/9017] Replayed DensityHS.Rainbow.StateDigraph
+warning: DensityHS/Rainbow/StateDigraph.lean:29:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.cluster_eq_of_common_vertex`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/StateDigraph.lean:41:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.stateDigraph_arc_sub`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype I]
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype I] [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8986/9017] Replayed DensityHS.Rainbow.RegularExtraction
+warning: DensityHS/Rainbow/RegularExtraction.lean:27:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.tile_comap_univ`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/RegularExtraction.lean:113:42: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Rainbow/RegularExtraction.lean:121:37: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8988/9017] Replayed DensityHS.Rainbow.Rounding
+warning: DensityHS/Rainbow/Rounding.lean:50:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: DensityHS/Rainbow/Rounding.lean:26:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.pack_rainbow_requests_of_embedding`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8989/9017] Replayed DensityHS.Rainbow.Branch
+warning: DensityHS/Rainbow/Branch.lean:28:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/Branch.lean:85:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/Branch.lean:91:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/Branch.lean:210:41: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/Branch.lean:220:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/Branch.lean:239:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: DensityHS/Rainbow/Branch.lean:239:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8991/9017] Replayed DensityHS.Weighted.Matching
+warning: DensityHS/Weighted/Matching.lean:110:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Matching.lean:115:0: automatically included section variable(s) unused in theorem `DensityHS.halfIntegral_edge_term_bound`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8992/9017] Replayed DensityHS.Weighted.Clique
+warning: DensityHS/Weighted/Clique.lean:48:0: automatically included section variable(s) unused in theorem `DensityHS.complete_cover_tight_swap`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Weighted/Clique.lean:90:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Weighted/Clique.lean:223:21: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hv, hiR, mul_left_comm, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/Clique.lean:223:46: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hv, hiR, mul_comm, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8995/9017] Replayed DensityHS.Weighted.Terminal
+warning: DensityHS/Weighted/Terminal.lean:31:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Terminal.lean:53:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Terminal.lean:59:43: Variable name `hz0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hz0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: DensityHS/Weighted/Terminal.lean:98:0: automatically included section variable(s) unused in theorem `DensityHS.marked_edge_term_bound`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Weighted/Terminal.lean:124:78: This simp argument is unused:
+  mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ha, ite_false, heq, false_and, huZ, ite_true, huS, zero_mul, zero_add, add_zero, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/Terminal.lean:133:10: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ha, ite_false, heq, false_and, huZ, hvZ, ite_true, hvS, mul_zero, zero_add, add_zero, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/Terminal.lean:153:35: This simp argument is unused:
+  Finset.sum_const_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_mem, add_zero, Finset.univ_inter] at hid
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/Terminal.lean:153:58: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_mem, Finset.sum_const_zero, Finset.univ_inter] at hid
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/Terminal.lean:163:33: This simp argument is unused:
+  Finset.sum_const_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_mem, add_zero, Finset.univ_inter] at hsum
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/Terminal.lean:163:56: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_mem, Finset.sum_const_zero, Finset.univ_inter] at hsum
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/Terminal.lean:186:43: This simp argument is unused:
+  Finset.sum_const_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [← hZ, Finset.sum_ite_mem, add_zero, Finset.univ_inter]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/Terminal.lean:186:66: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [← hZ, Finset.sum_ite_mem, Finset.sum_const_zero, Finset.univ_inter]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/Terminal.lean:204:0: automatically included section variable(s) unused in theorem `DensityHS.terminal_neighbors_in_universal_clique`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8996/9017] Replayed DensityHS.Weighted.RigidAlgebra
+warning: DensityHS/Weighted/RigidAlgebra.lean:42:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/RigidAlgebra.lean:104:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/RigidAlgebra.lean:142:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/RigidAlgebra.lean:148:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/RigidAlgebra.lean:154:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/RigidAlgebra.lean:163:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/RigidAlgebra.lean:172:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8997/9017] Replayed DensityHS.Weighted.RigidGraphBound
+warning: DensityHS/Weighted/RigidGraphBound.lean:179:10: This simp argument is unused:
+  Finset.sum_div
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [div_eq_mul_inv, ← Finset.sum_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Weighted/RigidGraphBound.lean:238:0: automatically included section variable(s) unused in theorem `DensityHS.sum_uniform_class`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8998/9017] Replayed DensityHS.Weighted.SupportRigidityBasics
+warning: DensityHS/Weighted/SupportRigidityBasics.lean:50:0: automatically included section variable(s) unused in theorem `DensityHS.Weighted.Support.cover_pair_bound_in_clique`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Weighted/SupportRigidityBasics.lean:201:2: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [quadratic] at h
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: DensityHS/Weighted/SupportRigidityBasics.lean:208:8: automatically included section variable(s) unused in theorem `DensityHS.Weighted.Support.mem_coverLevelSet`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8999/9017] Replayed DensityHS.Weighted.SupportRigidCounts
+warning: DensityHS/Weighted/SupportRigidCounts.lean:239:13: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9001/9017] Replayed DensityHS.Weighted.Main
+warning: DensityHS/Weighted/Main.lean:62:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9002/9017] Replayed DensityHS.Rainbow.Fractional
+warning: DensityHS/Rainbow/Fractional.lean:79:0: automatically included section variable(s) unused in theorem `DensityHS.Digraph.uniform_neighbor_cover_cost_le`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/Fractional.lean:119:12: This simp argument is unused:
+  Fintype.card_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [S]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Rainbow/Fractional.lean:136:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Rainbow/Fractional.lean:151:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Rainbow/Fractional.lean:185:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9003/9017] Replayed DensityHS.Rainbow.MapCounting
+warning: DensityHS/Rainbow/MapCounting.lean:30:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.fixedCoordinateMaps_card_le`:
+  [DecidableEq V]
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/MapCounting.lean:104:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.card_rsets_le_pow`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/MapCounting.lean:118:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.crossingCoordinateMaps_card_le`:
+  [DecidableEq V]
+  [DecidableEq I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/MapCounting.lean:127:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.candidate_maps_card_le`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9005/9017] Replayed DensityHS.Rainbow.BlockCounting
+warning: DensityHS/Rainbow/BlockCounting.lean:34:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.IsDisjointBlockChoice.cons`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9006/9017] Replayed DensityHS.Basic.EnvelopeStrict
+warning: DensityHS/Basic/EnvelopeStrict.lean:123:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9007/9017] Replayed DensityHS.Finite.Supersaturation
+warning: DensityHS/Finite/Supersaturation.lean:41:0: automatically included section variable(s) unused in theorem `DensityHS.cliqueMapIndicator_nonneg`:
+  [Fintype V]
+  [MeasurableSpace V]
+  [MeasurableSingletonClass V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [MeasurableSpace V] [MeasurableSingletonClass V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/Supersaturation.lean:69:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: DensityHS/Finite/Supersaturation.lean:145:0: automatically included section variable(s) unused in theorem `DensityHS.cliqueMap_injective`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Finite/Supersaturation.lean:219:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/Supersaturation.lean:220:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Finite/Supersaturation.lean:213:39: Variable name `hδ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9008/9017] Replayed DensityHS.Rainbow.ConnectorGraph
+warning: DensityHS/Rainbow/ConnectorGraph.lean:97:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Rainbow/ConnectorGraph.lean:119:18: Variable name `hN` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hN
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9010/9017] Replayed DensityHS.Rainbow.ConnectorProper
+warning: DensityHS/Rainbow/ConnectorProper.lean:40:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.attachRootGraph_le`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/ConnectorProper.lean:50:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.attachRootGraph_root_neighbor`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/ConnectorProper.lean:57:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.attachRootGraph_nonroot`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/ConnectorProper.lean:108:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.rootCompatible_double_le`:
+  [DecidableEq V]
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [9011/9017] Replayed DensityHS.Rainbow.ConnectorCounting
+warning: DensityHS/Rainbow/ConnectorCounting.lean:44:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9013/9017] Replayed DensityHS.Rainbow.LocalAbundance
+warning: DensityHS/Rainbow/LocalAbundance.lean:32:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.absorberMerge_image`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/LocalAbundance.lean:51:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.absorberMerge_injective`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/LocalAbundance.lean:172:46: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9014/9017] Replayed DensityHS.Rainbow.AbsorbingSet
+warning: DensityHS/Rainbow/AbsorbingSet.lean:44:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9016/9017] Replayed DensityHS.Rainbow.Restriction
+warning: DensityHS/Rainbow/Restriction.lean:33:21: This simp argument is unused:
+  SimpleGraph.induce_adj
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [edgeColor, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Rainbow/Restriction.lean:108:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [9017/9017] Built DensityHS.Rainbow.Main (19s)
+Build completed successfully (9017 jobs).

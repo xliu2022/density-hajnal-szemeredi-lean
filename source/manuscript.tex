@@ -1,0 +1,3221 @@
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[skip=0.45\baselineskip plus 2pt,indent=0pt]{parskip}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{scalerel}
+\usepackage{aliascnt}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[nameinlink,capitalize,noabbrev]{cleveref}
+\allowdisplaybreaks
+
+\newcommand{\hide}[1]{}
+
+\hypersetup{
+  pdftitle={The density Hajnal--Szemerédi theorem and its stability},
+  pdfsubject={Extremal graph theory and clique tiling stability},
+  pdfkeywords={Hajnal--Szemerédi theorem, clique tiling, stability,
+  graphon, fractional cover, edit distance, rainbow clique tiling}
+}
+
+\title{\bf\Large The density Hajnal--Szemer\'edi theorem}
+\author{}
+\date{\today}
+
+\numberwithin{equation}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+\newaliascnt{claim}{theorem}
+\newtheorem{claim}[claim]{Claim}
+\aliascntresetthe{claim}
+\newaliascnt{construction}{theorem}
+\newtheorem{construction}[construction]{Construction}
+\aliascntresetthe{construction}
+\newaliascnt{problem}{theorem}
+\newtheorem{problem}[problem]{Problem}
+\aliascntresetthe{problem}
+\newaliascnt{fact}{theorem}
+\newtheorem{fact}[fact]{Fact}
+\aliascntresetthe{fact}
+\newaliascnt{definition}{theorem}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+
+\newcommand{\ex}{\operatorname{ex}}
+\newcommand{\til}{\operatorname{til}}
+\newcommand{\fcov}{\operatorname{fcov}}
+\newcommand{\edit}{\operatorname{edit}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\vct}[1]{\boldsymbol{#1}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\distone}{\delta_1}
+\newcommand{\distsq}{\delta_\square}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+For every fixed integer $r\ge3$, we determine asymptotically the maximum number of edges in an $n$-vertex graph containing at most $k$ vertex-disjoint copies of $K_r$, uniformly over the full range $0\le k\le n/r$.  We also classify the $r+1$ classes of extremal graphons and prove a stability theorem uniform in $k/n$.  In particular, the final class is parameterized by an $(r-2)$-dimensional simplex and generally contains continuum many nonisomorphic graphons.
+
+The proof begins with a fractional relaxation, replacing vertex-disjoint clique tilings by weighted fractional tilings and their dual covers.  For a support-minimal counterexample, perturbing the vertex weights makes the adjacency quadratic form strictly negative on a subspace of codimension at most two.  Spectral interlacing and edge saturation then turn this analytic condition into structure: the support is a clique or a clique blow-up of $P_3$.  Analyzing these two supports proves the weighted inequality.  We then pass to graphons, where measure variations classify the equality cases, including the transition points, and compactness together with rounding yields uniform finite stability.  As an application, the weighted inequality improves the minimum colour-degree condition of Lo and Williams for perfect rainbow clique tilings of every fixed order at least four.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}\label{sec:introduction}
+
+For a positive integer $n$, write $[n]\coloneqq\{1,\ldots,n\}$, and put $[0]\coloneqq\varnothing$.  For graphs $F$ and $G$, let $\nu(F,G)$ denote the maximum number of pairwise vertex-disjoint copies of $F$ in $G$.  For integers $n,k\ge0$, define
+\[
+ \ex(n,(k+1)F)
+ \coloneqq
+ \max\{e(G)\colon |V(G)|=n,\ \nu(F,G)\le k\}.
+\]
+This quantity includes several classical problems as special cases.  When $k=0$, it is the Tur\'an problem for $F$; in particular, Tur\'an's theorem determines the answer for $F=K_r$ \cite{Turan41}.  When $F=K_2$, it is the matching problem solved by Erd\H{o}s and Gallai \cite{EG59}.  Near the other end of the range, taking $k=\lfloor n/v(F)\rfloor-1$ asks for the largest graph with no $F$-factor.  We study the range between these two ends for $F=K_r$.
+
+The edge-density problem for clique tilings was first solved in several restricted ranges.  Erd\H{o}s \cite{Erd62} and Moon \cite{Moon68} obtained early exact results, and Simonovits \cite{Simonovits68} treated cliques when $k$ is fixed and $n$ is sufficiently large.  The almost-perfect range and related factor problems were studied by Akiyama and Frankl \cite{AF85}, Bollob\'as and Eldridge \cite{BE78}, and Balogh, Kostochka, and Treglown \cite{BKT13}; Grosu and Hladk\'y \cite{GH12} considered partial bipartite tilings.  The first theorem covering the full range of $k$ was obtained for triangles by Allen, B\"ottcher, Hladk\'y, and Piguet \cite{ABHP15}.  They determined $\ex(n,(k+1)K_3)$ for all sufficiently large $n$ and all $0\le k\le n/3$, with four extremal ranges.  Hou, Hu, Liu, and Zhang \cite{HHLZ25} later solved the asymptotic $K_4$ problem and proposed $r+1$ construction families for every $r\ge5$.  We prove that these families give the asymptotic answer for every fixed $r$ and every $0\le k\le n/r$.
+
+The corresponding minimum-degree problem has a different history.  The Corr\'adi--Hajnal theorem \cite{CH63} for triangle tilings and the Hajnal--Szemer\'edi theorem \cite{HS70} for clique factors give the fundamental exact degree thresholds for cliques.  For arbitrary fixed graphs, Alon and Yuster \cite{AY96} obtained asymptotic minimum-degree conditions for factors, and Koml\'os, S\'ark\"ozy, and Szemer\'edi \cite{KSS01} proved the corresponding constant-error conjecture.  Koml\'os \cite{Komlos00} determined the asymptotic threshold for tilings covering any prescribed proportion of the vertices.  Shokoufandeh and Zhao \cite{ShokoufandehZhao03} showed that, at the almost-perfect threshold, only a bounded number of vertices need remain uncovered; see the survey of K\"uhn and Osthus \cite{KO09}.
+
+Another related density problem asks for the minimum number of copies of $K_r$ in a graph of a given edge density, rather than the maximum number of vertex-disjoint copies.  Razborov \cite{Razborov08} solved the triangle case, and Reiher \cite{Reiher16} proved the general clique density theorem.
+
+Similar tiling questions arise for uniform hypergraphs.  Taking $F$ to be a single hyperedge gives the Erd\H{o}s matching conjecture \cite{Erdos65}, an extension of the Erd\H{o}s--Gallai theorem with two main extremal constructions.  The conjecture remains open in general.  Huang, Loh, and Sudakov \cite{HLS12} and Frankl \cite{Frankl13} proved substantial ranges, and Frankl \cite{Frankl17} settled the $3$-uniform case.  Gan, Han, Sun, and Wang \cite{GHSW21} obtained an asymptotically sharp threshold for large $Y_{3,2}$-tilings in an initial linear range and applied it to Hamilton $\ell$-cycles.  Han, Sun, and Wang \cite{HSW24} later determined the asymptotically sharp threshold throughout the full linear range.
+
+For tilings by a general fixed hypergraph, Hou, Li, Liu, Yuan, and Zhang \cite{HLLYZ25} developed a method for nondegenerate hypergraphs that gives exact extremal constructions in an initial linear range under suitable structural assumptions.  Hou, Hu, Li, Liu, Yang, and Zhang \cite{HHLLYZ25Degenerate} obtained near-optimal bounds for degenerate hypergraphs in three parameter ranges, together with structural results in some of these ranges.  They studied the boundedness condition behind this method in \cite{HHLLYZ26Boundedness}, proving it for many degenerate hypergraphs, including all even cycles and many complete bipartite graphs and their expansions.  The same authors \cite{HHLLYZ26EvenCycles} also determined the exact extremal graph for each fixed even cycle $C_{2\ell}$, $\ell\ge3$, in a middle linear range.  Lang \cite{Lang23} proposed an extension of the Erd\H{o}s matching conjecture to tilings by general hypergraphs.  Chen, Liu, Sun, and Wang \cite{CLSW25} disproved one of Lang's conjectures by determining the two asymptotic extremal constructions for tilings by the $H$-shaped tree.
+
+We now define the density function in our main results.  Fix $r\ge3$ and let $x\in[0,1/r]$.  The constructions in \cref{sec:constructions} give the following quadratic functions.  For $1\le i\le r-1$, define
+\begin{equation}\label{eq:B}
+ B_{r,i}(x)
+ \coloneqq\frac12\left(1-\frac{(1-ix)^2}{r-i}\right).
+\end{equation}
+Define
+\begin{equation}\label{eq:A}
+ A_r(x)\coloneqq\frac{r-2}{2(r-1)}+2x^2,
+ \qquad 0\le x\le\frac1{2(r-1)},
+\end{equation}
+and
+\begin{equation}\label{eq:R}
+ R_r(x)\coloneqq\frac12-(1-rx)+\frac{r-1}{2}(1-rx)^2,
+ \qquad \frac{r-2}{r(r-1)}\le x\le\frac1r.
+\end{equation}
+We regard a function as having value $-\infty$ outside its displayed domain and put
+\begin{equation}\label{eq:Phi}
+ \Phi_r(x)\coloneqq\max\Bigl(\{B_{r,i}(x)\colon 1\le i\le r-1\}\cup\{A_r(x),R_r(x)\}\Bigr).
+\end{equation}
+For $r=2$, we use $ \Phi_2(x)\coloneqq\max\left\{x-\frac{x^2}{2},~2x^2\right\}$. 
+We need $\Phi_2$ only for the induction.  A density function is \emph{active} at $x$ if its value there is $\Phi_r(x)$.  As $x$ varies, the active function changes only finitely many times.  The points where the active function changes are the \emph{transition points}; between consecutive transition points, only one construction is active.  A transition point is \emph{first-order} if the two active functions have different derivatives there, and \emph{tangential} if their derivatives agree.
+
+Our first result determines the asymptotic extremal number throughout the full parameter range.
+
+\begin{theorem}\label{thm:finite-density}
+For every fixed integer $r\ge3$, uniformly over integers $0\le k\le\lfloor n/r\rfloor$,
+\[
+ \ex(n,(k+1)K_r)=\Phi_r\left(k/n\right)n^2+o_r(n^2).
+\]
+\end{theorem}
+
+Here \emph{uniformly} means that, for every fixed $r$, there is a function $\eta_r(n)\to0$ such that the absolute error is at most $\eta_r(n)n^2$ for every admissible $k$.  For $r=3$ \cite{ABHP15} and $r=4$ \cite{HHLZ25}, the known error term $O_r(n)$ is stronger.  Thus the new part of \cref{thm:finite-density} is the upper bound for every $r\ge5$.
+
+The weighted form of our density theorem also supplies the density estimate needed in the approach of Lo and Williams to perfect rainbow clique tilings \cite{LW24}.  For an edge-coloured graph $G$, the \emph{colour degree} $d_G^c(v)$ is the number of colours on the edges incident with $v$, and the \emph{minimum colour degree} is $\delta^c(G)\coloneqq\min_{v\in V(G)}d_G^c(v)$.  A clique is \emph{rainbow} if its edges have distinct colours, and a \emph{perfect rainbow-$K_r$-tiling} is a partition of the vertex set into rainbow copies of $K_r$; colours may be repeated between different copies.  For $r\ge4$, define
+\begin{equation}\label{eq:rainbow-rho-intro}
+ \rho_r\coloneqq\frac{2(r-1)+\sqrt{r^2+4r-8}}{3r}.
+\end{equation}
+Combining our weighted inequality with the directed-graph reduction and absorption method of Lo and Williams gives the following application.
+
+\begin{corollary}\label{cor:rainbow-tiling}
+For every fixed integer $r\ge4$ and every $\eps>0$, there exists $n_0=n_0(r,\eps)$ such that the following holds.  If $G$ is an edge-coloured graph on $n\ge n_0$ vertices, $r\mid n$, and $\delta^c(G)\ge(\rho_r+\eps)n$, then $G$ contains a perfect rainbow-$K_r$-tiling.
+\end{corollary}
+
+For $r=4$, the constant in \cref{cor:rainbow-tiling} is $(3+\sqrt6)/6\approx0.908248$.  It is slightly smaller than the previous constant $(2+\sqrt{13/2})/5\approx0.909902$, and the improvement holds for every $r\ge5$ as well.  We prove the corollary in \cref{sec:rainbow}.
+
+We next state the stability result.  For graphs $G,H$ on the same vertex set, define their \emph{edit distance} by $\edit(G,H)\coloneqq|E(G)\triangle E(H)|$; distance to a family also minimizes over vertex relabelings and over members of the family.  The Erd\H{o}s--Simonovits stability theorem \cite{Erdos67,Simonovits68} says that every near-extremal $K_r$-free graph is close to a Tur\'an graph.  Allen, B\"ottcher, Hladk\'y, and Piguet \cite{ABHP14} proved a rooted form of Tur\'an stability and used it for the triangle-tiling problem \cite{ABHP15}.  In our problem, the extremal construction changes with $k/n$, and two constructions may have nearly equal densities near a transition point.  A statement uniform in $k$ must therefore allow every construction whose density is close to $\Phi_r(k/n)$.
+
+For each construction $\tau$ defined in \cref{sec:constructions}, write $D_{r,\tau}$ for its edge-density function and $\cE_{r,\tau}(n,k)$ for the family of its integer realizations.
+
+\begin{theorem}\label{thm:finite-stability}
+Fix $r\ge3$.  For every $\eps>0$ and $\eta>0$ there are $\delta>0$ and $n_0$ such that the following holds.  Let $n,k$ be integers with $n\ge n_0$ and $0\le k\le\lfloor n/r\rfloor$, and let $G$ be an $n$-vertex graph satisfying $\nu(K_r,G)\le k$ and $e(G)\ge\bigl(\Phi_r(k/n)-\delta\bigr)n^2$.
+Then there is a construction $\tau$ with $D_{r,\tau}(k/n)\ge \Phi_r(k/n)-\eta$ and a graph $E\in\cE_{r,\tau}(n,k)$ such that $\edit(G,E)\le\eps n^2$.
+\end{theorem}
+
+Away from the transition points, the theorem says that every near-extremal graph is close to the unique extremal construction.  At a transition point it allows all extremal constructions, and near such a point it allows those whose densities are close to the maximum.  In the final $R_r$ range, several nonisomorphic constructions can have the same asymptotic density.  Sequence and fixed-range forms of \cref{thm:finite-stability} are given in \cref{sec:formal-stability}.
+
+We finish the Introduction with an outline of the proof.  The main results are stated for finite graphs, but their proofs use graphons for compactness and for the equality analysis.  The weighted-graph and graphon terminology used in the outline is defined in \cref{sec:weighted-preliminaries,sec:prelim}.
+
+The density proof begins with a \emph{fractional relaxation}.  On a finite graph $H$ with probability vector $\vct p$, we replace a collection of vertex-disjoint copies of $K_r$ by a fractional $K_r$-tiling with vertex capacities $\vct p$.  Its linear-programming dual is a fractional $K_r$-cover.  This relaxation has two roles.  First, strong duality expresses the relaxed tiling number as a minimum cover cost.  After fixing a cover $\vct c$, the normalization $\sum_vp_v=1$ and the cover cost $\langle\vct p,\vct c\rangle=x$ are linear in $\vct p$, so the weights can be perturbed on the resulting affine subspace.  Second, fractional tilings and covers behave well under blow-ups and sampling, which connects the weighted problem to graphons and then to finite graphs.  The use of vertex weights in clique extremal problems goes back at least to Motzkin and Straus \cite{MotzkinStraus65}.
+
+The case $r=2$ follows from the Erd\H{o}s--Gallai theorem by a rational blow-up.  For $r\ge3$, we assume that the weighted inequality fails and choose a counterexample with the smallest support and maximum weighted edge density.  Fixing an extreme minimum cover, we perturb $\vct p$ in the subspace orthogonal to $\one$ and $\vct c$.  Support minimality makes the adjacency quadratic form strictly negative on this subspace.  The min--max principle then shows that the adjacency matrix has at most two nonnegative eigenvalues.  Strict negativity rules out an independent set of three vertices, while spectral interlacing rules out an odd cycle and an induced $2K_2$ in the complement.  The complement is therefore a chain graph, so the support is a co-chain graph.  A sign rule for induced $P_4$'s and saturation reduce its chain structure to at most one step, leaving either a clique or a clique blow-up of $P_3$.
+
+The clique case follows from the hypersimplex formula.  For a $P_3$-blow-up, the tight clique equations for an extreme minimum fractional cover imply that its positive coordinates take at most two values.  The remaining possibilities are handled by an elementary quadratic estimate or by the stationarity equations and a positive-semidefinite quadratic form.  A peeling recursion completes the induction on $r$.  Sampling transfers the weighted inequality to graphons, and graphon compactness then gives \cref{thm:finite-density}.
+
+To determine the equality cases and prove stability, we pass from finite graphs to graphons.  This step is needed for two reasons.  First, the vertex-class sizes in a finite graph are discrete, so they cannot be varied infinitesimally.  In the graphon setting, we can instead perturb the underlying probability measure while keeping the $\{0,1\}$-valued support and every fractional-cover inequality fixed.  When only one construction is active, two-sided perturbations give a first-order identity for the degree function and a second-order inequality for the adjacency quadratic form.  These relations determine the multipartite structure of the extremal graphon.  At a first-order transition, the two perturbation directions are governed by different one-sided derivatives of $\Phi_r$, and the variational argument gives a multiplier between the two slopes.  An uncrossing argument and the peeling recursion force this multiplier to be an endpoint, reducing the equality case to one of the two neighboring constructions.
+
+Second, graphon compactness is needed for a stability statement that is uniform in $k/n$.  From any sequence of near-extremal finite graphs, even when $k/n$ varies or approaches a transition point, we can take a subsequence converging in cut distance to a graphon.  Lower semicontinuity of the fractional tiling number and convergence of the edge density show that the limit is an exact extremal graphon.  The equality classification then identifies its construction.  Since every extremal construction is a $\{0,1\}$-valued step graphon with a bounded number of parts, cut-distance closeness can be strengthened to $L^1$ closeness.  Finally, rounding the part sizes gives a finite construction that is close in edit distance, yielding \cref{thm:finite-stability}.  Thus graphons provide both the continuous variations used in the equality proof and the compactness needed to pass from exact equality to uniform finite stability.
+
+\paragraph{Organization.}
+\Cref{sec:weighted-constructions} introduces weighted tilings and covers, defines the extremal constructions, and determines where each is active.  \Cref{sec:weighted-density} proves the weighted inequality and then derives the finite density theorem in \cref{sec:prelim}.  \Cref{sec:equality-stability} develops the tools for the equality analysis, classifies the extremal graphons, handles the transition points, and proves the stability theorem.  \Cref{sec:rainbow} applies the weighted inequality to perfect rainbow clique tilings.  The appendix contains three calculations used at exceptional transition points.
+
+\section{Weighted graphs and extremal constructions}\label{sec:weighted-constructions}
+
+This section introduces the weighted fractional tiling problem and its linear-programming dual, and then describes the constructions that attain the conjectured density bound.
+
+\subsection{Fractional tilings and covers in weighted graphs}\label{sec:weighted-preliminaries}
+
+A \emph{weighted graph} is a pair $(H,\vct p)$, where $H$ is a finite simple graph and $\vct p\coloneqq(p_v)_{v\in V(H)}$ is a probability vector with every $p_v>0$.  We call $H$ the \emph{support}, its vertices \emph{atoms}, and $p_v$ the \emph{weight} of $v$.  For $S\subseteq V(H)$, put $\vct p(S)\coloneqq\sum_{v\in S}p_v$.  Let $A(H)$ denote the adjacency matrix of $H$, and put
+\[
+ e(H,\vct p)\coloneqq\sum_{uv\in E(H)}p_up_v
+       =\frac12\vct p^{\mathsf T}A(H)\vct p.
+\]
+
+Let $\mathcal K_r(H)$ be the set of copies of $K_r$ in $H$.  A \emph{weighted fractional $K_r$-tiling} is a vector $\vct t\coloneqq(t_K)_{K\in\mathcal K_r(H)}$ assigning a nonnegative amount to every copy $K\in\mathcal K_r(H)$.  The \emph{load} placed on an atom $v\in V(H)$ is
+\[
+ L_{\vct t}(v)\coloneqq\sum_{K\in\mathcal K_r(H)\colon v\in K}t_K.
+\]
+The weight $p_v$ is the \emph{capacity} of $v$, so the tiling is \emph{feasible} if $L_{\vct t}(v)\le p_v$ for every $v$.  The \emph{size} of the tiling is $\sum_Kt_K$, and its maximum is the value of the linear program
+\begin{equation}\label{eq:weighted-tiling-lp}
+\begin{aligned}
+ \til_r(H,\vct p)\coloneqq\text{\rm maximize}\quad
+   &\sum_{K\in\mathcal K_r(H)}t_K\\
+ \text{\rm subject to}\quad
+   &\sum_{K\in\mathcal K_r(H)\colon v\in K}t_K\le p_v
+       &&\text{for }v\in V(H),\\
+   &t_K\ge0
+       &&\text{for }K\in\mathcal K_r(H).
+\end{aligned}
+\end{equation}
+Every unit of tiling uses one unit of capacity at each of its $r$ vertices.  Consequently,
+\[
+ r\sum_{K\in\mathcal K_r(H)}t_K
+ =\sum_{v\in V(H)}L_{\vct t}(v)
+ \le\sum_{v\in V(H)}p_v=1,
+\]
+so $\til_r(H,\vct p)\le1/r$.
+
+The dual notion assigns a nonnegative price $c_v$ to each atom.  A \emph{fractional $K_r$-cover} is a vector $\vct c\coloneqq(c_v)_{v\in V(H)}\in\R_{\ge0}^{V(H)}$ for which every clique has total price at least one:
+\[
+ \vct c(K)\coloneqq\sum_{v\in K}c_v\ge1
+ \qquad\text{for }K\in\mathcal K_r(H).
+\]
+The \emph{cost} of the cover is
+\[
+ \langle\vct p,\vct c\rangle=\sum_{v\in V(H)}p_vc_v.
+\]
+The minimum cover cost is therefore the value of
+\begin{equation}\label{eq:weighted-cover-lp}
+\begin{aligned}
+ \fcov_r(H,\vct p)\coloneqq\text{\rm minimize}\quad
+   &\sum_{v\in V(H)}p_vc_v\\
+ \text{\rm subject to}\quad
+   &\sum_{v\in K}c_v\ge1
+       &&\text{for }K\in\mathcal K_r(H),\\
+   &c_v\ge0
+       &&\text{for }v\in V(H).
+\end{aligned}
+\end{equation}
+
+To see the duality directly, let $B$ be the $V(H)\times\mathcal K_r(H)$ vertex--clique incidence matrix,
+\[
+ B_{vK}\coloneqq
+ \begin{cases}
+  1,&v\in K,\\
+  0,&v\notin K.
+ \end{cases}
+\]
+Writing $\one$ for the all-ones vector indexed by $\mathcal K_r(H)$, the two programs are
+\[
+ \begin{array}{lll}
+ \text{\rm(P)}&
+ \text{\rm maximize }\one^{\mathsf T}\vct t&
+ \text{\rm subject to }B\vct t\le\vct p,\quad \vct t\ge0,\\[1mm]
+ \text{\rm(D)}&
+ \text{\rm minimize }\vct p^{\mathsf T}\vct c&
+ \text{\rm subject to }B^{\mathsf T}\vct c\ge\one,\quad \vct c\ge0.
+ \end{array}
+\]
+Thus \cref{eq:weighted-cover-lp} is exactly the linear-programming dual of \cref{eq:weighted-tiling-lp}.  Weak duality is also visible without matrix notation: for every feasible tiling $\vct t$ and cover $\vct c$,
+\begin{equation}\label{eq:weighted-weak-duality}
+\begin{aligned}
+ \sum_Kt_K
+ \le\sum_Kt_K\sum_{v\in K}c_v
+ =\sum_vc_v\sum_{K\ni v}t_K
+ \le\sum_vp_vc_v.
+\end{aligned}
+\end{equation}
+The primal is feasible, by taking $\vct t=\vct0$, and bounded by $1/r$.  The dual is feasible, since the constant vector with coordinates $c_v=1/r$ covers every $K_r$ and has cost $1/r$.  Finite-dimensional strong linear-programming duality therefore gives optimal solutions to both programs and
+\begin{equation}\label{eq:weighted-duality}
+ \til_r(H,\vct p)=\fcov_r(H,\vct p)\in[0,1/r].
+\end{equation}
+Moreover, an optimal pair $(\vct t,\vct c)$ satisfies complementary slackness:
+\begin{equation}\label{eq:weighted-complementary-slackness}
+\begin{aligned}
+ c_v>0
+ &\quad\Longrightarrow\quad
+   \sum_{K\ni v}t_K=p_v,\\
+ t_K>0
+ &\quad\Longrightarrow\quad
+   \sum_{v\in K}c_v=1.
+\end{aligned}
+\end{equation}
+Equivalently, positive-priced atoms have saturated capacity, and the tiling assigns positive weight only to cliques that are \emph{tight} for the cover.  We may always restrict attention to covers in $[0,1]^{V(H)}$: replacing any coordinate larger than one by one preserves every cover constraint and does not increase its cost.
+
+When the weights are rational, these definitions also have the usual blow-up interpretation.  If $N p_v$ is integral, replace each atom $v$ by an independent class of size $Np_v$.  An integral $K_r$-tiling in the blow-up, grouped according to its support clique and divided by $N$, gives a feasible vector in \cref{eq:weighted-tiling-lp}.  Likewise, assigning price $c_v$ to every vertex in the class corresponding to $v$ gives normalized cover cost $\sum_vp_vc_v$.  Thus the two programs are the fractional versions of tiling and covering in large blow-ups of $H$.
+
+\subsection{Extremal constructions and their properties}\label{sec:constructions}
+
+This subsection describes the extremal constructions, computes their edge densities and fractional cover weights, and records which constructions are active for each value of the parameter.
+
+We first describe the constructions as finite graphs.  This makes the reason for the three families transparent. 
+Let $n,k$ be integers with $0\le k\le\lfloor n/r\rfloor$.
+
+\paragraph{The finite $B_i$ construction $\cE_{r,B_i}(n,k)$.}
+Fix $i\in[r-1]$ and put $s\coloneqq r-i$.  Partition the vertex set into
+\[
+ X\sqcup Y_1\sqcup\cdots\sqcup Y_s,
+\]
+where $|X|\coloneqq ik$ and the sizes of $Y_1,\ldots,Y_s$ differ by at most one.  Make $X$ a clique, join $X$ completely to every $Y_j$, and join every two distinct sets $Y_j,Y_{j'}$ completely; there are no edges inside any $Y_j$.  Let $\cE_{r,B_i}(n,k)$ denote the resulting family of graphs.  Every $K_r$ contains at least $i$ vertices of $X$, so these graphs contain at most $k$ pairwise vertex-disjoint copies of $K_r$.  Moreover, for $x\coloneqq k/n$,
+\begin{equation}\label{eq:finite-B-count}
+ e(G)=\binom n2-\sum_{j\in[s]}\binom{|Y_j|}{2}
+ =B_{r,i}(x)n^2+O_r(n).
+\end{equation}
+
+\paragraph{The finite $A$ construction $\cE_{r,A}(n,k)$.}
+Suppose $0\le k/n\le1/(2(r-1))$.  Start with the balanced complete $(r-1)$-partite graph on $n$ vertices, choose a largest part $V_1$, and choose a set $X\subseteq V_1$ of size $2k$.  Add all edges inside $X$ and no other edges within the Tur\'an parts.  Let $\cE_{r,A}(n,k)$ denote the resulting family.  Every $K_r$ contains at least two vertices of $X$, and hence the graph contains at most $k$ vertex-disjoint copies of $K_r$.  If $t_{r-1}(n)$ denotes the number of edges in the balanced $(r-1)$-partite Tur\'an graph, then for $x\coloneqq k/n$,
+\begin{equation}\label{eq:finite-A-count}
+ e(G)=t_{r-1}(n)+\binom{2k}{2}
+ =A_r(x)n^2+O_r(n).
+\end{equation}
+
+\paragraph{The finite $R$ construction $\cE_{r,R}(n,k)$.}
+Suppose $(r-2)/(r(r-1))\le k/n\le1/r$, and put $L\coloneqq n-rk$.  Partition the vertex set into
+\[
+ X\sqcup\bigcup_{j\in[r-1]}(Y_j\sqcup Z_j),
+\]
+where
+\[
+ |X|\coloneqq n-(r-1)L,\qquad |Y_j|+|Z_j|=L,\qquad\text{and}\qquad \sum_{j\in[r-1]}|Z_j|=L.
+\]
+Make $X$ a clique.  Each $Y_j\cup Z_j$ is independent, distinct sets $Y_j\cup Z_j$ are completely joined, and $X$ is complete to every $Y_j$ and anticomplete to every $Z_j$.  Let $\cE_{r,R}(n,k)$ be the family obtained from all integer choices of the sizes $|Z_j|\in[0,L]$.  No $K_r$ meets any $Z_j$, so every $K_r$ lies in $X\cup\bigcup_{j\in[r-1]}Y_j$, 
+which has exactly $rk$ vertices.  Thus these graphs contain at most $k$ vertex-disjoint copies of $K_r$.  Their edge count is independent of the individual values of $|Z_j|$ and satisfies (for $x\coloneqq k/n$,)
+\begin{equation}\label{eq:finite-R-count}
+ e(G)=\binom n2-(r-1)\binom L2-|X|L
+ =R_r(x)n^2+O_r(n).
+\end{equation}
+
+Let
+\[
+ \mathfrak T_r\coloneqq\{B_1,\ldots,B_{r-1},A,R\}.
+\]
+We use this set to record which of the three types of construction is best at a given value of $x$.
+For $\tau\in\mathfrak T_r$, define its edge-density function by
+\[
+ D_{r,B_i}\coloneqq B_{r,i},\qquad D_{r,A}\coloneqq A_r,\qquad\text{and}\qquad D_{r,R}\coloneqq R_r,
+\]
+with value $-\infty$ outside the appropriate domain.
+
+The three finite families give the following lower bound.
+
+\begin{fact}\label{prop:finite-lower-bound}
+For every fixed $r\ge3$, uniformly over integers $0\le k\le\lfloor n/r\rfloor$,
+\[
+ \ex(n,(k+1)K_r)\ge \Phi_r(k/n)n^2-O_r(n).
+\]
+\end{fact}
+
+\begin{definition}\label{def:active-family}
+For $x\in[0,1/r]$ and $\eta\ge0$, the \emph{active construction set} and the \emph{$\eta$-active construction set} are
+\[
+ \cA_r(x)\coloneqq\{\tau\in\mathfrak T_r\colon D_{r,\tau}(x)=\Phi_r(x)\}
+ \quad\text{and}\quad 
+ \cA_r(x;\eta)\coloneqq\{\tau\in\mathfrak T_r\colon D_{r,\tau}(x)\ge \Phi_r(x)-\eta\}.
+\]
+\end{definition}
+
+The next lemma gives the order in which these constructions are active.
+
+\begin{lemma}\label{lem:phase-diagram}
+The function $\Phi_r$ is continuous and strictly increasing on $[0,1/r]$.  Apart from the common Tur\'an construction at $x=0$, its active constructions occur in the order $B_1, A, B_2, B_3,\ldots, B_{r-1}, R$. 
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item The nonzero $B_1=A$ crossing is $x=\frac2{4r-3}$. 
+\item The $A=B_2$ crossing is tangential and occurs at $x=\frac1{2(r-1)}$. 
+\item For $2\le i\le r-2$, the active $B_i=B_{i+1}$ crossing is the unique solution of
+\begin{equation}\label{eq:adjacent-crossing}
+ \frac{1-ix}{\sqrt{r-i}}
+ =\frac{1-(i+1)x}{\sqrt{r-i-1}}.
+\end{equation}
+\item The active $B_{r,r-1}=R_r$ crossing occurs at the root whose zero-set parameter is
+\begin{equation}\label{eq:BR-crossing-ell}
+ \ell_*\coloneqq\frac{r^2-r+1-r\sqrt{r^2-3r+3}}
+ {(r-1)(r^2+r-1)}.
+\end{equation}
+\end{enumerate}
+There are no other active intersections.
+\end{lemma}
+
+\begin{proof}
+Write
+\[
+ d_i(x)\coloneqq1-2B_{r,i}(x)=\frac{(1-ix)^2}{r-i},
+ \qquad\text{and}\qquad
+ d_A(x)\coloneqq\frac1{r-1}-4x^2.
+\]
+Since $x\le1/r$, all square roots below are positive.  Put $s\coloneqq r-i$ and $\ell\coloneqq1-rx$.  Then
+\[
+ \sqrt{d_i(x)}=\frac{1-ix}{\sqrt{r-i}}
+ =\frac{\ell}{\sqrt s}+x\sqrt s.
+\]
+The equality of the terms indexed by $s$ and $s-1$ is equivalent to
+\[
+ x=\frac{\ell}{\sqrt{s(s-1)}}
+ \quad\Longleftrightarrow\quad
+ x=\frac1{r+\sqrt{s(s-1)}}.
+\]
+As $s$ decreases from $r-1$ to $1$, these crossing points strictly increase.  Moreover the sequence $\ell/\sqrt s+x\sqrt s$ is unimodal in $s$: its consecutive difference changes sign exactly at the displayed threshold.  Hence every $B_i$ is active in increasing order of $i$, and no intersection of two nonconsecutive $B$-curves is active.
+
+The assertions involving $A$ follow from
+\[
+ d_1-d_A=\frac{x((4r-3)x-2)}{r-1},
+ \qquad\text{and}\qquad
+ d_2-d_A=\frac{(2(r-1)x-1)^2}{(r-2)(r-1)}.
+\]
+The first identity gives the nonzero $B_1=A$ crossing.  The second shows that $A$ dominates $B_2$ up to their tangential meeting at the endpoint of the $A$-domain.  When $r\ge4$, the next $B$-crossing occurs at $1/(r+\sqrt{(r-2)(r-3)})>1/(2(r-1))$, so no later $B_i$ intervenes while $A$ is defined.  When $r=3$ there is no later $B$ branch to compare.
+
+For the $R$ comparison, the deficiencies of $B_{r,r-1}$ and $R_r$ are
+\[
+ d_B\coloneqq\left(\frac{1+(r-1)\ell}{r}\right)^2,
+ \qquad\text{and}\qquad
+ d_R\coloneqq2\ell-(r-1)\ell^2.
+\]
+Their equality is
+\[
+ (r-1)(r^2+r-1)\ell^2-2(r^2-r+1)\ell+1=0.
+\]
+The smaller root is given in \cref{eq:BR-crossing-ell}.  The larger root is
+\[
+ \ell_+\coloneqq\frac{r^2-r+1+r\sqrt{r^2-3r+3}}
+ {(r-1)(r^2+r-1)}.
+\]
+It lies strictly outside the $R$-domain.  Indeed,
+\[
+ r^2(r^2-3r+3)-4(r-1)^2
+ =(r-2)^2(r^2+r-1)>0,
+\]
+so $r\sqrt{r^2-3r+3}>2(r-1)$ and hence $\ell_+>1/(r-1)$.  The smaller root lies inside the domain, since
+\[
+ (d_B-d_R)\left(\frac1{r-1}\right)
+ =-\frac{(r-2)^2}{r^2(r-1)}<0
+ \qquad
+ \text{and}
+ \qquad
+ (d_B-d_R)(0)=\frac1{r^2}>0.
+\]
+When $r\ge4$, at the last adjacent $B$-crossing, where $\ell=\sqrt2/(r+\sqrt2)$, one has
+\[
+ d_B-d_R
+ =-\frac{2r(\sqrt2-1)+3-2\sqrt2}{r^2+2\sqrt2 r+2}<0.
+\]
+For $r=3$, the branch $B_{3,2}$ becomes active at the tangency $A_3=B_{3,2}$, where $x=\ell=1/4$, and
+\[
+ (d_{B_{3,2}}-d_{R_3})(1/4)=\frac14-\frac38=-\frac18<0.
+\]
+In both cases $d_B-d_R=1/r^2>0$ at $\ell=0$.  Thus the unique active $B_{r,r-1}=R_r$ crossing is the smaller root, it occurs after $B_{r,r-1}$ has become the active $B$-branch, and $R_r$ is active exactly for smaller $\ell$.
+
+On the interior of every nondegenerate active interval, the active branch has positive derivative.  At $x=0$, the simultaneously active $B_{r,1}$ branch satisfies $B_{r,1}'(0)=1/(r-1)>0$.  Hence $\Phi_r$ is strictly increasing on $[0,1/r]$.  The displayed identities also give continuity at all restricted-domain endpoints.
+\end{proof}
+
+% Begin content inlined from density_weighted.tex.
+\section{\texorpdfstring{$K_r$}{K-r}-tilings in weighted graphs and proof of Theorem 1.1}\label{sec:weighted-density}\label{sec:weighted-extremizer}
+
+The weighted tiling and cover programs were introduced in \cref{sec:weighted-preliminaries}.  The central weighted statement is the following density theorem.
+
+\begin{theorem}\label{thm:weighted-density}
+Let $r\ge2$, let $(H,\vct p)$ be a weighted graph, and put $x\coloneqq\fcov_r(H,\vct p)$.  Then $e(H,\vct p)\le \Phi_r(x)$. 
+Consequently, if $\vct c$ is any fractional $K_r$-cover with $\langle\vct p,\vct c\rangle\le1/r$, then $e(H,\vct p)\le \Phi_r(\langle\vct p,\vct c\rangle)$. 
+\end{theorem}
+
+We prove \cref{thm:weighted-density} by induction on the clique size.  We first verify the matching case and establish the peeling recursion.  For the induction step, we choose a counterexample with support of minimum order.  Variations of its weight vector show that the adjacency form is negative definite on the subspace determined by the normalization and cover-cost constraints.  This reduces the support to a clique or a clique blow-up of $P_3$.  Complete supports are handled by the hypersimplex formula; on a $P_3$-blow-up, an extreme minimum cover has only two positive levels, and the remaining cases give the $B$- and $R$-terms in the maximum defining $\Phi_r$.
+
+\subsection{The base case and the peeling recursion}\label{sec:weighted-base-recursion}
+
+We begin with the matching case, which supplies the base of the induction.
+
+\begin{proposition}\label{prop:weighted-base}
+\Cref{thm:weighted-density} holds for $r=2$.
+\end{proposition}
+
+\begin{proof}
+Put $x\coloneqq\til_2(H,\vct p)=\fcov_2(H,\vct p)$.  First suppose that all weights are rational.  Fix a common denominator $N_0$, let $N\coloneqq tN_0$, and blow up every vertex $v$ to an independent class of size $Np_v$, joining two classes completely if and only if their support vertices are adjacent.  Call the resulting graph $G_N$.  Then
+\[
+ \frac{e(G_N)}{N^2}=e(H,\vct p).
+\]
+Every integral matching in $G_N$, divided by $N$ and grouped by support edges, is a weighted fractional matching in $(H,\vct p)$.  Thus, with $m_N\coloneqq\nu(K_2,G_N)$,
+\[
+ \frac{m_N}{N}\le x.
+\]
+The Erd\H{o}s--Gallai matching theorem \cite{EG59} gives
+\[
+ e(G_N)\le
+ \max\left\{
+   \binom{2m_N+1}{2},
+   m_N(N-m_N)+\binom{m_N}{2}
+ \right\}.
+\]
+After division by $N^2$ and passage to a subsequence, write $m_N/N\to y\le x$.  Letting $t\to\infty$ yields
+\[
+ e(H,\vct p)\le\max\left\{2y^2,y-\frac{y^2}{2}\right\}\le \Phi_2(x),
+\]
+because both branches are increasing on $[0,1/2]$.  Positive rational probability vectors are dense.  After truncating covers to $[0,1]^{V(H)}$, the feasible cover polytope is compact and independent of $\vct p$, and
+\[
+ |\fcov_2(H,\vct p)-\fcov_2(H,\vct p')|
+ \le\|\vct p-\vct p'\|_1.
+\]
+Together with the continuity of $e(H,\vct p)$, this proves the general case.
+\end{proof}
+
+We next record how the density bound changes when a universal zero-cover vertex is removed.  For a function $f:[0,1/(r-1)]\to\R$, define the \emph{peeling operator}
+\begin{equation}\label{eq:peeling-operator}
+ (\mathcal T_rf)(x)
+ \coloneqq\sup_{\substack{(r-1)x\le q\le1\\q>0}}
+ \left\{q(1-q)+q^2f(x/q)\right\}.
+\end{equation}
+At $x=0$ one may also allow $q=0$, with value zero.  Here $q$ is the total weight that remains after a universal zero-cover vertex is deleted: the term $q(1-q)$ counts the complete join to the deleted vertex, and the second term is the normalized contribution of the remainder.
+
+\begin{lemma}\label{lem:clique-recursion}
+For every $r\ge3$ and $x\in[0,1/r]$,
+\[
+ \mathcal T_r\Phi_{r-1}(x)\le \Phi_r(x).
+\]
+For $1\le i\le r-2$, put
+\[
+ q_i^*\coloneqq\frac{r-i-1+ix}{r-i}.
+\]
+At the first-order transitions listed below, equality can hold only as follows.  If $r\ge4$ and $B_{r,1}(x)=A_r(x)$, equality in
+\[
+ q(1-q)+q^2\Phi_{r-1}(x/q)\le \Phi_r(x)
+\]
+can hold only for
+\[
+ q=q_1^*=\frac{r-2+x}{r-1}
+ \quad\text{or}\quad
+ q=\frac{r-2}{r-1}.
+\]
+If $2\le i\le r-3$ and $B_{r,i}(x)=B_{r,i+1}(x)$, equality can hold only for $q=q_i^*$ or $q=q_{i+1}^*$.
+\end{lemma}
+
+\begin{proof}
+We treat the branches of $\Phi_{r-1}$ separately.  For $1\le i\le r-2$,
+\begin{align}
+ q(1-q)+q^2B_{r-1,i}(x/q)
+=q-\frac{q^2}{2}
+ -\frac{(q-ix)^2}{2(r-1-i)}.\label{eq:B-rec-expression}
+\end{align}
+This is concave in $q$, with its maximum at $q_i^*$.
+The identities
+\[
+ q_i^*-(r-1)x
+ =\frac{(r-i-1)(1-rx)}{r-i}\ge0,
+ \qquad\text{and}\qquad
+ 1-q_i^*=\frac{1-ix}{r-i}\ge0
+\]
+show that this point is feasible, and substitution gives
+\begin{equation}\label{eq:B-recursion-value}
+ \sup_q\{q(1-q)+q^2B_{r-1,i}(x/q)\}=B_{r,i}(x).
+\end{equation}
+At the lower endpoint $q=(r-1)x$, a complete normalized remainder gives
+\begin{equation}\label{eq:last-B-recursion-value}
+ q(1-q)+\frac{q^2}{2}=B_{r,r-1}(x).
+\end{equation}
+
+For $r=3$, the remaining branch of $\Phi_2$ is $2y^2$, and its transform is
+\[
+ q(1-q)+2x^2=q-q^2+2x^2.
+\]
+If $x\le1/4$, the maximum over $q\ge2x$ occurs at $q=1/2$ and equals $A_3(x)$.  If $1/4\le x\le1/3$, it occurs at $q=2x$ and equals $B_{3,2}(x)$.
+
+Now let $r\ge4$.  On the $A_{r-1}$ branch the domain requires $q\ge2(r-2)x$, and
+\begin{equation}\label{eq:A-rec-expression}
+ q(1-q)+q^2A_{r-1}(x/q)
+ =q-\frac{r-1}{2(r-2)}q^2+2x^2.
+\end{equation}
+Its unconstrained maximum is at $q=(r-2)/(r-1)$.  This point is feasible when $x\le1/(2(r-1))$, and the value is $A_r(x)$.  When
+\[
+ \frac1{2(r-1)}<x\le\frac1{2(r-2)},
+\]
+the maximum is at $q=2(r-2)x$, where
+\[
+ A_{r-1}\!\left(\frac1{2(r-2)}\right)
+ =B_{r-1,2}\!\left(\frac1{2(r-2)}\right),
+\]
+so it is already controlled by \cref{eq:B-recursion-value}.  For larger $x$ the branch is absent.
+
+For $r=4$, the transformed $R_3$ branch has domain $3x\le q\le\min\{6x,1\}$ and equals
+\[
+ \Psi_x(q)\coloneqq(1-3x)q-\frac12q^2+9x^2.
+\]
+If $0<x\le1/9$, its maximum occurs at $q=6x$.  Since
+\[
+ R_3(1/6)=\frac14<\frac{47}{144}=B_{3,1}(1/6),
+\]
+this value is at most the transformed $B_{3,1}$ maximum $B_{4,1}(x)$.  If $1/9\le x\le1/6$, the stationary point $q=1-3x$ is feasible and
+\[
+ \Psi_x(1-3x)=\frac12-3x+\frac{27}{2}x^2,
+\]
+while
+\[
+ A_4(x)-\Psi_x(1-3x)=-\frac16+3x-\frac{23}{2}x^2.
+\]
+The latter is concave and has positive endpoint values $2/81$ and $1/72$.  If $1/6\le x\le1/4$, the maximum occurs at $q=3x$ and equals $B_{4,3}(x)$.
+
+Finally let $r\ge5$.  The transform of $R_{r-1}$ is a quadratic in $q$ whose quadratic coefficient is $(r-5)/2$.  It is affine for $r=5$ and convex for $r\ge6$, hence its maximum occurs at a domain endpoint.  The lower endpoint $q=(r-1)x$ is covered by \cref{eq:last-B-recursion-value}.  If the upper endpoint comes from the left endpoint
+\[
+ y_0\coloneqq\frac{r-3}{(r-1)(r-2)}
+\]
+of the $R_{r-1}$ domain, then
+\[
+ B_{r-1,r-2}(y_0)-R_{r-1}(y_0)
+ =\frac{(r-3)^2}{2(r-2)(r-1)^2}>0,
+\]
+so \cref{eq:B-recursion-value} controls it.  If the upper endpoint is $q=1$, then $x\ge y_0$ and
+\[
+ B_{r,r-1}(x)-R_{r-1}(x)
+ =\frac{(1-(r-1)x)((r-1)^2x-r+3)}2\ge0.
+\]
+This proves the inequality.  The same calculation gives the equality cases.  Each expression in \cref{eq:B-rec-expression} is strictly concave and has the unique maximizer $q_i^*$.  The expression in \cref{eq:A-rec-expression} is also strictly concave and, when it yields $A_r(x)$, has the unique maximizer $(r-2)/(r-1)$.  At a crossing listed in the statement, \cref{lem:phase-diagram} says that exactly the two indicated branches equal $\Phi_r(x)$; all other $B$- and $A$-branches are strictly smaller.  There is one additional boundary issue for the transformed $A_{r-1}$ branch.  When its stationary point is infeasible, its maximum is attained at
+\[
+ q_A\coloneqq2(r-2)x
+\]
+and equals the value of the transformed $B_{r-1,2}$ branch there.  The latter branch has its unique maximum at
+\[
+ q_2^*\coloneqq\frac{r-3+2x}{r-2},
+ \qquad
+ q_A=q_2^*\quad\Longleftrightarrow\quad
+ x=\frac1{2(r-1)}.
+\]
+Thus at the first-order transition $B_{r,2}=B_{r,3}$ this boundary value is strictly below $B_{r,2}(x)=\Phi_r(x)$; at every later transition it is at most the already nonactive value $B_{r,2}(x)<\Phi_r(x)$.
+
+For $r\ge5$, the transformed $R_{r-1}$ branch is also strict at every transition in the statement.  At its lower endpoint its value is $B_{r,r-1}(x)$, which is then strictly inactive.  At an upper endpoint coming from $y_0$, the first displayed comparison is strict.  At the upper endpoint $q=1$, the second comparison is strict unless $x=y_0$; in that boundary case the first comparison again gives strictness.  When $r=4$, the only crossing in the statement is $B_{4,1}=A_4$ at $x=2/13$; the interior maximum of the transformed $R_3$ branch is below their common value by $23/1014$.  Thus equality occurs only at the displayed values of $q$.
+\end{proof}
+
+The operator inequality gives the following form of the peeling step used later in the induction.
+
+\begin{lemma}\label{lem:universal-zero-peeling}
+Let $r\ge3$ and assume \cref{thm:weighted-density} for clique size $r-1$.  Suppose $(H,\vct p)$ has a fractional $K_r$-cover $\vct c$ of cost $x$ and has a universal vertex $b$ with $c_b=0$.  Then $e(H,\vct p)\le \Phi_r(x)$.
+\end{lemma}
+
+\begin{proof}
+Put $q\coloneqq1-p_b$.  The restriction of $\vct c$ to $H-b$ covers every $K_{r-1}$, because adjoining $b$ produces a $K_r$.  If $q=0$, then $x=e(H,\vct p)=0$.  Suppose $q>0$.  If $q<(r-1)x$, then
+\[
+ e(H,\vct p)\le q(1-q)+\frac{q^2}{2}\le B_{r,r-1}(x),
+\]
+because $q-q^2/2$ is increasing on $[0,1]$.  If $q\ge(r-1)x$, normalize the weights on $H-b$ by $q$.  The restricted cover has cost $x/q\le1/(r-1)$, and the induction hypothesis together with \cref{lem:clique-recursion} gives
+\[
+ e(H,\vct p)\le q(1-q)+q^2\Phi_{r-1}(x/q)\le \Phi_r(x).
+\]
+\end{proof}
+
+\subsection{Optimality and support structure}\label{sec:weighted-counterexample}
+
+We now analyze a support-minimal counterexample.  After choosing a saturated support and an extreme minimum cover, weight variations give both a negative quadratic form and a first-order stationarity equation.  These facts reduce the support to a complete graph or a clique blow-up of $P_3$.
+
+Fix $r\ge3$ and assume inductively that \cref{thm:weighted-density} holds for clique size $r-1$.  Suppose that it fails for $r$.  Since $\Phi_r(1/r)=1/2$, a counterexample exists at some $\bar x<1/r$.
+
+Choose, among counterexamples at $\bar x$, one with the minimum number $m$ of positive-weight atoms.  On a fixed labeled $m$-vertex set, maximize $e(H,\vct p)$ over all triples $(H,\vct p,\vct c_0)$ in which $\vct p$ lies in the closed probability simplex and $\vct c_0\in[0,1]^{V(H)}$ is a fractional $K_r$-cover with $\langle\vct p,\vct c_0\rangle\le\bar x$.  There are finitely many support graphs and each feasible set is compact, so a maximum exists.  Its value is greater than $\Phi_r(\bar x)$, and a maximizing weight vector has no zero coordinate: otherwise deleting a zero-weight atom would give a smaller counterexample.  Thus zero weights are allowed only in this compactness argument; after deletion, the selected weighted graph again has strictly positive weights.
+
+Keep $(H,\vct p)$ fixed and choose an extreme minimum solution $\vct c$ of
+\[
+ \mathcal C_r(H)\coloneqq\left\{\vct z\in\R_{\ge0}^{V(H)}\colon
+ \sum_{v\in K}z_v\ge1
+ \text{ for every }K\in\mathcal K_r(H)\right\}.
+\]
+Such a solution exists.  An optimal coordinate cannot exceed one, since truncation to one preserves every constraint and lowers the objective.  Thus the optimal face is a nonempty compact polytope in the cube $[0,1]^{V(H)}$ and has an extreme point that is also extreme in $\mathcal C_r(H)$.  Put
+\[
+ x\coloneqq\langle\vct p,\vct c\rangle=\fcov_r(H,\vct p)\le\bar x.
+\]
+By the monotonicity of $\Phi_r$,
+\begin{equation}\label{eq:strict-weighted-counterexample}
+ e(H,\vct p)>\Phi_r(\bar x)\ge \Phi_r(x).
+\end{equation}
+The support has at least three atoms; otherwise $e(H,\vct p)\le1/4\le \Phi_r(0)\le \Phi_r(x)$.
+
+The consequences of this extremal choice will be used together, so we collect them in one lemma.  Let $M\coloneqq A(H)$.
+
+\begin{lemma}\label{lem:extremal-properties}
+The selected triple $(H,\vct p,\vct c)$ has the following properties.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item Every atom $v$ with $c_v>0$ belongs to a $K_r$ satisfying $\vct c(K)=1$.
+\item For every nonedge $uv$ of $H$, there is a copy $Q\cong K_{r-2}$ in $N_H(u)\cap N_H(v)$ such that $c_u+c_v+\vct c(Q)<1$. 
+\item For every nonzero $\vct z\in\R^{V(H)}$ satisfying $\langle\vct z,\one\rangle=0$ and $\langle\vct z,\vct c\rangle=0$, one has $\vct z^{\mathsf T}M\vct z<0$.  Consequently, $M$ has at most two nonnegative eigenvalues and $\lambda_3(M)<0$.
+\item There are $\lambda\in\R$ and $\mu\ge0$ such that
+\begin{equation}\label{eq:weighted-stationarity}
+ M\vct p=\lambda\one+\mu\vct c.
+\end{equation}
+Here $\mu=0$ if the cover-cost constraint is inactive.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+For \textup{(i)}, if every $K_r$ containing $v$ had cover sum strictly greater than one, then finiteness would allow us to decrease $c_v$ slightly while preserving all cover constraints.  Since $p_v>0$, this would lower the cover cost.
+
+For \textup{(ii)}, first observe that adding any nonedge must make $\vct c$ cease to be a cover; otherwise the edge could be added while preserving feasibility and increasing $e(H,\vct p)$.  Every new $K_r$ created by adding $uv$ has the form $Q\cup\{u,v\}$, where $Q\cong K_{r-2}$ lies in the common neighborhood.  One such clique must violate the cover inequality, giving the stated certificate.
+
+For \textup{(iii)}, let $\vct z$ satisfy the two displayed orthogonality conditions.  For sufficiently small positive and negative $t$, the vector $\vct p+t\vct z$ is a positive probability vector and the same cover has cost $x\le\bar x$.  Thus $\vct p$ is an interior maximizer on this affine section.  The linear term vanishes, so $\vct z^{\mathsf T}M\vct p=0$, and
+\[
+ e(H,\vct p+t\vct z)
+ =e(H,\vct p)+\frac{t^2}{2}\vct z^{\mathsf T}M\vct z.
+\]
+A positive quadratic term contradicts maximality.  If the quadratic term is zero, move along the line until a weight first becomes zero.  The edge density and cover cost remain unchanged, producing a counterexample with smaller positive support.  This is also impossible.  The common orthogonal subspace has codimension at most two, so the min--max principle gives the eigenvalue assertion.
+
+For \textup{(iv)}, keep $(H,\vct c)$ fixed.  Every nearby $\vct p'$ satisfying $\langle\vct p',\one\rangle=1$ and $\langle\vct p',\vct c\rangle\le\bar x$ is admissible.  Since $\vct p$ lies in the relative interior of the probability simplex, the normal cone is generated by the probability equality and the possibly active cover-cost halfspace.  The corresponding multiplier equation is \cref{eq:weighted-stationarity}.
+\end{proof}
+
+The preceding properties force the support into one of the two forms used in the rest of the proof.
+
+\begin{lemma}\label{lem:P3-support}
+The support $H$ is complete or has a partition
+\begin{equation}\label{eq:P3-partition}
+ V(H)=A\sqcup B\sqcup C
+\end{equation}
+into nonempty cliques such that $B$ is complete to $A\cup C$ and $A$ is anticomplete to $C$.  Moreover, $|B|\ge r-2$.
+\end{lemma}
+
+\begin{proof}
+\smallskip
+\noindent\emph{The complement is a chain graph.}
+First, $H$ has independence number at most two.  Indeed, the coordinate subspace of three pairwise nonadjacent atoms contains a nonzero vector orthogonal to $\one$ and $\vct c$, and the adjacency quadratic form vanishes on this vector, contrary to \cref{lem:extremal-properties}(iii).  Hence $J\coloneqq\overline H$ is triangle-free.
+
+If $J$ were not bipartite, a shortest odd cycle would be an induced $C_m$ with odd $m\ge5$, so $H$ would contain an induced $\overline C_m$.  The adjacency matrix of $\overline C_m$ has principal eigenvalue $m-3$ and two further eigenvalues equal to
+\[
+ -1+2\cos(\pi/m)>0.
+\]
+Interlacing would give $\lambda_3(M)>0$, contrary to \cref{lem:extremal-properties}(iii).  The graph $J$ also cannot contain an induced $2K_2$, whose complement is an induced $C_4$ in $H$: since $\lambda_3(C_4)=0$, interlacing would give $\lambda_3(M)\ge0$.  Thus $J$ is bipartite and has no induced $2K_2$, so it is a chain graph.
+
+\smallskip
+\noindent\emph{The canonical staircase.}
+Remove the isolated vertices of $J$ and put them in $U$; these are exactly the universal vertices of $H$.  If vertices remain, fix a bipartition $L\sqcup R$, merge equal-neighborhood vertices in $L$, and order the resulting neighborhoods strictly by reverse inclusion.  Taking successive differences on the $R$ side gives nonempty cliques
+\[
+ L_0,L_1,\ldots,L_{m-1}
+ \quad\text{and}\quad
+ R_1,R_2,\ldots,R_m
+\]
+such that
+\begin{equation}\label{eq:Ferrers-adjacency}
+ L_iR_j\subseteq E(H)\quad\Longleftrightarrow\quad i\ge j.
+\end{equation}
+Here $H$ is complete exactly when $m=0$.
+
+\smallskip
+\noindent\emph{The staircase has at most one step.}
+We first record the sign relation used to rule out $m\ge2$.  If $a-b-c-d$ is an induced $P_4$ in $H$, then
+\begin{equation}\label{eq:P4-sign-rule}
+ (c_c-c_a)(c_d-c_b)>0.
+\end{equation}
+To see this, put $\alpha\coloneqq c_c-c_a$ and $\beta\coloneqq c_d-c_b$.  If $(\alpha,\beta)\ne(0,0)$, the vector supported on the path with coordinates $(\beta,-\alpha,-\beta,\alpha)$ is orthogonal to $\one$ and $\vct c$ and has quadratic value $-2\alpha\beta$.  Part \textup{(iii)} of \cref{lem:extremal-properties} gives $\alpha\beta>0$.  If $\alpha=\beta=0$, the coordinates $(1,1,-1,-1)$ instead give a positive quadratic value, again a contradiction.
+
+Assume now that $m\ge2$.  For $1\le i\le m$, define
+\[
+ \mathcal D_i\coloneqq\{c_r-c_\ell\colon r\in R_i,\ \ell\in L_{i-1}\}.
+\]
+For $1\le i<m$, arbitrary $\ell_{i-1}\in L_{i-1}$, $\ell_i\in L_i$, $r_i\in R_i$, and $r_{i+1}\in R_{i+1}$ induce the path
+\[
+ \ell_{i-1}-\ell_i-r_i-r_{i+1}.
+\]
+By \cref{eq:P4-sign-rule}, every element of $\mathcal D_i$ has positive product with every element of $\mathcal D_{i+1}$.  Hence none of these sets contains zero and they all have the same strict sign.
+
+Choose $u\in L_0$ and $v\in R_m$.  Their common neighborhood is exactly $U$.  By \cref{lem:extremal-properties}(ii), there is $Q\cong K_{r-2}$ in $U$ such that
+\begin{equation}\label{eq:far-corner-certificate}
+ c_u+c_v+c(Q)<1.
+\end{equation}
+If all $\mathcal D_i$ are positive, choose $w\in L_{m-1}$.  Since $Q\cup\{u,w\}$ is a $K_r$, its cover inequality and \cref{eq:far-corner-certificate} give $c_w>c_v$, whereas positivity of $\mathcal D_m$ gives $c_v>c_w$.  If all $\mathcal D_i$ are negative, choose $z\in R_1$ and use the clique $Q\cup\{z,v\}$ to obtain $c_z>c_u$, while negativity of $\mathcal D_1$ gives $c_z<c_u$.  Thus $m\le1$.
+
+When $m=0$, the support is complete.  When $m=1$, take $A=L_0$, $C=R_1$, and $B=U$.  The stated adjacencies follow from \cref{eq:Ferrers-adjacency}.  Finally, for a nonedge $uv$ with $u\in A$ and $v\in C$, part \textup{(ii)} of \cref{lem:extremal-properties} gives a $K_{r-2}$ in their common neighborhood $B$, so $|B|\ge r-2$.
+\end{proof}
+
+\subsection{Complete supports and zero sets avoided by cliques}\label{sec:complete-terminal}
+
+The preceding reduction leaves only two kinds of support: a complete graph and a clique blow-up of $P_3$.  The two estimates needed for these alternatives are proved below.
+
+\begin{proposition}\label{prop:complete-support-bound}
+If $H$ is complete and $x=\fcov_r(H,\vct p)$, then $e(H,\vct p)\le \Phi_r(x)$.
+\end{proposition}
+
+\begin{proof}
+Order the weights as $p_1\ge p_2\ge\cdots$ and set $p_j\coloneqq0$ beyond the support.  We first compute the fractional tiling number:
+\begin{equation}\label{eq:finite-hypersimplex}
+ \til_r(H,\vct p)=
+ \min_{0\le s\le r-1}\frac{1-\sum_{j\in[s]}p_j}{r-s}.
+\end{equation}
+Indeed, if a fractional tiling has size $q$ and loads $y_j$, then
+\[
+ 0\le y_j\le\min\{p_j,q\}
+ \quad\text{and}\quad
+ \sum_jy_j=rq.
+\]
+Thus $\sum_j\min\{p_j,q\}\ge rq$.  Conversely, if this inequality holds and $q>0$, choose $0\le y_j\le\min\{p_j,q\}$ with total $rq$.  The vector $\vct y\coloneqq(y_j/q)_j$ belongs to
+\[
+ \{\vct z\colon 0\le z_j\le1,\ \sum_jz_j=r\},
+\]
+the convex hull of the incidence vectors of $r$-subsets.  A convex decomposition supplies a fractional $K_r$-tiling of size $q$.  For the ordered sequence $(p_j)$, the load inequality is equivalent to
+\[
+ q\le\frac{1-\sum_{j\in[s]}p_j}{r-s}
+ \quad\text{for }0\le s\le r-1,
+\]
+which proves \cref{eq:finite-hypersimplex}.
+
+If $x=1/r$, the result follows from $e(H,\vct p)\le1/2=\Phi_r(1/r)$.  Otherwise \cref{eq:weighted-duality,eq:finite-hypersimplex} give some $s\in\{1,\ldots,r-1\}$ such that
+\[
+ 1-\sum_{j\in[s]}p_j\le(r-s)x.
+\]
+Put $i\coloneqq r-s$.  Then $\sum_{j\in[r-i]}p_j\ge1-ix$, and Cauchy--Schwarz yields
+\[
+ \sum_jp_j^2\ge\frac{(1-ix)^2}{r-i}.
+\]
+Therefore
+\[
+ e(H,\vct p)=\frac12\left(1-\sum_jp_j^2\right)
+ \le B_{r,i}(x)\le \Phi_r(x).
+\]
+\end{proof}
+
+The selected counterexample is therefore not complete.  By \cref{lem:P3-support}, it has the partition in \cref{eq:P3-partition}; every part is a module and $|B|\ge r-2$.  It remains to handle the possibility that no clique meets the zero-cover set.
+
+\begin{lemma}\label{lem:weighted-terminal}
+Let $Z\coloneqq\{v\in V(H)\colon c_v=0\}$.  If no $K_r$ intersects $Z$, then $e(H,\vct p)\le \Phi_r(x)$.
+\end{lemma}
+
+\begin{proof}
+Put $z\coloneqq\vct p(Z)$ and $\ell\coloneqq1-rx$.  First choose an optimal fractional tiling $\vct t$ dual to $\vct c$ and let $L(v)\coloneqq\sum_{K\ni v}t_K$.  Complementary slackness gives $c_v>0\Rightarrow L(v)=p_v$, and hence
+\[
+ \vct p(V(H)\setminus Z)
+ =\sum_{c_v>0}L(v)
+ \le\sum_vL(v)=r\sum_Kt_K=rx.
+\]
+Thus $z\ge\ell$.
+
+We next apply the marked-set theorem of Allen--B\"ottcher--Hladk\'y--Piguet \cite[Theorem~2(a)]{ABHP14}.  For rational weights, blow up each atom to an independent class of the corresponding proportional size.  The hypothesis that no $K_r$ meets $Z$ is preserved, and the theorem gives, after normalization,
+\begin{equation}\label{eq:weighted-marked-turan}
+ e(H,\vct p)\le
+ \begin{cases}
+ \dfrac{r-2}{2(r-1)},&z\ge1/(r-1),\\[1ex]
+ \dfrac12-z+\dfrac{r-1}{2}z^2,&0\le z\le1/(r-1).
+ \end{cases}
+\end{equation}
+Approximation by positive rational probability vectors proves the same bound for arbitrary weights.
+
+If $z\ge1/(r-1)$, then \cref{eq:weighted-marked-turan} gives
+\[
+ e(H,\vct p)\le\frac{r-2}{2(r-1)}\le B_{r,1}(x).
+\]
+If $z<1/(r-1)$, then $\ell<1/(r-1)$ and $R_r$ is defined.  The function $g(z)\coloneqq1/2-z+(r-1)z^2/2$ is decreasing on this interval, so
+\[
+ e(H,\vct p)\le g(z)\le g(\ell)=R_r(x),
+\]
+where the first inequality follows from \cref{eq:weighted-marked-turan}.
+\end{proof}
+
+Every atom of $B$ is universal.  Therefore \cref{lem:universal-zero-peeling} implies
+\begin{equation}\label{eq:B-cover-positive}
+ c_b>0\qquad\text{for }b\in B
+\end{equation}
+in the selected counterexample.
+
+\subsection{Extreme covers and completion of the induction}\label{sec:extreme-cover}
+
+We now work with the partition $V(H)=A\sqcup B\sqcup C$ from \cref{eq:P3-partition}.  Every $K_r$ is contained in one of the two complete sides $A\cup B$ and $B\cup C$.  Thus the cover polytope is determined by these two families of clique inequalities, and an extreme minimum cover has the two-level structure described below.  We then translate the possible cover structures into the required density bounds.
+
+For $S\subseteq V(H)$, put
+\[
+ m_S(\vct c)\coloneqq
+ \begin{cases}
+  \min\{\vct c(K)\colon K\subseteq S,\ |K|=r\},&|S|\ge r,\\
+  +\infty,&|S|<r.
+ \end{cases}
+\]
+Call $S$ \emph{active} if it contains a tight $K_r$, equivalently if $m_S(\vct c)=1$.  The two complete sides are $S_A\coloneqq A\cup B$ and $S_C\coloneqq B\cup C$.
+
+\begin{lemma}\label{lem:weighted-two-level}
+The extreme minimum cover $\vct c$ has at most two distinct positive coordinate values.  If it has exactly two, the active sides contribute linearly independent level-count equations.
+\end{lemma}
+
+\begin{proof}
+Let $S\in\{S_A,S_C\}$ and let $K\subseteq S$ be a tight $r$-set.  If $u\in S\setminus K$ and $v\in K$, then $c_u\ge c_v$, since otherwise replacing $v$ by $u$ gives an $r$-set in the same complete side with cover sum below one.  Thus a tight set consists of the $r$ lowest available cover values, with freedom only inside the threshold level.  In particular, all tight $r$-sets in $S$ use the same number of vertices at every cover level.
+
+Let $0<\theta_1<\cdots<\theta_t$ be the positive values of $\vct c$.  For each active side $S$, let $\vct a_S\in\R^t$ count the numbers of the positive levels in a tight $r$-set; the preceding observation shows that this is well defined.  If $t>2$, choose a nonzero vector orthogonal to the at most two active count vectors and perturb every coordinate at level $\theta_j$ by plus or minus a sufficiently small common multiple of its $j$th entry.  Positivity and the strict order of levels are preserved, tight constraints remain equalities, and the finitely many non-tight constraints remain feasible.  The two perturbed covers have $\vct c$ as their midpoint, contradicting extremality.  The same perturbation when $t=2$ shows that the active count vectors must span $\R^2$.
+\end{proof}
+
+Order the $B$-coordinates as $\beta_1\le\cdots\le\beta_{m_B}$, where $m_B\coloneqq|B|\ge r-2$, and put
+\begin{equation}\label{eq:sigma-light-B}
+ \sigma\coloneqq\sum_{i\in[r-2]}\beta_i.
+\end{equation}
+For every $a\in A$ and $z\in C$, the saturation lemma for the nonedge $az$ gives an $(r-2)$-clique $Q\subseteq B$ with $c_a+c_z+\vct c(Q)<1$.  Hence
+\begin{equation}\label{eq:end-saturation-inequality}
+ c_a+c_z+\sigma<1
+ \qquad\text{for }a\in A\text{ and }z\in C.
+\end{equation}
+
+We can now determine all possible forms of the selected extreme cover.
+
+\begin{theorem}\label{thm:rigid-cover}
+Let $(H,\vct p,\vct c)$ be the support-minimal maximizing counterexample selected in \cref{sec:weighted-counterexample}, with the partition in \cref{eq:P3-partition}, and assume \cref{eq:B-cover-positive}.  After possibly interchanging $A$ and $C$, one of the following holds.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item No $K_r$ intersects the zero set $Z$.
+\item The sets $A$ and $C$ each consist of one zero-cover atom, and
+\[
+ c_b=\frac1{r-1}\qquad\text{for }b\in B.
+\]
+\item The set $C$ consists of one zero-cover atom.  There are integers
+\[
+ a_0\coloneqq|A|,\qquad 0\le s\le r-2,\qquad t\ge0,
+ \qquad\text{and}\qquad j\coloneqq r-1-s\ge1
+\]
+such that $\vct c\equiv1/r$ on $A$, exactly $s$ atoms of $B$ have cover value $1/r$, and its remaining $t$ atoms have value
+\[
+ \gamma\coloneqq\frac{j+1}{rj}.
+\]
+Moreover, $a_0\ge j+1$ and $t\ge j$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+We first note that each of $A$ and $C$ contains at most one zero-cover atom.  Indeed, if $a_1,a_2\in A$ were distinct zero-cover atoms, then $\{a_1,a_2\}$ together with the $r-2$ lightest atoms of $B$ would be a $K_r$, giving $\sigma\ge1$, contrary to \cref{eq:end-saturation-inequality}.  The proof for $C$ is symmetric.
+
+We now divide the proof into four steps.
+
+\smallskip
+\noindent\emph{The case $m_B=r-2$.}
+If $|A|,|C|\ge2$, let $a_1,a_2$ and $z_1,z_2$ be the two lightest atoms of the respective ends.  The cliques consisting of either pair together with $B$ give
+\[
+ c_{a_1}+c_{a_2}+\sigma\ge1,
+ \qquad\text{and}\qquad
+ c_{z_1}+c_{z_2}+\sigma\ge1.
+\]
+Thus $c_{a_2},c_{z_2}\ge(1-\sigma)/2$, contradicting \cref{eq:end-saturation-inequality} for $a_2,z_2$.  Hence one end is a singleton; say $C=\{z\}$.  The side $B\cup C$ has only $r-1$ atoms, so $z$ lies in no $K_r$ and optimality gives $c_z=0$.  If $A$ contained a zero atom $a$ and another atom $a'$, then $\{a,a'\}\cup B$ would give $c_{a'}+\sigma\ge1$, again contradicting \cref{eq:end-saturation-inequality}.  Hence no $K_r$ meets $Z$, which is case~\textup{(i)}.
+
+\smallskip
+\noindent\emph{Preliminary consequences for $m_B\ge r-1$.}
+Put $\beta\coloneqq\beta_{r-1}$.  The $r-1$ lightest atoms of $B$, together with any $a\in A$ or $z\in C$, form a $K_r$.  Thus
+\[
+ c_a+\sigma+\beta\ge1,
+ \qquad\text{and}\qquad
+ c_z+\sigma+\beta\ge1.
+\]
+Together with \cref{eq:end-saturation-inequality}, this gives
+\begin{equation}\label{eq:end-below-beta}
+ c_a<\beta,
+ \qquad\text{and}\qquad
+ c_z<\beta.
+\end{equation}
+Suppose that an end atom has positive cover value.  Then \cref{lem:weighted-two-level} and \cref{eq:end-below-beta} show that the positive levels are $0<\alpha<\gamma$, every positive end atom has value $\alpha$, and $\beta=\gamma$.  Let
+\[
+ s\coloneqq|\{b\in B\colon c_b=\alpha\}|\le r-2.
+\]
+For an end $E\in\{A,C\}$, let $z_E\in\{0,1\}$ be its number of zero atoms and $n_E$ its number of positive atoms.  If $E\cup B$ is active, its tight equation is
+\begin{align}
+ (r-z_E)\alpha&=1,
+ &&\text{if }n_E+s\ge r-z_E,\label{eq:alpha-threshold}\\
+ (n_E+s)\alpha+(r-z_E-n_E-s)\gamma&=1,
+ &&\text{if }n_E+s<r-z_E.\label{eq:gamma-threshold}
+\end{align}
+
+\smallskip
+\noindent\emph{At most one end contains positive atoms.}
+Assume $n_A,n_C\ge1$.  Both sides are active by part \textup{(i)} of \cref{lem:extremal-properties}.  If both are in the $\alpha$-threshold case, no tight clique contains a $\gamma$-atom of $B$, contradicting the same property.  Suppose that $A\cup B$ is in the $\alpha$-threshold case and $B\cup C$ in the $\gamma$-threshold case.  Comparing their equations gives
+\[
+ (z_C-z_A)\alpha
+ =(r-z_C-n_C-s)(\gamma-\alpha)>0.
+\]
+Thus $z_A=0$, $z_C=1$, and $\alpha=1/r$.  Put $q\coloneqq n_C\ge1$ and $j\coloneqq r-1-q-s\ge1$.  Then $\gamma=(j+1)/(rj)$, and
+\[
+ 2\alpha+\sigma
+ =\frac{s+2}{r}+(r-2-s)\frac{j+1}{rj}
+ =1+\frac{j+q-1}{rj}>1,
+\]
+contrary to \cref{eq:end-saturation-inequality}.  The reverse assignment of thresholds is symmetric.
+
+If both sides are in the $\gamma$-threshold case and $z_A=z_C$, their equations give $n_A=n_C$, so the active level-count equations coincide, contrary to \cref{lem:weighted-two-level}.  If, say, $z_A=0,z_C=1$, subtraction gives
+\[
+ (n_A-n_C)(\gamma-\alpha)=\gamma.
+\]
+In particular $n_A\ge2$, and comparison of the $A\cup B$ tight equation with $2\alpha+\sigma$ yields
+\[
+ 2\alpha+\sigma-1=(n_A-2)(\gamma-\alpha)\ge0,
+\]
+again contradicting \cref{eq:end-saturation-inequality}.
+
+\smallskip
+\noindent\emph{The remaining one-zero-end case.}
+After interchanging the ends, assume $C=\{z\}$ and $c_z=0$.  If $A$ contained both a zero and a positive atom, then it would have one zero atom and all positive atoms would have value $\alpha$.  The side $A\cup B$ is active.  In its $\alpha$-threshold case, $(r-1)\alpha=1$.  A $\gamma$-atom of $B$ must then be tight in $B\cup C$, whose equation is
+\[
+ s\alpha+(r-1-s)\gamma=1,
+\]
+forcing $\gamma=\alpha$.  In the $\gamma$-threshold case, if $B\cup C$ is active, subtraction of the two equations gives $n_A(\alpha-\gamma)=0$; if it is inactive, only one active count equation remains for two positive levels.  Both alternatives are impossible.
+
+If every atom of $A$ is zero, then the observation at the beginning of the proof gives $A=\{a\}$.  The two sides have the same multiset of cover values.  At least one is active by part \textup{(i)} of \cref{lem:extremal-properties}, hence both are active.  Two positive levels would give identical active count equations, so every atom of $B$ has a common value $\lambda$.  A tight clique uses one zero end and $r-1$ atoms of $B$, whence $(r-1)\lambda=1$.  This is case~\textup{(ii)}.
+
+Finally suppose that all $a_0=|A|$ atoms of $A$ are positive.  If $a_0+s\ge r$, then $A\cup B$ is in the $\alpha$-threshold case, so $\alpha=1/r$.  The $\gamma$-atoms of $B$ force $B\cup C$ to be active, and
+\[
+ s\alpha+(r-1-s)\gamma=1.
+\]
+With $j=r-1-s$, this gives $\gamma=(j+1)/(rj)$, $a_0\ge j+1$, and $t=m_B-s\ge j$, yielding case~\textup{(iii)}.
+
+It remains to rule out $a_0+s<r$.  Then $A\cup B$ is in the $\gamma$-threshold case.  The other side must be active, since otherwise there is only one active count equation, and subtraction gives
+\[
+ a_0\alpha+(1-a_0)\gamma=0.
+\]
+For $a_0=1$ this says $\alpha=0$.  For $a_0\ge2$, perturb two $A$-coordinates by $+\varepsilon$ and $-\varepsilon$.  Every tight set in $A\cup B$ contains all of $A$, while tight sets in $B\cup C$ contain none of $A$; all tight sums are unchanged.  A sufficiently small perturbation also preserves every non-tight constraint, contradicting the extremality of $\vct c$.
+\end{proof}
+
+The three cases in \cref{thm:rigid-cover} are handled by comparing the missing-edge density with the relevant branch of $\Phi_r$.  For this purpose, define the \emph{deficiency} by
+\begin{equation}\label{eq:weighted-deficiency}
+ \Delta(H,\vct p)\coloneqq1-2e(H,\vct p).
+\end{equation}
+For a simple weighted support this is the sum of the squared vertex weights plus twice the total weight of the nonedges between distinct vertices.
+
+\begin{proposition}\label{prop:rigid-case-bounds}
+The two exceptional cases in \cref{thm:rigid-cover} satisfy the following bounds.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item In case~\textup{(ii)}, $e(H,\vct p)\le B_{r,r-1}(x)$.
+\item In case~\textup{(iii)}, $e(H,\vct p)\le R_r(x)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For \textup{(i)}, put $b\coloneqq\vct p(B)$.  Then $x=b/(r-1)$ and $\vct p(A)+\vct p(C)=1-(r-1)x$.  Since the only cross-module nonedges lie between $A$ and $C$,
+\[
+ \Delta(H,\vct p)
+ =\vct p(A)^2+\vct p(C)^2+2\vct p(A)\vct p(C)
+   +\sum_{v\in B}p_v^2
+ \ge(1-(r-1)x)^2.
+\]
+This is equivalent to the first bound.
+
+For \textup{(ii)}, we are in case~\textup{(iii)} of \cref{thm:rigid-cover}.  Thus $C=\{z\}$ with $c_z=0$, all $a_0=|A|$ atoms of $A$ have cover value $1/r$, and $B$ has $s$ low atoms of value $1/r$ and $t$ high atoms of value $\gamma=(j+1)/(rj)$, where $j=r-1-s$, $a_0\ge j+1$, and $t\ge j$.  Put
+\begin{equation}\label{eq:Nhk-definitions}
+ N\coloneqq a_0-1,
+ \qquad h\coloneqq N-j\ge0,
+ \qquad\text{and}\qquad \kappa\coloneqq t-j\ge0.
+\end{equation}
+Atoms in the same module and at the same cover level have equal weights: subtracting their equations in \cref{eq:weighted-stationarity} makes the degree difference, which is the negative of the weight difference, vanish.  Write $w$ for the weight of each $A$-atom, $L$ for the weight of each low $B$-atom when $s>0$, $u$ for the weight of each high $B$-atom, and $d\coloneqq p_z$.
+
+Define $v\coloneqq Nw/j$.  When $s=0$, set $L\coloneqq u+v$ formally; all terms involving $L$ are then multiplied by $s$.  One has
+\begin{equation}\label{eq:weighted-KKT-weights}
+ w=\frac jNv,
+ \qquad
+ d=u+\frac hNv,
+ \qquad\text{and}\qquad
+ L=u+v,
+\end{equation}
+and
+\begin{equation}\label{eq:weighted-KKT-total}
+ rv+(r+\kappa)u=1.
+\end{equation}
+Let $\ell\coloneqq1-rx$.  Then
+\begin{equation}\label{eq:weighted-KKT-ell}
+ \ell=\frac hNv-\frac\kappa j u.
+\end{equation}
+Finally,
+\begin{equation}\label{eq:weighted-KKT-deficiency}
+ \Delta(H,\vct p)
+ =(r+\kappa)u^2+2ruv+
+ \left(r+\frac{jh}{N}\right)v^2.
+\end{equation}
+To verify these identities, note that the weighted degrees of an $A$-atom, a $B$-atom of weight $q$, and $z$ are respectively
+\[
+ 1-d-w,
+ \qquad 1-q,
+ \qquad\text{and}\qquad \vct p(B).
+\]
+The normalization equation is
+\begin{equation}\label{eq:weighted-normalization}
+ a_0w+sL+tu+d=1.
+\end{equation}
+Comparing an $A$-atom with $z$ in \cref{eq:weighted-stationarity} gives $\mu/r=Nw$.  Comparing a high $B$-atom with $z$ then gives
+\[
+ a_0w+d-u=\mu\gamma=Nw\frac{j+1}{j},
+\]
+so $d-u=hw/j$.  Comparing a low $B$-atom with $z$ gives $L=d+w$.  Substitution of $v=Nw/j$ yields \cref{eq:weighted-KKT-weights}.  Substituting these expressions, $s=r-1-j$, and $t=j+\kappa$ in \cref{eq:weighted-normalization} gives \cref{eq:weighted-KKT-total}.
+
+The cover cost is
+\[
+ x=\frac{a_0w+sL}{r}+t\frac{j+1}{rj}u.
+\]
+Subtracting $rx$ from \cref{eq:weighted-KKT-total} gives \cref{eq:weighted-KKT-ell}.  Finally, the missing pairs are the atom diagonals and all pairs between $A$ and $z$, so
+\[
+ \Delta(H,\vct p)=a_0w^2+sL^2+tu^2+d^2+2a_0wd.
+\]
+Substitution gives \cref{eq:weighted-KKT-deficiency}.
+
+We now prove the second bound.  Since $\ell=1-rx$, one has $\ell\ge0$.  The high atoms occur and have $u>0$, so \cref{eq:weighted-KKT-total} gives $v<1/r$.  Therefore
+\[
+ \ell\le\frac hNv<\frac1r<\frac1{r-1},
+\]
+and $R_r(x)$ is defined.  It suffices to prove
+\begin{equation}\label{eq:rigid-deficiency-target}
+ \Delta(H,\vct p)\ge2\ell-(r-1)\ell^2.
+\end{equation}
+Using $1=rv+(r+\kappa)u$, the difference between the two sides is the homogeneous quadratic form
+\[
+ q_{11}u^2+2q_{12}uv+q_{22}v^2,
+\]
+where
+\begin{align*}
+ q_{11}&\coloneqq\frac{j^2(r+\kappa)+2j\kappa(r+\kappa)
+          +\kappa^2(r-1)}{j^2},\\
+ q_{12}&\coloneqq\frac{jr(j+\kappa)-h\kappa(j-1)}{j(j+h)},\\
+ q_{22}&\coloneqq\frac{j^2r+hj^2+h^2(j-1)}{(j+h)^2}.
+\end{align*}
+Clearly $q_{11},q_{22}>0$, and direct factorization gives
+\[
+ q_{11}q_{22}-q_{12}^2
+ =\frac{hj\kappa+hjr+h\kappa r+j\kappa r}
+        {j^2(j+h)^2}
+ \left(h(j-1)(j+\kappa)+j\bigl(j^2+\kappa(2j-1)\bigr)\right)\ge0.
+\]
+Thus the quadratic form is positive semidefinite, proving \cref{eq:rigid-deficiency-target}.  Since $1-2R_r(x)=2\ell-(r-1)\ell^2$, the result follows.
+\end{proof}
+
+We now combine the preceding alternatives to finish the induction.
+
+\begin{proof}[Proof of \cref{thm:weighted-density}]
+The case $r=2$ is \cref{prop:weighted-base}.  Let $r\ge3$ and assume the theorem for $r-1$.  If a counterexample existed, choose the extremal triple above.  By \cref{lem:P3-support}, its support would be complete or a clique blow-up of $P_3$.  The complete case is excluded by \cref{prop:complete-support-bound}.  In the latter case, if no $K_r$ intersects the zero set, \cref{lem:weighted-terminal} applies; if a vertex of $B$ has zero cover value, \cref{lem:universal-zero-peeling} applies.  Otherwise \cref{thm:rigid-cover} applies.  In its case~\textup{(i)}, no $K_r$ meets the zero set, while cases~\textup{(ii)} and \textup{(iii)} are handled by parts~\textup{(i)} and \textup{(ii)} of \cref{prop:rigid-case-bounds}, respectively.  Every alternative contradicts \cref{eq:strict-weighted-counterexample}.
+
+Thus the weighted inequality holds for every $r\ge2$.  If $\vct c$ is any fractional cover with $\langle\vct p,\vct c\rangle\le1/r$, then $\fcov_r(H,\vct p)\le\langle\vct p,\vct c\rangle$, and the final assertion follows from the monotonicity of $\Phi_r$.
+\end{proof}
+
+% End content inlined from density_weighted.tex.
+\subsection{Proof of Theorem 1.1}\label{sec:prelim}
+
+This section introduces the graphon framework and completes the proof of the density theorem.  We first identify finite weighted graphs with independent-cell step graphons, then give the graphon forms of the extremal constructions from \cref{sec:constructions}.  Finally, we extend the weighted inequality to arbitrary graphons by sampling and derive the finite theorem by compactness.
+
+We use the graph-limit framework developed by Lov\'asz and Szegedy \cite{LovaszSzegedy06}, Borgs, Chayes, Lov\'asz, S\'os, and Vesztergombi \cite{BCLSV}, and Lov\'asz \cite{Lovasz}.  For tilings, we use the theory of Hladk\'y, Hu, and Piguet \cite{HHP21}, who also gave a graphon proof of Koml\'os's tiling theorem \cite{HHP19}.
+
+A \emph{graphon} is a symmetric measurable function $W:\Omega^2\to[0,1]$ on a standard atomless probability space.  We identify graphons under the equivalence relation defined below; when a localization argument is used, we identify the space with $([0,1],\lambda)$.  For a measurable set $S$, let $\one_S$ denote its indicator function, and for measurable functions $f,g$ write $(f\otimes g)(x,y)\coloneqq f(x)g(y)$.  We write $\overline W\coloneqq1-W$ and
+\[
+ e(W)\coloneqq\frac12\int_{\Omega^2}W,
+ \qquad\text{and}\qquad
+ d_W(x)\coloneqq\int_\Omega W(x,y)\dd y,
+\]
+and, for a bounded symmetric kernel $K$ and $h\in L^2(\Omega)$, define the integral operator and its quadratic form by
+\[
+ (T_Kh)(x)\coloneqq\int_\Omega K(x,y)h(y)\dd y,
+ \qquad\text{and}\qquad
+ Q_K(h)\coloneqq\langle h,T_Kh\rangle
+ =\int_{\Omega^2}K(x,y)h(x)h(y)\dd x\dd y.
+\]
+When the underlying probability measure is not the fixed measure $\mu$, we display it as an additional subscript or argument, as in $d_{W,\nu}$, $T_{W,\nu}$, $Q_{W,\nu}$, $e(W,\nu)$, and $\fcov(K_r,W,\nu)$.
+A \emph{fractional $K_r$-cover} is a measurable $c:\Omega\to[0,1]$ such that $\sum_{j\in[r]}c(x_j)\ge1$ for almost every $K_r$ in the support of $W$.  Restricting to $[0,1]$ loses nothing, since coordinates above one may be truncated.  Its minimum weight, called the \emph{fractional $K_r$-cover number}, is $\fcov(K_r,W)$.  A \emph{fractional $K_r$-tiling} is a measurable function $t:\Omega^r\to[0,\infty)$, supported on the ordered $K_r$-tuples, whose \emph{load}
+\[
+ \ell_t(v)\coloneqq\sum_{i\in[r]}
+ \int_{\Omega^{r-1}}t(x_1,\ldots,x_{i-1},v,x_{i+1},\ldots,x_r)
+ \,\dd\mu^{r-1}
+\]
+is at most one almost everywhere.  Its \emph{size} is $|t|\coloneqq\int_{\Omega^r}t\,\dd\mu^r$, and its \emph{fractional $K_r$-tiling number} $\til(K_r,W)$ is the supremum of these sizes.  In particular, $\int\ell_t=r|t|$.  Throughout the paper, assertions that a measurable set meets or avoids every clique are understood modulo the corresponding product-measure null set on the clique support.  Whenever a coordinate of a clique tuple is replaced, we first restrict to the full-measure set of Fubini-typical tuples on which all required cover inequalities hold.
+
+The normalization agrees exactly with the finite programs in \cref{eq:weighted-tiling-lp,eq:weighted-cover-lp}: expanding a vertex of weight $p_v$ into a cell of measure $p_v$ converts its total capacity $p_v$ into pointwise capacity one, as proved in \cref{lem:weighted-step-graphon}.
+
+For a bounded kernel $U$, the \emph{cut norm} is
+\[
+ \|U\|_\square\coloneqq\sup_{S,T\subseteq\Omega}\left|\int_{S\times T}U\right|.
+\]
+The \emph{cut distance} $\distsq$ and the \emph{$L^1$ distance} $\distone$ are obtained by optimizing over measure-preserving relabelings.  Two graphons are \emph{weakly isomorphic} if their cut distance is zero.  For a family $\mathcal U$ of graphons, $\distone(W,\mathcal U)$ and $\distsq(W,\mathcal U)$ denote the corresponding infima over $U\in\mathcal U$.
+
+For a finite graph $G$ on vertex set $[n]$, let $W_G$ be the step graphon obtained by partitioning $[0,1]$ into equal intervals $(I_v)_{v\in[n]}$ and putting $W_G=1$ on $I_u\times I_v$ exactly when $uv\in E(G)$.  For a measurable set $S$ of positive measure, $W[S]$ denotes the restriction to $S^2$, while $W[S]/\mu(S)$ denotes the same restriction on the probability space obtained by normalizing the measure of $S$ to one.  We use $W(A,B)=\xi$ to mean that $W=\xi$ almost everywhere on $A\times B$.
+
+Recall from the Introduction that the \emph{edit distance} of two graphs on the same vertex set is $\edit(G,H)=|E(G)\triangle E(H)|$; distance to a family also minimizes over vertex relabelings and over members of the family.  After relabeling, $2\edit(G,H)/n^2$ is the $L^1$ distance of their graphons up to $O(1/n)$.
+
+\begin{theorem}\label{thm:graphon-inputs}
+The graphon space modulo weak isomorphism is compact in cut distance \cite{BCLSV,Lovasz}.  If $W_n\to W$ in cut distance, then
+\[
+ e(W_n)\to e(W),
+ \qquad\text{and}\qquad
+ \til(K_r,W)\le\liminf_n\til(K_r,W_n).
+\]
+A minimum fractional cover exists and
+\[
+ \til(K_r,W)=\fcov(K_r,W).
+\]
+The required cover compactness, tiling--cover duality, lower semicontinuity, and finite-to-graphon result are given in \cite[Theorems~3.7, 3.14 and~3.16, equation~(3.7), and Theorem~3.4]{HHP21}.  In particular, if finite graphs $G_n$, with $|V(G_n)|\to\infty$, converge to $W$ in cut distance, then
+\begin{equation}\label{eq:finite-tiling-transference}
+ \til(K_r,W)\le\liminf_{n\to\infty}\frac{\nu(K_r,G_n)}{|V(G_n)|}.
+\end{equation}
+\end{theorem}
+
+The following lemma gives the exact relation between the weighted setting of \cref{sec:weighted-density} and graphons.
+
+\begin{lemma}\label{lem:weighted-step-graphon}
+Let $(H,\vct p)$ be a weighted graph.  Partition a standard atomless probability space as
+\[
+ \Omega=\bigsqcup_{v\in V(H)}P_v,
+ \qquad\text{and}\qquad
+ \mu(P_v)=p_v,
+\]
+and define the \emph{associated graphon} by
+\begin{equation}\label{eq:weighted-step-graphon}
+ W_{H,\vct p}(x,y)\coloneqq A(H)_{uv}
+ \quad\text{for }(x,y)\in P_u\times P_v.
+\end{equation}
+Thus every $P_v$ is independent, and distinct cells are either completely joined or anticomplete.  Then
+\begin{equation}\label{eq:weighted-step-identities}
+ e(W_{H,\vct p})=e(H,\vct p),
+ \qquad
+ \til(K_r,W_{H,\vct p})=\til_r(H,\vct p),
+ \qquad\text{and}\qquad
+ \fcov(K_r,W_{H,\vct p})=\fcov_r(H,\vct p).
+\end{equation}
+Moreover, varying the cell weights is the restriction of a graphon base-measure variation to functions that are constant on the cells.
+\end{lemma}
+
+\begin{proof}
+The edge-density identity follows directly from \cref{eq:weighted-step-graphon}:
+\[
+ \frac12\int_{\Omega^2}W_{H,\vct p}
+ =\frac12\sum_{u,v}A(H)_{uv}p_up_v
+ =e(H,\vct p).
+\]
+
+If $\vct c=(c_v)_{v\in V(H)}$ is a weighted cover, make it constant with value $c_v$ on $P_v$.  Every graphon $K_r$ lies, modulo a null set, in the product of the cells indexed by a clique of $H$, so this gives a graphon cover of the same weight.  Conversely, let $g:\Omega\to[0,1]$ be a graphon cover and set
+\[
+ \bar g_v\coloneqq\frac1{p_v}\int_{P_v}g\,\dd\mu.
+\]
+For every $K=\{v_1,\ldots,v_r\}\in\mathcal K_r(H)$, integrate the graphon cover inequality over $P_{v_1}\times\cdots\times P_{v_r}$ to obtain
+\[
+ \sum_{v\in K}\bar g_v\ge1.
+\]
+Hence $\vct{\bar g}\coloneqq(\bar g_v)_v$ is a weighted cover, and its weight is $\sum_vp_v\bar g_v=\int_\Omega g$.  Taking infima proves the covering identity.
+
+For the tiling identity, first let $\tau$ be any graphon fractional $K_r$-tiling of $W_{H,\vct p}$.  For each unordered support clique $K=\{v_1,\ldots,v_r\}$, put
+\[
+ t_K\coloneqq
+ \sum_{\sigma\in S_r}
+ \int_{P_{v_{\sigma(1)}}\times\cdots\times P_{v_{\sigma(r)}}}
+ \tau\,\dd\mu^r.
+\]
+The ordered clique products appearing here partition the graphon clique support modulo null sets, so
+\[
+ \sum_Kt_K=|\tau|.
+\]
+Moreover, Fubini's theorem and the pointwise load constraint give
+\[
+ \sum_{K\ni v}t_K
+ =\int_{P_v}\ell_\tau(x)\,\dd\mu(x)
+ \le p_v.
+\]
+Thus $\vct t\coloneqq(t_K)_K$ is a feasible weighted tiling, proving $\til(K_r,W_{H,\vct p})\le\til_r(H,\vct p)$.
+
+Conversely, let $\vct t=(t_K)_K$ be a feasible weighted tiling.  For every $K=\{v_1,\ldots,v_r\}$ and every $\sigma\in S_r$, define $\tau$ to be constant with value
+\[
+ \frac{t_K}{r!\prod_{v\in K}p_v}
+\]
+on $P_{v_{\sigma(1)}}\times\cdots\times P_{v_{\sigma(r)}}$, and put $\tau\coloneqq0$ elsewhere.  Its size is $\sum_Kt_K$, while for almost every $x\in P_v$ its load is
+\[
+ \ell_\tau(x)=\frac1{p_v}\sum_{K\ni v}t_K\le1.
+\]
+It is therefore a graphon tiling of the same size, proving the reverse inequality.
+
+Finally, let $\vct z\coloneqq(z_v)_{v\in V(H)}$ satisfy $\sum_vz_v=0$ and $p_v+tz_v>0$.  If $h\coloneqq z_v/p_v$ on $P_v$, then $\int h=0$, and under $\dd\mu_t\coloneqq(1+th)\dd\mu$ one has
+\[
+ \mu_t(P_v)=p_v+tz_v.
+\]
+Thus the finite weight variation $\vct p\mapsto\vct p+t\vct z$ is the cell-constant case of the base-measure variations used later in \cref{sec:variation}.
+\end{proof}
+
+For $x\in[0,1/r]$, define the \emph{extremal graphon family} by
+\begin{equation}\label{eq:Mrx}
+ \cM_r(x)\coloneqq\{W\colon \til(K_r,W)\le x,\ e(W)=\Phi_r(x)\}.
+\end{equation}
+We next give graphon versions of the finite constructions in \cref{sec:constructions}.  These descriptions will also specify the equality cases in the graphon density theorem.
+
+Fix $i\in[r-1]$, put $s\coloneqq r-i$, and partition the probability space into
+\[
+ X\sqcup Y_1\sqcup\cdots\sqcup Y_s
+\]
+with
+\[
+ \mu(X)\coloneqq ix,
+ \qquad\text{and}\qquad
+ \mu(Y_j)\coloneqq\frac{1-ix}{s}.
+\]
+The graphon is $1$ on $X^2$, on $X\times Y_j$, and between distinct $Y_j,Y_k$, and is $0$ on each $Y_j^2$.  Denote the resulting graphon by $W_{B_i}(x)$, and let $\cE_{r,B_i}(x)$ be its weak-isomorphism class.  Define a fractional cover by setting $c\coloneqq1/i$ on $X$ and $c\coloneqq0$ elsewhere; it has weight $x$.
+
+Partition the probability space into
+\[
+ X\sqcup Z\sqcup Y_2\sqcup\cdots\sqcup Y_{r-1}
+\]
+with
+\[
+ \mu(X)\coloneqq2x,
+ \qquad
+ \mu(Z)\coloneqq\frac1{r-1}-2x,
+ \qquad\text{and}\qquad
+ \mu(Y_j)\coloneqq\frac1{r-1}.
+\]
+The sets $X\cup Z,Y_2,\ldots,Y_{r-1}$ are the $r-1$ Tur\'an parts: all distinct parts are completely joined.  Inside the first part, $X$ is a clique, $Z$ is independent, and $X$ is anticomplete to $Z$.  The other $Y_j$ are independent.  Denote this graphon by $W_A(x)$, and let $\cE_{r,A}(x)$ be its weak-isomorphism class.  Define a cover by setting $c\coloneqq1/2$ on $X$ and $c\coloneqq0$ elsewhere; it has weight $x$.
+
+Put $\ell\coloneqq1-rx$ and partition the probability space into
+\[
+ X\sqcup\bigcup_{j\in[r-1]}(Y_j\sqcup Z_j)
+\]
+with
+\[
+ \mu(X)\coloneqq1-(r-1)\ell,
+ \qquad
+ \mu(Y_j)+\mu(Z_j)=\ell,
+ \qquad\text{and}\qquad
+ \sum_{j\in[r-1]}\mu(Z_j)=\ell.
+\]
+The set $X$ is a clique.  Each $P_j\coloneqq Y_j\sqcup Z_j$ is independent, and distinct $P_j,P_k$ are completely joined.  The set $X$ is complete to each $Y_j$ and anticomplete to each $Z_j$.  The family is parameterized by the compact simplex
+\[
+ \vct z\coloneqq(z_1,\ldots,z_{r-1})\in[0,\ell]^{r-1},
+ \qquad\text{and}\qquad
+ \sum_{j\in[r-1]}z_j=\ell,
+\]
+where $z_j\coloneqq\mu(Z_j)$.  Let $\cE_{r,R}(x)$ be the family of all weak-isomorphism classes obtained from this simplex.  Put $c\coloneqq1/r$ on $X\cup\bigcup_{j\in[r-1]}Y_j$ and $c\coloneqq0$ on $\bigcup_{j\in[r-1]}Z_j$.
+
+\begin{lemma}\label{lem:construction-validity}
+For every construction $\tau\in\mathfrak T_r$ and every parameter in its domain, each $U\in\cE_{r,\tau}(x)$ has a fractional $K_r$-cover of weight $x$ and
+\[
+ e(U)=D_{r,\tau}(x).
+\]
+Consequently, if $D_{r,\tau}(x)=\Phi_r(x)$, then every $U\in\cE_{r,\tau}(x)$ belongs to $\cM_r(x)$.
+\end{lemma}
+
+\begin{proof}
+The displayed functions are covers of weight $x$.  In the $B_i$ construction, a clique uses at most one point from each of the $r-i$ outside independent classes, and hence at least $i$ points of $X$.  In the $A$ construction, a $K_r$ in the underlying $(r-1)$-partite graphon must use two points from the exceptional Tur\'an part; the only adjacent pair inside that part lies in $X^2$.  In the $R$ construction no $K_r$ meets any $Z_j$: a point of $Z_j$ is nonadjacent to $X$ and to its own independent class, leaving at most one point from each of the other $r-2$ classes and hence at most $r-1$ clique vertices in total.  Thus every $K_r$ lies in the region on which the displayed cover has value $1/r$.
+
+For the $B_i$ construction, the complement consists of the $r-i$ diagonal blocks $Y_j^2$, so
+\[
+ 1-2e(U)=\sum_{j\in[r-i]}\mu(Y_j)^2
+ =\frac{(1-ix)^2}{r-i}.
+\]
+For the $A$ construction, start with the balanced complete $(r-1)$-partite graphon and add the clique on $X$, obtaining
+\[
+ e(U)=\frac{r-2}{2(r-1)}+\frac{\mu(X)^2}{2}=A_r(x).
+\]
+For the $R$ construction, write $\alpha\coloneqq\mu(X)=1-(r-1)\ell$.  The missing ordered pairs are the diagonal blocks $P_j^2$ and the two orientations of $X\times\bigcup_{j\in[r-1]}Z_j$.  Hence
+\[
+ 1-2e(U)=(r-1)\ell^2+2\alpha\ell
+ =2\ell-(r-1)\ell^2,
+\]
+which is equivalent to $e(U)=R_r(x)$.  If $D_{r,\tau}(x)=\Phi_r(x)$, then $e(U)=\Phi_r(x)$ and the cover gives $\til(K_r,U)\le x$, so $U\in\cM_r(x)$.
+\end{proof}
+
+The active and near-active graphon families are obtained by retaining the corresponding construction types from \cref{def:active-family}.
+
+\begin{definition}\label{def:active-graphon-family}
+Using the construction sets from \cref{def:active-family}, define the \emph{active graphon family} and the \emph{near-active graphon family} by
+\[
+ \cE_r^\star(x)\coloneqq\bigcup_{\tau\in\cA_r(x)}\cE_{r,\tau}(x),
+ \qquad\text{and}\qquad
+ \cE_r(x;\eta)\coloneqq\bigcup_{\tau\in\cA_r(x;\eta)}\cE_{r,\tau}(x).
+\]
+\end{definition}
+
+Every graphon in these construction families is a $\{0,1\}$-valued step graphon with at most $2r-1$ blocks.
+
+We are now ready to extend the weighted inequality to arbitrary graphons.
+
+\begin{theorem}\label{thm:graphon-density}
+For every $r\ge2$ and every graphon $W$,
+\begin{equation}\label{eq:graphon-density-input}
+ e(W)\le \Phi_r\bigl(\til(K_r,W)\bigr).
+\end{equation}
+\end{theorem}
+
+The statement is exact and includes the matching case $r=2$.  It follows from the weighted inequality by sampling a minimum fractional cover.
+
+\begin{proof}[Proof of \cref{thm:graphon-density}]
+Let $x\coloneqq\til(K_r,W)=\fcov(K_r,W)$ and choose a minimum fractional cover $c:\Omega\to[0,1]$ of weight $x$, using \cref{thm:graphon-inputs}.  If $x=1/r$, then $e(W)\le1/2=\Phi_r(1/r)$, so suppose $x<1/r$.
+
+Take independent samples $X_1,X_2,\ldots$ from $\mu$.  Conditional on the points, join every pair $i<j$ independently with probability $W(X_i,X_j)$, and let $H_m$ be the graph induced on $[m]$.  With probability one,
+\[
+ \frac{e(H_m)}{m^2}\longrightarrow e(W),
+ \qquad\text{and}\qquad
+ x_m\coloneqq\frac1m\sum_{i\in[m]} c(X_i)\longrightarrow x.
+\]
+Moreover, almost surely the sampled vector $\vct c_m\coloneqq\bigl(c(X_1),\ldots,c(X_m)\bigr)$ is a fractional $K_r$-cover of every $H_m$.  Indeed, for a fixed ordered $r$-tuple of distinct indices, the probability that it is a realized clique and violates the cover inequality is
+\[
+ \int_{\Omega^r}
+ \one_{\{\sum_{a\in[r]}c(x_a)<1\}}
+ \prod_{a<b}W(x_a,x_b)\,\dd\mu^r=0.
+\]
+A countable union over index tuples remains null.
+
+Thus $(H_m,\one/m)$ is an independent-cell finite model of the kind in \cref{lem:weighted-step-graphon}, and sampling preserves the cover constraints exactly rather than only approximately.  For all sufficiently large $m$, $x_m<1/r$.  Apply \cref{thm:weighted-density} to the uniformly weighted graph $H_m$ and this sampled cover:
+\[
+ \frac{e(H_m)}{m^2}\le \Phi_r(x_m).
+\]
+Letting $m\to\infty$ and using the continuity of $\Phi_r$ (which follows from its two-branch definition for $r=2$, and supplied by \cref{lem:phase-diagram} for $r\ge3$) proves the theorem.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:finite-density}]
+The lower bound is \cref{prop:finite-lower-bound}.  If the upper bound failed uniformly, there would be $\eps>0$, integers $n_j\to\infty$ and $0\le k_j\le\lfloor n_j/r\rfloor$, and $n_j$-vertex graphs $G_j$ such that
+\[
+ \nu(K_r,G_j)\le k_j,
+ \qquad\text{and}\qquad
+ e(G_j)\ge\bigl(\Phi_r(k_j/n_j)+\eps\bigr)n_j^2.
+\]
+After taking a subsequence, assume $k_j/n_j\to x$ and $W_{G_j}\to W$ in cut distance.  The finite-to-graphon transference in \cref{thm:graphon-inputs} gives
+\[
+ \til(K_r,W)
+ \le\liminf_{j\to\infty}\frac{\nu(K_r,G_j)}{n_j}
+ \le x.
+\]
+Consequently, by \cref{thm:graphon-density} and the monotonicity of $\Phi_r$,
+\[
+ e(W)\le \Phi_r(\til(K_r,W))\le \Phi_r(x).
+\]
+On the other hand, cut convergence of the edge density and continuity of $\Phi_r$ give
+\[
+ e(W)=\lim_{j\to\infty}\frac{e(G_j)}{n_j^2}
+ \ge \Phi_r(x)+\eps,
+\]
+a contradiction.
+\end{proof}
+
+\section{Equality cases and stability}\label{sec:equality-stability}
+
+\subsection{Tools for the equality cases}\label{sec:equality-tools}
+
+We next collect the tools used to classify equality in the graphon density theorem.  First, a marked Tur\'an theorem handles a zero set that meets no $K_r$.  We then prove an approximate complementary-slackness statement, which is needed because a maximum graphon tiling need not exist.  The remaining lemmas turn the quadratic-form inequalities obtained from variations into multipartite structure.
+
+\begin{theorem}\label{thm:ABHP-input}
+Let $r\ge3$, and let $Z$ be a measurable set such that the set of $K_r$-tuples of $W$ having at least one coordinate in $Z$ has $\mu^r$-measure zero.  Put $z\coloneqq\mu(Z)$ and define
+\[
+ g_r(z)\coloneqq
+ \begin{cases}
+ \dfrac{r-2}{2(r-1)},&z\ge1/(r-1),\\[1.2ex]
+ \dfrac12-z+\dfrac{r-1}{2}z^2,&0\le z\le1/(r-1).
+ \end{cases}
+\]
+Then
+\begin{equation}\label{eq:ABHP-bound}
+ e(W)\le g_r(z).
+\end{equation}
+If equality holds and $z\ge1/(r-1)$, then $W$ is the balanced complete $(r-1)$-partite graphon.  If equality holds and $z\le1/(r-1)$, then, up to weak isomorphism, there is a partition
+\[
+ \Omega=X\sqcup\bigcup_{j\in[r-1]}(Y_j\sqcup Z_j)
+\]
+with
+\[
+ \mu(X)=1-(r-1)z,
+ \qquad
+ \mu(Y_j)+\mu(Z_j)=z,
+ \qquad\text{and}\qquad
+ \sum_{j\in[r-1]}\mu(Z_j)=z,
+\]
+such that $Z=\bigsqcup_{j\in[r-1]}Z_j$ modulo null sets, $X$ is a clique, each $Y_j\sqcup Z_j$ is independent, distinct such classes are completely joined, and $X$ is complete to $Y_j$ and anticomplete to $Z_j$.
+\end{theorem}
+
+\begin{proof}
+We derive the graphon statement from the finite equality and stability theorem of Allen--B\"ottcher--Hladk\'y--Piguet \cite{ABHP14}.  Sample independent points $X_1,X_2,\ldots$ from $\mu$ and, conditional on them, form the usual $W$-random graph $G_n$ on $[n]$.  Put
+\[
+ M_n\coloneqq\{i\in[n]\colon X_i\in Z\},
+ \qquad\text{and}\qquad m_n\coloneqq|M_n|.
+\]
+With probability one,
+\[
+ \frac{m_n}{n}\longrightarrow z,
+ \qquad
+ \frac{e(G_n)}{n^2}\longrightarrow e(W),
+ \qquad\text{and}\qquad
+ W_{G_n}\longrightarrow W
+ \quad\text{in cut distance}.
+\]
+Moreover, almost surely no copy of $K_r$ in any $G_n$ intersects $M_n$.  Indeed, for each fixed ordered $r$-tuple of distinct indices, the probability that it realizes a clique and that at least one sampled point lies in $Z$ is
+\[
+ \int_{\Omega^r}
+ \one_{\{\{x_1,\ldots,x_r\}\cap Z\ne\varnothing\}}
+ \prod_{a<b}W(x_a,x_b)\,\dd\mu^r=0,
+\]
+and a countable union over index tuples is still null.
+
+Let $t_{r-1}(n,m)$ and $\mathfrak E_{r-1}(n,m)$ denote, respectively, the extremal edge number and the extremal family in \cite[Theorem~2]{ABHP14}.  The finite extremal theorem therefore gives
+\[
+ e(G_n)\le t_{r-1}(n,m_n),
+\]
+where
+\[
+ \frac{t_{r-1}(n,m)}{n^2}
+ =g_r(m/n)+O_r(1/n)
+\]
+uniformly in $m$.  Letting $n\to\infty$ proves \cref{eq:ABHP-bound}.
+
+Now assume equality.  Choose a sequence $\eps_s\downarrow0$.  The finite stability theorem supplies $\gamma_s>0$ for $\eps_s$.  Along an almost-sure sample path, choose $n_s\to\infty$ so large that
+\[
+ t_{r-1}(n_s,m_{n_s})-e(G_{n_s})<\gamma_s n_s^2.
+\]
+The marked-set stability statement \cite[Theorem~2(c)]{ABHP14} gives an extremal graph $H_s\in\mathfrak E_{r-1}(n_s,m_{n_s})$ on the same vertex set, with the marked set $M_{n_s}$ unchanged, and
+\[
+ \edit(G_{n_s},H_s)\le\eps_s n_s^2.
+\]
+If $z>1/(r-1)$, these extremal graphs have the balanced Tur\'an graphon as their only limit, which proves the equality case in that range.  Suppose now that $z\le1/(r-1)$.  In the finite description, only $O_r(1)$ vertices are exceptional and therefore disappear in the graphon limit.  The remaining vertices consist of a clique of asymptotic measure $1-(r-1)z$ and $r-1$ independent classes of asymptotic measure $z$; the marked set $M_{n_s}$ is distributed among those classes.  Passing to a subsequence, the normalized class-intersection sizes converge to numbers $z_1,\ldots,z_{r-1}\in[0,z]$ with $\sum_jz_j=z$.  Thus $W_{H_s}$ converges in $L^1$ to an extension-of-Tur\'an graphon $U$ with a partition
+\[
+ \Omega=X\sqcup\bigcup_{j\in[r-1]}(Y_j\sqcup Z_j)
+\]
+and with all the adjacency and measure relations displayed in the theorem.  At the threshold $z=1/(r-1)$ the two finite extremal ranges have the same graphon limit, namely the balanced complete $(r-1)$-partite graphon.  Since
+\[
+ \distone(W_{G_{n_s}},W_{H_s})\le2\eps_s+o(1)
+\]
+and $W_{G_{n_s}}\to W$ in cut distance, $W$ is weakly isomorphic to $U$.
+
+It remains to identify the originally prescribed set $Z$.  By the standard common-pullback characterization of weakly isomorphic graphons \cite{Lovasz}, pull $W$, $U$, and $Z$ back to one common probability space, and denote the pullback of $Z$ by $Z'$.  Then $\mu(Z')=z$ and the set of $K_r$-tuples of $U$ meeting $Z'$ has measure zero.  If $z<1/(r-1)$, then $\mu(X)>0$.  Every positive-measure subset of $X$ lies in a positive-measure family of cliques contained in $X^r$, and every positive-measure subset of a $Y_j$ lies in a positive-measure family of cliques obtained by adjoining $r-1$ points of $X$.  Hence
+\[
+ Z'\subseteq\bigcup_{j\in[r-1]}Z_j
+ \quad\text{modulo null sets}.
+\]
+Both sides have measure $z$, so equality holds modulo null sets.  If $z=1/(r-1)$, then $X$ is null and $U$ is the balanced Tur\'an graphon with parts $P_1,\ldots,P_{r-1}$; define
+\[
+ Z_j\coloneqq Z'\cap P_j,
+ \qquad\text{and}\qquad
+ Y_j\coloneqq P_j\setminus Z_j.
+\]
+This gives the required marked decomposition also at the threshold.
+\end{proof}
+
+Since a maximum graphon tiling need not be attained, we use the following approximate complementary-slackness statement.
+
+\begin{lemma}\label{lem:approx-CS}
+Let $c$ be a minimum fractional $K_r$-cover of $W$, of weight $x$.  There are fractional tilings $t_n$ of sizes $|t_n|\to x$ with load functions $\ell_n:\Omega\to[0,1]$ such that, writing
+\[
+ \sigma_c(x_1,\ldots,x_r)\coloneqq\sum_{j\in[r]}c(x_j)-1
+\]
+on the clique support, one has
+\begin{equation}\label{eq:CS-identity}
+ x-|t_n|
+ =\int_\Omega c(1-\ell_n)
+ +\int_{\Omega^r}t_n\sigma_c
+ \longrightarrow0.
+\end{equation}
+Consequently:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item if $P\coloneqq\{c>0\}$, then $\mu(P)\le rx$;
+\item for every $\delta>0$, the total $t_n$-weight of cliques with cover sum at least $1+\delta$ tends to zero;
+\item if every clique of cover sum below $1+\delta$ meets a measurable set $S$, then $\mu(S)\ge x$;
+\item if every such clique avoids $S$, then $\int_S\ell_n\to0$;
+\item if, in addition, $c\ge\gamma>0$ on $S$, then in the situation of \textup{(iv)} one has $\mu(S)=0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Choose tilings with $|t_n|\to\til(K_r,W)=x$.  By the definition of the load,
+\[
+ \int_\Omega c\ell_n
+ =\int_{\Omega^r}t_n\sum_{j\in[r]}c(x_j).
+\]
+Subtracting $|t_n|$ and using $\ell_n\le1$ gives the exact decomposition in \cref{eq:CS-identity}; both terms are nonnegative, so both tend to zero.
+
+For $P_\gamma\coloneqq\{c\ge\gamma\}$, the first term in \cref{eq:CS-identity} gives
+\[
+ \int_{P_\gamma}(1-\ell_n)\longrightarrow0,
+ \qquad\text{and}\qquad
+ \int_{P_\gamma}\ell_n\longrightarrow\mu(P_\gamma).
+\]
+Since $\int\ell_n=r|t_n|\to rx$, we obtain $\mu(P_\gamma)\le rx$ and then let $\gamma\downarrow0$.  Assertion \textup{(ii)} follows from Markov's inequality applied to the second term of \cref{eq:CS-identity}.
+
+For a measurable set $S$, let $N_S(Q)$ denote the number of coordinates of the clique tuple $Q$ that lie in $S$.  Fubini's theorem and the definition of the load give
+\begin{equation}\label{eq:load-counting}
+ \int_S\ell_n
+ =\int_{\Omega^r}t_n(Q)N_S(Q)\,\dd\mu^r(Q).
+\end{equation}
+Let $\mathcal L_\delta\coloneqq\{Q\colon \sigma_c(Q)<\delta\}$ be the set of clique tuples of cover sum below $1+\delta$.  By \textup{(ii)}, the total $t_n$-weight of its complement tends to zero.  If every tuple in $\mathcal L_\delta$ meets $S$, modulo a null set, then $N_S\ge1$ there and \cref{eq:load-counting} gives
+\[
+ \liminf_n\int_S\ell_n\ge\lim_n|t_n|=x.
+\]
+Since $\ell_n\le1$, this proves \textup{(iii)}.  If every tuple in $\mathcal L_\delta$ avoids $S$, then
+\[
+ \int_S\ell_n
+ \le r\int_{\mathcal L_\delta^c}t_n\longrightarrow0,
+\]
+which proves \textup{(iv)}.  Finally, if $c\ge\gamma$ on $S$, the first term of \cref{eq:CS-identity} gives $\int_S(1-\ell_n)\to0$; combining this with \textup{(iv)} yields $\mu(S)=0$ and proves \textup{(v)}.
+\end{proof}
+
+We next record a basic consequence of equality in the graphon density theorem.
+
+\begin{lemma}\label{lem:extremizer-saturation}
+If $W\in\cM_r(x)$, then
+\[
+ \til(K_r,W)=\fcov(K_r,W)=x,
+\]
+and $W$ is $\{0,1\}$-valued almost everywhere.
+\end{lemma}
+
+\begin{proof}
+Put $y\coloneqq\til(K_r,W)\le x$.  By \cref{eq:graphon-density-input} and the strict monotonicity in \cref{lem:phase-diagram},
+\[
+ \Phi_r(x)=e(W)\le \Phi_r(y)\le \Phi_r(x),
+\]
+so $y=x$.  Let $c$ be a minimum cover and replace $W$ by $W^+\coloneqq\one_{\{W>0\}}$.  The same $c$ is a cover of $W^+$, while $e(W^+)\ge e(W)$.  The graphon density theorem gives $e(W^+)\le \Phi_r(x)=e(W)$, hence $W=W^+$ almost everywhere.
+\end{proof}
+
+The next four lemmas provide the functional-analytic tools used to read structure from the second-order inequalities.
+
+\begin{lemma}\label{lem:bounded-tangent-density}
+Let $\phi_1,\ldots,\phi_m\in L^\infty(\Omega)$ and put
+\[
+ H\coloneqq\{h\in L^2(\Omega)\colon \langle h,\phi_j\rangle=0
+       \text{ for every }j\}.
+\]
+Then $H\cap L^\infty(\Omega)$ is dense in $H$.  Consequently, every continuous quadratic-form inequality proved for bounded vectors in $H$ extends to all of $H$.
+\end{lemma}
+
+\begin{proof}
+Let $V\coloneqq\operatorname{span}\{\phi_1,\ldots,\phi_m\}$ and let $P_V$ be the orthogonal projection of $L^2$ onto $V$.  If $h\in H$, let $u_N$ be the truncation of $h$ at height $N$ and set
+\[
+ h_N\coloneqq u_N-P_Vu_N.
+\]
+The space $V$ is finite-dimensional and contained in $L^\infty$, so $h_N$ is bounded and belongs to $H$.  Since $u_N\to h$ in $L^2$ and $P_Vh=0$, the continuity of $P_V$ gives $h_N\to h$ in $L^2$.
+\end{proof}
+
+\begin{lemma}\label{lem:null-polarization}
+Let $T$ be a bounded self-adjoint operator and let $H$ be a closed subspace.  If $\langle h,Th\rangle\le0$ for every $h\in H$ and equality holds for some $h_0\in H$, then $Th_0\in H^\perp$.
+\end{lemma}
+
+\begin{proof}
+For $g\in H$, the quadratic polynomial $\langle h_0+tg,T(h_0+tg)\rangle$ is nonpositive for both signs of $t$ and has zero constant term.  Its linear coefficient is therefore zero.
+\end{proof}
+
+\begin{lemma}\label{lem:row-constancy}
+Let $K\in L^2(\Omega^2)$ be symmetric, and let $C\subseteq\Omega$ have positive measure.  Suppose that
+\[
+ T_Kh=0
+\]
+for every bounded $h$ supported on $C$ with $\int_Ch=0$.  Then there is a measurable function $g:\Omega\to\R$ such that
+\[
+ K(x,y)=g(y)
+\]
+for almost every $(x,y)\in C\times\Omega$.  If $K$ is $\{0,1\}$-valued on $C\times\Omega$, then $g$ is $\{0,1\}$-valued almost everywhere.
+\end{lemma}
+
+\begin{proof}
+The bounded mean-zero functions are dense in $L^2_0(C)=\{h\in L^2(C)\colon \int_Ch=0\}$ by \cref{lem:bounded-tangent-density}.  Choose a countable dense sequence $(h_n)$ of bounded functions in $L^2_0(C)$.  By Fubini, after deleting one null set of $y$-values, the section $K(y,\cdot)|_C$ belongs to $L^2(C)$ and
+\[
+ \int_CK(y,x)h_n(x)\,\dd x=0
+ \qquad\text{for every }n.
+\]
+Thus $K(y,\cdot)|_C$ is orthogonal to $L^2_0(C)$ and is constant almost everywhere on $C$.  Taking
+\[
+ g(y)\coloneqq\frac1{\mu(C)}\int_CK(x,y)\,\dd x
+\]
+and using symmetry gives the displayed conclusion.  The final assertion follows because an almost-everywhere constant function with values in $\{0,1\}$ has constant value in $\{0,1\}$.
+\end{proof}
+
+We now turn these analytic facts into graphon structure.  A \emph{cluster graphon} is a $\{0,1\}$-valued graphon whose underlying space is partitioned, up to null sets, into measurable cliques with no edges between distinct parts, together with a possible measurable set whose rows vanish almost everywhere.
+
+\begin{lemma}\label{lem:PSD-cluster}
+Let $U$ be a $\{0,1\}$-valued graphon.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item If $Q_U(h)\ge0$ for every bounded $h$, then $U$ is a cluster graphon.
+\item If $Q_U(h)\ge0$ for every bounded mean-zero $h$, then $U$ is a cluster graphon as well.
+\end{enumerate}
+We call the possible set on which all rows vanish the \emph{zero-row remainder}.
+\end{lemma}
+
+\begin{proof}
+First recall that a $\{0,1\}$-valued graphon is a cluster graphon if and only if its induced $P_3$ density is zero, by the induced-density characterization of hereditary graphon classes \cite{Lovasz}.  For completeness, if the induced density is zero, then for almost every edge $xy$ the rows $U(x,\cdot)$ and $U(y,\cdot)$ agree almost everywhere: a point on which they differ would form an induced $P_3$ with $x,y$.  Thus every nonzero row-equivalence class is a clique, two distinct such classes are anticomplete, and the remaining points have zero rows.
+
+Suppose now that the induced $P_3$ density is positive.  Identify the underlying atomless probability space with $[0,1]$ and consider the positive-measure set of triples $(x,y,z)$ satisfying
+\[
+ U(x,y)=U(y,z)=1,
+ \qquad\text{and}\qquad U(x,z)=0.
+\]
+Almost every point of this set is a Lebesgue density point, and the triples with a repeated coordinate form a null set.  Choose a density point with three distinct coordinates.  The Lebesgue differentiation theorem gives, for arbitrarily small $\xi>0$, pairwise disjoint equal-measure intervals $A,B,C$ for which the average of $U$ is at least $1-\xi$ on $A\times B$ and $B\times C$, and at most $\xi$ on $A\times C$.  Put $f_S\coloneqq\one_S/\mu(S)$.  Since every diagonal average is at most one,
+\[
+ Q_U(f_A-f_B+f_C)
+ \le3-4(1-\xi)+2\xi<0
+\]
+for small $\xi$, contradicting \textup{(i)}.  For \textup{(ii)}, the function $f_A-2f_B+f_C$ has mean zero and
+\[
+ Q_U(f_A-2f_B+f_C)
+ \le6-8(1-\xi)+2\xi<0
+\]
+for small $\xi$, again a contradiction.
+\end{proof}
+
+The graphon analogue of \cref{eq:finite-hypersimplex} will identify the complete multipartite equality cases.
+
+\begin{lemma}\label{lem:hypersimplex}
+Suppose $W$ is complete multipartite with positive-measure independent classes of sizes
+\[
+ p_1\ge p_2\ge\cdots
+\]
+and with a remaining set that is complete both to itself and to every independent class; we call this set the \emph{clique remainder}.  Then
+\begin{equation}\label{eq:hypersimplex}
+ \til(K_r,W)=\min_{0\le j\le r-1}
+ \frac{1-\sum_{h\in[j]}p_h}{r-j}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write $d\coloneqq1-\sum_hp_h$ for the measure of the clique remainder.  If a tiling has size $q$, its load in the $h$th independent class is at most $\min\{p_h,q\}$, whereas its total load is $rq$.  Hence
+\begin{equation}\label{eq:graphon-load-condition}
+ d+\sum_{h\ge1}\min\{p_h,q\}\ge rq.
+\end{equation}
+Equivalently, for every $0\le j\le r-1$ the total load outside the first $j$ classes gives
+\[
+ rq\le jq+1-\sum_{h\in[j]}p_h,
+\]
+which is the upper bound in \cref{eq:hypersimplex}.  Conversely, if all these upper bounds hold, then \cref{eq:graphon-load-condition} holds: if $m\coloneqq|\{h\colon p_h>q\}|<r$, it is exactly the bound with $j=m$, while if $m\ge r$ it is automatic.
+
+We now construct a tiling with these loads.  The case $q=0$ is trivial, so assume $q>0$.  Choose numbers
+\[
+ 0\le y_h\le\min\{p_h,q\},\qquad 0\le y_D\le d,
+ \qquad\text{and}\qquad \sum_hy_h+y_D=rq;
+\]
+they exist by \cref{eq:graphon-load-condition}.  If $d>0$, partition the atomless clique remainder into $N$ equal measurable pieces, where $N$ is large enough that $y_D/N\le q$, and prescribe load $y_D/N$ on each piece.  After temporarily deleting the edges within each remainder piece, the independent classes together with any such pieces form a countable complete support.  Enumerate these blocks as $(A_i)_{i\ge1}$, put $a_i\coloneqq\mu(A_i)$, let $y_i$ be the prescribed load on $A_i$, and set
+\[
+ \vct z\coloneqq(z_i)_{i\ge1},
+ \qquad\text{and}\qquad z_i\coloneqq y_i/q.
+\]
+Then
+\[
+ 0\le z_i\le1,\qquad\text{and}\qquad \sum_i z_i=r.
+\]
+The vector $\vct z$ belongs to the countable hypersimplex, which is the closed convex hull of the incidence vectors of $r$-subsets; equivalently, every vector in it is the vector of one-point marginals of a probability distribution on $r$-subsets.  For completeness, choose $N_0$ so that $\sum_{i>N_0}z_i\le1$, replace the tail by one coordinate of that total weight, and apply the finite hypersimplex argument from the proof of \cref{prop:complete-support-bound}.  If the total tail weight is positive, then whenever the tail coordinate is selected, replace it by $i>N_0$ with probability $z_i/\sum_{j>N_0}z_j$; if it is zero, omit this step.  This gives a probability distribution on $r$-subsets with one-point marginals $z_i$.
+
+Write $\pi_S$ for the probability of an $r$-subset $S$ of blocks.  For every ordering $(i_1,\ldots,i_r)$ of $S$, put the constant
+\[
+ \frac{q\pi_S}{r!\,a_{i_1}\cdots a_{i_r}}
+\]
+on the ordered product of the corresponding blocks, and put zero elsewhere.  The resulting countable nonnegative sum is measurable, has total size $q$, and on a block of measure $a_i$ has pointwise load
+\[
+ \frac{q}{a_i}\sum_{S\ni i}\pi_S=\frac{y_i}{a_i}\le1.
+\]
+Consequently this is a graphon fractional tiling of size $q$ in the edge-deleted step subgraphon, hence also in $W$.  Thus every $q$ satisfying the displayed upper bounds is feasible, proving \cref{eq:hypersimplex}.
+\end{proof}
+
+Finally, we isolate the equality case needed after the $A_r$ case is reduced to a matching problem.
+
+\begin{lemma}\label{lem:rank-two-equality}
+Let $2/5<y\le1/2$.  If $\til(K_2,W)\le y$ and $e(W)=2y^2$, then $W$ is, up to weak isomorphism, a clique of measure $2y$ together with an isolated set of measure $1-2y$.
+\end{lemma}
+
+\begin{proof}
+If $y=1/2$, then $e(W)=1/2$ forces $W=1$ almost everywhere, as required.  Hence assume $y<1/2$ and apply the graphon Erd\H{o}s--Gallai inequality $e(U)\le \Phi_2(\til(K_2,U))$.  Since $\Phi_2$ is strictly increasing and its active branch at $y>2/5$ is $2y^2$, the hypotheses force $\til(K_2,W)=y$.  Let $c$ be a minimum fractional vertex cover of weight $y$.  Replacing $W$ by its support shows, exactly as in \cref{lem:extremizer-saturation}, that $W$ is $\{0,1\}$-valued.
+
+Let $h$ be bounded and mean-zero, and replace the base measure by $\dd\mu_t\coloneqq(1+th)\dd\mu$.  The same cover has weight $y+t\int ch$, while the edge density is $2y^2+t\int d_Wh+O(t^2)$.  Since the clique branch remains active for small positive and negative $t$, and since the same $c$ is a cover of the perturbed graphon with weight $y+t\int ch$, the graphon Erd\H{o}s--Gallai inequality gives comparison with $2(y+t\int ch)^2$.  The two signs of $t$ therefore imply
+\[
+ \int d_Wh=4y\int ch.
+\]
+Thus $d_W-4yc$ is constant almost everywhere.  Since $\int d_W=2e(W)=4y^2=4y\int c$, that constant is zero.  Therefore
+\begin{equation}\label{eq:rank-two-degree}
+ d_W=4yc.
+\end{equation}
+In particular $c\le1/(4y)<1$ almost everywhere.  Put $P\coloneqq\{c>0\}$ and $Z\coloneqq\{c=0\}$.  Let
+\[
+ E\coloneqq\{(z,v)\in Z\times\Omega\colon W(z,v)=1\}.
+\]
+For almost every $(z,v)\in E$, the cover inequality gives $c(v)\ge1$.  On the other hand, \cref{eq:rank-two-degree} and $d_W\le1$ give $c(v)\le1/(4y)<1$ almost everywhere.  Hence $\mu^2(E)=0$, so $W=0$ almost everywhere on $Z\times\Omega$.  By \cref{lem:approx-CS}(i), now with $r=2$, $\mu(P)\le2y$.  Since $W$ is supported on $P^2$,
+\[
+ 2y^2=e(W)\le\frac{\mu(P)^2}{2}\le2y^2.
+\]
+Equality throughout gives $\mu(P)=2y$ and $W=1$ almost everywhere on $P^2$.  Thus $P$ is the required clique and $Z$ is isolated.
+\end{proof}
+
+\subsection{Variational identities}\label{sec:variation}
+
+Suppose that a single quadratic function $F$ agrees with $\Phi_r$ in a neighborhood of $x$.  Let $W$ be extremal at $x$, and let $c$ be a minimum cover of weight $x$.  We perturb the underlying probability measure rather than the kernel $W$; this keeps the support and every cover inequality unchanged.  On the independent-cell graphons of \cref{lem:weighted-step-graphon}, cell-constant perturbations are exactly the finite weight-vector variations used in \cref{sec:weighted-counterexample}.  The two-sided perturbation gives both a degree identity and a second-order inequality.
+
+\begin{theorem}\label{thm:variation}
+Assume that $F=\Phi_r$ in a neighborhood of $x$ and
+\[
+ \til(K_r,W)=x,
+ \qquad\text{and}\qquad
+ e(W)=\Phi_r(x)=F(x).
+\]
+Then:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $W$ is $\{0,1\}$-valued almost everywhere;
+\item
+\[
+ d_W(v)=2F(x)-xF'(x)+F'(x)c(v)
+ \quad\text{a.e.};
+\]
+\item for every bounded $h$ with $\int h=0$,
+\[
+ Q_W(h)\le F''(x)\left(\int ch\right)^2.
+\]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Assertion \textup{(i)} is \cref{lem:extremizer-saturation}.
+
+Let $h$ be bounded with $\int h=0$, and change the base measure to
+\[
+ \dd\mu_t\coloneqq(1+th)\dd\mu
+\]
+for small positive and negative $t$.  The same cover has new weight
+\[
+ x_t\coloneqq x+t\int ch.
+\]
+Writing
+\[
+ a\coloneqq\int ch,
+ \quad b\coloneqq\int d_Wh,
+ \quad\text{and}\quad q\coloneqq Q_W(h),
+\]
+the edge density becomes
+\[
+ e_t\coloneqq e(W)+tb+\frac{t^2}{2}q.
+\]
+For both signs of $t$ the parameter remains in this neighborhood.  Although $c$ need not remain minimum, it is still a cover of weight $x_t$; hence the density theorem and monotonicity give
+\[
+ e_t\le \Phi_r\bigl(\fcov(K_r,W,\mu_t)\bigr)\le \Phi_r(x_t)=F(x_t)
+ =F(x)+tF'(x)a+\frac{t^2}{2}F''(x)a^2.
+\]
+Equality at $t=0$ and the two signs imply $b=F'(x)a$, hence $d_W-F'(x)c$ is constant.  Integrating determines the constant.  Comparing quadratic terms gives the last assertion.
+\end{proof}
+
+The derivatives of the three possible active functions are
+\begin{align}
+ B_{r,i}'(x)&=\frac{i(1-ix)}{r-i},
+ &B_{r,i}''(x)&=-\frac{i^2}{r-i},\label{eq:Bderivatives}\\
+ A_r'(x)&=4x,
+ &A_r''(x)&=4,\label{eq:Aderivatives}\\
+ R_r'(x)&=r\bigl(1-(r-1)(1-rx)\bigr),
+ &R_r''(x)&=r^2(r-1).\label{eq:Rderivatives}
+\end{align}
+
+\subsection{Extremal graphons with one active construction}\label{sec:single-active}
+
+We now apply the variational identities when only one construction is active.  The $B_{r,i}$ case leads to a complete multipartite graphon with a clique remainder, the $A_r$ case reduces to an equality case for matchings, and the $R_r$ case follows from the marked Tur\'an theorem.
+
+\phantomsection\label{sec:Bphase}
+\begin{theorem}\label{thm:B-classification}
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item If $B_{r,i}$ is the unique active curve at $x$, then
+\[
+ \cM_r(x)=\{W_{B_i}(x)\}.
+\]
+\item Suppose that $B_i\in\cA_r(x)$, that $W\in\cM_r(x)$, and that a minimum cover $c$ of weight $x$ satisfies the degree and second-order identities associated with the $B_{r,i}$ branch.  Then $W$ belongs to the $B_{r,q}$ construction family for some $B_q\in\cA_r(x)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For \textup{(i)}, let $s\coloneqq r-i$ and $a\coloneqq1-ix$.  When $B_{r,i}$ is uniquely active, \cref{thm:variation} gives
+\begin{equation}\label{eq:Bdegree}
+ d_W=1-\frac{a}{s}+\frac{ia}{s}c.
+\end{equation}
+Put $f\coloneqq1-ic$.  Since $c\ge0$ and $d_W\le1$, one has $0\le f\le1$, and
+\[
+ d_{\overline W}=\frac{a}{s}f,
+ \qquad\text{and}\qquad
+ \int f=a.
+\]
+For mean-zero $h$,
+\[
+ Q_{\overline W}(h)=-Q_W(h)
+ \ge\frac1s\left(\int fh\right)^2.
+\]
+Thus
+\[
+ K\coloneqq\overline W-\frac1s f\otimes f
+\]
+satisfies $K\one=0$ and is positive semidefinite on the bounded mean-zero functions.  By \cref{lem:bounded-tangent-density}, this extends to the closed mean-zero subspace of $L^2$.  It is therefore positive semidefinite on all of $L^2$, and so is $\overline W$.  By \cref{lem:PSD-cluster}, $\overline W$ is a cluster graphon.  Equivalently, $W$ is complete multipartite with a possible clique remainder.
+
+Let the positive-measure independent classes have sizes $p_1\ge p_2\ge\cdots$.  Since $W$ is extremal,
+\begin{equation}\label{eq:B-deficiency}
+ \sum_hp_h^2=1-2e(W)=\frac{a^2}{s}.
+\end{equation}
+By \cref{lem:hypersimplex} and $\til(K_r,W)=x<1/r$, the minimizing index satisfies $1\le j\le r-1$.  With $q\coloneqq r-j$,
+\[
+ \sum_{h\in[j]}p_h=1-qx.
+\]
+Hence
+\begin{equation}\label{eq:B-cauchy}
+ \sum_hp_h^2\ge\frac{(1-qx)^2}{r-q}=1-2B_{r,q}(x).
+\end{equation}
+If $B_{r,i}$ is uniquely active, \cref{eq:B-deficiency} and \cref{eq:B-cauchy} force $q=i$.  Equality in Cauchy--Schwarz then gives
+\[
+ p_1=\cdots=p_s=\frac{a}{s},
+ \qquad\text{and}\qquad
+ p_h=0\quad\text{for }h>s.
+\]
+The remaining set of measure $1-a=ix$ forms the clique remainder.  This is $W_{B_i}(x)$.
+
+For \textup{(ii)}, the same positive-semidefinite argument gives a complete multipartite graphon with deficiency given by \cref{eq:B-deficiency}.  Equality in \cref{eq:B-cauchy} implies $B_{r,q}(x)=\Phi_r(x)$ and gives exactly $r-q$ equal independent classes of total measure $1-qx$.  The remaining set forms the clique remainder, giving the $B_{r,q}$ construction.
+\end{proof}
+
+We next treat the case in which $A_r$ is uniquely active.
+
+\phantomsection\label{sec:Aphase}
+\begin{theorem}\label{thm:A-classification}
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item If $A_r$ is uniquely active at $x$, then
+\[
+ \cM_r(x)=\{W_A(x)\}.
+\]
+\item Let $x$ be the nonzero transition $B_{r,1}=A_r$, let $W\in\cM_r(x)$, and let $c$ be a minimum cover.  If the degree and quadratic identities for $A_r$ hold, then $W\cong W_A(x)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For \textup{(i)}, let
+\[
+ \rho\coloneqq\frac1{r-1},
+ \qquad\text{and}\qquad
+ \lambda\coloneqq\frac{r-2}{r-1}.
+\]
+The degree and quadratic identities for $A_r$ are
+\begin{equation}\label{eq:Adegree}
+ d_W=\lambda+4xc,
+ \qquad\text{and}\qquad
+ Q_W(h)\le4\left(\int ch\right)^2
+ \quad\text{for }\int h=0.
+\end{equation}
+Define
+\[
+ U\coloneqq\overline W+4c\otimes c.
+\]
+Then $U\one=\rho\one$.  The second inequality in \cref{eq:Adegree} says that $Q_U\ge0$ on the bounded mean-zero functions.  By \cref{lem:bounded-tangent-density}, the inequality extends to the closed mean-zero subspace; the constant row sum then shows that $U$ is positive semidefinite on all of $L^2$.
+
+Put $P\coloneqq\{c>0\}$ and $Z\coloneqq\{c=0\}$.  The near-optimal tiling argument in \cref{lem:approx-CS}(i) gives
+\begin{equation}\label{eq:positive-support-measure}
+ \mu(P)\le rx,
+ \qquad\text{and}\qquad
+ \mu(Z)\ge1-rx>0.
+\end{equation}
+This conclusion uses only the near-optimal tilings given by \cref{lem:approx-CS}.
+
+On $Z^2$ one has $U=\overline W$.  Hence \cref{lem:PSD-cluster} shows that $\overline W[Z]$ is a cluster graphon.  Write its positive-measure clique components as
+\[
+ C_1,\ldots,C_m.
+\]
+There is no positive-measure zero-row remainder: such a set would be a positive-measure clique of $W$ with zero cover.  Also $m\le r-1$, since one point from each of $r$ components would form a zero-cover $K_r$ in $W$.
+
+For $h$ supported on $C_j$ with $\int_{C_j}h=0$, one has $Q_U(h)=0$.  Positive semidefiniteness gives $T_Uh=0$.  By \cref{lem:row-constancy}, there is a common global row $g_j$ for almost all points of $C_j$.  Since $c=0$ on $C_j$, this is a $\{0,1\}$-valued row of $\overline W$.  Put
+\[
+ S_j\coloneqq\{y\colon g_j(y)=1\}.
+\]
+The constant row sum gives $\mu(S_j)=\rho$, and $C_j\subseteq S_j$ modulo null sets.
+
+Let $p_j\coloneqq\mu(C_j)$ and $e_j\coloneqq\one_{C_j}/\sqrt{p_j}$.  Then
+\[
+ T_Ue_j=\sqrt{p_j}\one_{S_j},
+ \qquad
+ \langle e_j,T_Ue_j\rangle=p_j,
+ \qquad\text{and}\qquad
+ \|T_Ue_j\|_2^2=\rho p_j.
+\]
+The Schur test gives $\|T_U\|\le\rho$.  Since $T_U\ge0$, the operator $\rho T_U-T_U^2$ is positive semidefinite.  Its quadratic form vanishes on $e_j$, hence
+\[
+ T_U\one_{S_j}=\rho\one_{S_j}.
+\]
+As $U\ge0$ and every row has integral $\rho$, it follows that
+\begin{equation}\label{eq:Ucomponents}
+ U=0\quad\text{a.e. on }S_j\times(\Omega\setminus S_j).
+\end{equation}
+The sets $S_j$ are pairwise disjoint: indeed,
+\[
+ \langle T_Ue_j,T_Ue_k\rangle
+ =\langle e_j,T_U^2e_k\rangle
+ =\rho\langle e_j,T_Ue_k\rangle=0
+\]
+for $j\ne k$; the last equality uses $U=\overline W=0$ on $C_j\times C_k$.
+
+Since $U\ge4c\otimes c$, the cover cannot be positive on two different $U$-components.  Thus either $P$ is contained in one of the $S_j$, or $P$ is disjoint from every $S_j$ and lies in the remaining set $\Omega\setminus\bigcup_jS_j$.
+
+Assume first that $P\subseteq S_1$.  Every zero-cover point belongs to one of the $C_j\subseteq S_j$, so no point lies outside $\bigcup_jS_j$.  Therefore $m\rho=1$ and $m=r-1$.  For $j\ge2$, the component $S_j$ contains no positive-cover point and hence $S_j=C_j$.  In the original graphon $W$, these $r-2$ sets are independent, complete to their complements, and have measure $\rho$.
+
+Let $W_1$ be the normalized restriction of $W$ to $S_1$, and put $y\coloneqq(r-1)x$.  The restriction of $c$ is a fractional $K_2$-cover of $W_1$ of weight $y$: every edge in $W_1$, together with one point from each of the $r-2$ peeled classes, forms a $K_r$.  The complete joins between the $r-1$ components give
+\[
+ e(W)=\frac{r-2}{2(r-1)}+\rho^2e(W_1).
+\]
+Since $e(W)=A_r(x)$, one obtains $e(W_1)=2y^2$.  The location of the $A_r$ interval gives $y>2/5$, and \cref{lem:rank-two-equality} shows that $W_1$ is a clique of measure $2y$ plus an isolated remainder.  Rescaling yields
+\[
+ \mu(X)=2x,
+ \qquad\text{and}\qquad
+ \mu(Z\cap S_1)=\frac1{r-1}-2x,
+\]
+so $W\cong W_A(x)$.
+
+It remains to exclude the second case.  In that case every $S_j=C_j$ is a zero-cover independent class complete to its complement.  Remove all $m$ classes and normalize the remainder.  Put
+\[
+ t\coloneqq r-m,
+ \qquad
+ q\coloneqq1-\frac{m}{r-1}=\frac{t-1}{r-1},
+ \qquad\text{and}\qquad
+ y\coloneqq\frac{x}{q}.
+\]
+The remaining set contains $P$ and therefore has positive measure, so $t\ge2$ and $q>0$.  The restricted cover is a minimum fractional $K_t$-cover.  First, every $K_t$ in the remainder extends to a $K_r$ by choosing one point from each peeled class, so the restriction of $c$ is a $K_t$-cover.  Conversely, every $K_r$ uses at most one point from each peeled independent class and therefore contains a $K_t$ in the remainder.  Thus any smaller $K_t$-cover of the remainder, extended by zero on the peeled classes, would cover every $K_r$ and contradict the minimality of $c$.  This cover is positive almost everywhere, so \cref{lem:approx-CS}(i), applied after normalization, gives $1\le ty$.  But
+\[
+ y<\frac1{2(t-1)}\le\frac1t,
+\]
+where the first inequality follows from the upper endpoint of the $A_r$ interval.  This contradiction finishes the classification.
+
+For \textup{(ii)}, observe that the preceding argument only used $2/(4r-3)\le x<1/(2(r-1))$, the degree and quadratic identities for $A_r$, and equality $e(W)=A_r(x)$.  All three hold at this transition.
+\end{proof}
+
+We finish with the case in which $R_r$ is uniquely active.
+
+\phantomsection\label{sec:Rphase}
+\begin{theorem}\label{thm:R-classification}
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item If $R_r$ is uniquely active at $x$, then
+\[
+ \cM_r(x)=\cE_{r,R}(x).
+\]
+\item Let $x$ be the transition $B_{r,r-1}=R_r$, let $W\in\cM_r(x)$, and let $c$ be a minimum cover.  If the degree relation corresponding to the $R_r$ slope holds, then $W\in\cE_{r,R}(x)$.
+\end{enumerate}
+\end{theorem}
+
+For the proof of part~\textup{(i)} of \cref{thm:R-classification}, let $W\in\cM_r(x)$ and let $c$ be a minimum cover.  Put
+\[
+ \ell\coloneqq1-rx,
+ \qquad\text{and}\qquad
+ \alpha\coloneqq1-(r-1)\ell.
+\]
+The degree identity for $R_r$ is
+\begin{equation}\label{eq:Rdegree}
+ d_W=(r-2)\ell+r\alpha c.
+\end{equation}
+When $R_r$ is uniquely active,
+\begin{equation}\label{eq:ell-small}
+ \ell<\frac1{r^2-r+1},
+\end{equation}
+which is equivalent to the positive gap
+\begin{equation}\label{eq:R-gap}
+ g_R
+ \coloneqq r^2x-\bigl(r-1+(r-1)x\bigr)>0.
+\end{equation}
+Indeed, put $\ell_0\coloneqq1/(r^2-r+1)$.  Then
+\[
+ (d_B-d_R)(\ell_0)
+ =-\frac{r^2-3r+3}{(r^2-r+1)^2}<0,
+\]
+whereas $(d_B-d_R)(0)=1/r^2>0$.  Since the active crossing is the smaller root from \cref{lem:phase-diagram}, it is strictly smaller than $\ell_0$.  The function $R_r$ is uniquely active for the smaller values of $\ell$, which proves \cref{eq:ell-small}.
+
+Put $P\coloneqq\{c>0\}$ and $Z\coloneqq\{c=0\}$.  As before, \cref{lem:approx-CS} gives $\mu(P)\le rx$.
+
+\begin{lemma}\label{lem:R-robust-tight}
+There is $\delta>0$ such that, up to a $\mu^r$-null set, no clique tuple of cover sum below $1+\delta$
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item meets $Z$; or
+\item contains a point $v$ with $c(v)\ge1/(r-1)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Choose $0<\delta<1/(2(r-1))$ so that
+\[
+ \frac{x}{1/(r-1)-\delta}<(r-1)x+\frac{g_R}{2}.
+\]
+We first isolate the full-measure set of clique tuples on which the pointwise argument is legitimate.  Delete tuples having a coordinate where \cref{eq:Rdegree} fails, and delete the null set on which the cover inequality fails.  For each $i\in[r]$, apply Fubini to the set of $(v_1,\ldots,v_r,w)$ for which the tuple obtained by replacing $v_i$ by $w$ is a clique but violates the cover inequality.  After deleting one further null set of $Q=(v_1,\ldots,v_r)$, the following holds simultaneously for every $i$: for almost every $w$, whenever the replacement tuple is a clique, it satisfies the cover inequality.  Call such clique tuples $Q$ \emph{typical}.
+
+Suppose that the set of tuples in either \textup{(i)} or \textup{(ii)} has positive measure, and choose a typical one.  Put $M\coloneqq\max_i c(v_i)$ and choose an index $i$ attaining the maximum.  If $Q$ meets $Z$, then its at most $r-1$ positive values have sum at least one, so $M\ge1/(r-1)$; this lower bound is part of the hypothesis in case \textup{(ii)}.  If $c(w)<M-\delta$ and $w$ were adjacent to every vertex of $Q\setminus\{v_i\}$, then the replacement tuple would be a clique of cover sum less than one, contrary to typicality.  Hence, for almost every such $w$, it misses at least one of those $r-1$ vertices.  Writing $\deg_Q(w)\coloneqq\sum_{j\in[r]}W(v_j,w)$ and integrating gives
+\[
+ \sum_{i\in[r]}d_W(v_i)
+ =\int\deg_Q(w)\,\dd w
+ \le r-1+\mu\{c\ge M-\delta\}
+ \le r-1+\frac{x}{1/(r-1)-\delta}
+ <r-1+(r-1)x+\frac{g_R}{2}.
+\]
+On the other hand, \cref{eq:Rdegree} and the cover inequality on the typical tuple give
+\[
+ \sum_{i\in[r]}d_W(v_i)
+ \ge r(r-2)\ell+r\alpha
+ =r(1-\ell)=r^2x
+ =r-1+(r-1)x+g_R,
+\]
+a contradiction.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:R-classification}]
+By \cref{lem:approx-CS}(ii),(iv) and part \textup{(i)} of \cref{lem:R-robust-tight}, the load of a near-optimal tiling on $Z$ tends to zero.  Hence
+\[
+ rx=\lim_n\int\ell_n
+ =\lim_n\int_P\ell_n\le\mu(P)\le rx.
+\]
+Thus
+\begin{equation}\label{eq:R-support-measures}
+ \mu(P)=rx,
+ \qquad\text{and}\qquad
+ \mu(Z)=\ell.
+\end{equation}
+Part \textup{(ii)} and \cref{lem:approx-CS}(v) show that
+\[
+ \mu\{c\ge1/(r-1)\}=0.
+\]
+Let $H\coloneqq\{c\ge1/(r-1)\}$, so $\mu(H)=0$.  Apart from the null set on which the cover inequality fails, every clique tuple meeting $Z$ has its remaining at most $r-1$ positive cover values summing to at least one, and therefore has a coordinate in $H$.  The union of the coordinate cylinders $\{x_i\in H\}$ has $\mu^r$-measure zero.  Hence the set of $K_r$-tuples meeting $Z$ has measure zero.
+
+Apply \cref{thm:ABHP-input} with $\mu(Z)=\ell$.  Equality at $R_r(x)$ forces $W$ to lie in the $R_r$ family.
+
+This proves \textup{(i)}.  For \textup{(ii)}, let $m_B\coloneqq B_{r,r-1}'(x)$ and $m_R\coloneqq R_r'(x)$ denote the two one-sided slopes.  At this transition $m_B<m_R$.  Moreover, the crossing identity $B_{r,r-1}(x)=R_r(x)$ gives
+\[
+ (m_R-m_B)(1-rx)=g_R>0.
+\]
+Thus the lower degree-sum expression in the proof of \cref{lem:R-robust-tight} exceeds the upper one by this positive quantity, and the same argument applies with this gap.  It gives \cref{eq:R-support-measures} and a null high-cover set; the coordinate-cylinder argument immediately following that lemma then shows that the clique tuples meeting $Z$ form a null set.  The extension-of-Tur\'an equality theorem now applies.
+\end{proof}
+
+\subsection{Transition points and the equality classification}\label{sec:transitions}
+
+It remains to classify extremizers at the finitely many transition points.  We first derive a nonsmooth Euler--Lagrange equation.  The tangential and final transitions can then be treated directly.  At the remaining first-order transitions, the main task is to exclude a multiplier strictly between the two one-sided slopes.
+
+Together with the cases treated in \cref{sec:single-active}, the analysis in this section proves the following complete classification.
+
+\begin{theorem}\label{thm:EC-main}
+For every fixed $r\ge3$ and every $x\in[0,1/r]$,
+\begin{equation}\label{eq:EC}
+ \cM_r(x)=\cE_r^\star(x).
+\end{equation}
+\end{theorem}
+
+When only one construction is active, \cref{thm:EC-main} gives that construction alone.  At a transition point it gives the union of the active constructions.  In the final $R_r$ interval, the extremal constructions form a compact simplex up to coordinate permutations, and different points of this simplex need not be weakly isomorphic.
+
+Let $x_0$ be a first-order transition at which the left and right active quadratics are $f_-$ and $f_+$, with
+\[
+ m_-\coloneqq f_-'(x_0),
+ \qquad
+ m_+\coloneqq f_+'(x_0),
+ \qquad\text{and}\qquad
+ m_-<m_+.
+\]
+
+\begin{lemma}\label{lem:nonsmooth}
+Let $W\in\cM_r(x_0)$ and let $c$ be a minimum cover.  There is $\theta\in[m_-,m_+]$ such that
+\begin{equation}\label{eq:nonsmooth-degree}
+ \lambda\coloneqq2\Phi_r(x_0)-\theta x_0,
+ \qquad\text{and}\qquad
+ d_W=\lambda+\theta c.
+\end{equation}
+If $\theta=m_-$, then
+\[
+ Q_W(h)\le f_-''(x_0)\left(\int ch\right)^2
+\]
+for every bounded mean-zero $h$; the analogous statement holds with $f_+$ if $\theta=m_+$.  If $m_-<\theta<m_+$, then
+\begin{equation}\label{eq:strict-tangent-negative}
+ Q_W(h)\le0
+ \quad\text{whenever}\quad
+ \int h=\int ch=0.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For mean-zero $h$, put $a\coloneqq\int ch$ and $b\coloneqq\int d_Wh$.  If $a=0$, both signs of a small base-measure perturbation keep the cover weight equal to $x_0$, so $b=0$.  Unless $a$ is the zero functional on the mean-zero subspace, it follows that $b=\theta a$ for a scalar $\theta$.  In the exceptional case $c$ is constant almost everywhere; then $b=0$ for every mean-zero $h$, and the same relation holds after choosing any scalar $\theta$.  The two one-sided derivatives of $\Phi_r$ allow the choice $m_-\le\theta\le m_+$.  Integrating determines $\lambda$.
+
+If $\theta$ is an endpoint, perturb toward the side on which the corresponding quadratic is active; the linear term cancels and the second-order comparison gives the asserted quadratic inequality.  If $\theta$ is strict and $a=0$, both perturbation signs keep the parameter fixed, and comparison with $\Phi_r(x_0)$ gives \cref{eq:strict-tangent-negative}.
+\end{proof}
+
+We first dispose of the tangential transition $A_r=B_{r,2}$.
+
+At $x=1/(2(r-1))$ the two construction functions agree and have the same slope; write this slope as $m$.  The first-order argument from \cref{thm:variation} remains two-sided at a differentiability point of $\Phi_r$ and gives
+\[
+ d_W=2\Phi_r(x)-mx+mc.
+\]
+Let $h$ be bounded and mean-zero, and put $a\coloneqq\int ch$.  If $a\ne0$, choose the sign of $t$ for which $x+ta$ lies on the $B_2$ side; if $a=0$, either sign may be used.  The linear term cancels, and the one-sided quadratic comparison gives
+\[
+ Q_W(h)\le B_{r,2}''(x)a^2.
+\]
+Thus the degree and quadratic identities for $B_2$ hold.  By part~\textup{(ii)} of \cref{thm:B-classification}, the extremizer is the common graphon $W_A=W_{B_2}$.
+
+We next treat the final transition $B_{r,r-1}=R_r$.  Let $x_*$ be this crossing, and write $m_B<m_R$ for its slopes.  If $\theta=m_B$, part~\textup{(ii)} of \cref{thm:B-classification} gives $W_{B_{r-1}}(x_*)$.
+
+Assume $\theta>m_B$.  Put $Z\coloneqq\{c=0\}$.  At cover sum one, the degree relation in \cref{eq:nonsmooth-degree} gives
+\[
+ \sum_{j\in[r]}d_W(v_j)
+ =2r\Phi_r(x_*)+\theta(1-rx_*)
+\]
+for every typical clique $(v_1,\ldots,v_r)$ of cover sum one.  When $\theta=m_B$, the right-hand side equals $r-1+(r-1)x_*$.  Thus for $\theta>m_B$ there is a positive gap.  Repeating the argument with typical tuples from \cref{lem:R-robust-tight}, with this degree sum in place of $r^2x$, shows that for some $\delta>0$, up to a null set, no clique tuple of cover sum below $1+\delta$ meets $Z$ or contains a point of cover value at least $1/(r-1)$.  By \cref{lem:approx-CS},
+\[
+ \mu(Z)=1-rx_*,
+ \qquad\text{and}\qquad
+ \mu\{c\ge1/(r-1)\}=0.
+\]
+Let $H\coloneqq\{c\ge1/(r-1)\}$, so $\mu(H)=0$.  Outside the cover-exceptional null set, every clique tuple meeting $Z$ has one of its remaining at most $r-1$ coordinates in $H$.  The union of the corresponding coordinate cylinders is null, so the clique tuples meeting $Z$ form a null set.  Equality in \cref{thm:ABHP-input} gives an $R_r$ graphon.  Hence
+\begin{equation}\label{eq:BR-classification}
+ \cM_r(x_*)=
+ \cE_{r,B_{r-1}}(x_*)\cup\cE_{r,R}(x_*).
+\end{equation}
+
+\phantomsection\label{sec:defects}
+It remains to treat the first-order transitions $B_{r,1}=A_r$ and $B_{r,i}=B_{r,i+1}$ for $2\le i\le r-2$.  The endpoint multipliers are already covered by the arguments for the neighboring constructions, so we only need to rule out a strict interior multiplier.  Fix one such transition point $x$ and assume for contradiction that the multiplier in \cref{lem:nonsmooth} is strict.  Put
+\begin{equation}\label{eq:DL-def}
+ \Delta\coloneqq1-2\Phi_r(x),
+ \qquad
+ L\coloneqq\Delta+\theta x,
+ \qquad\text{and}\qquad
+ d_W=1-L+\theta c.
+\end{equation}
+Let $Z\coloneqq\{c=0\}$ and $P\coloneqq\{c>0\}$.  All endpoint slopes at these transitions are positive, so $\theta>0$.  By \cref{lem:bounded-tangent-density}, the inequality in \cref{eq:strict-tangent-negative}, initially proved for bounded functions, extends to the closed tangent subspace
+\[
+ \mathcal H_c\coloneqq\left\{h\in L^2\colon \int h=\int ch=0\right\}.
+\]
+By \cref{lem:approx-CS},
+\begin{equation}\label{eq:z-lower}
+ z\coloneqq\mu(Z),
+ \qquad
+ \ell\coloneqq1-rx,
+ \qquad\text{and}\qquad
+ z\ge\ell.
+\end{equation}
+
+For mean-zero $h$ supported on $Z$, \cref{eq:strict-tangent-negative} gives $Q_{\overline W}(h)\ge0$.  By \cref{lem:PSD-cluster}(ii), $\overline W[Z]$ is a cluster graphon.  Its zero-row remainder cannot have positive measure, since such a set would support a positive-measure family of $K_r$'s of $W$ with cover sum zero.  Nor can there be $r$ positive-measure cluster classes: choosing one coordinate from each would give the same contradiction.  Therefore
+\[
+ Z=C_1\sqcup\cdots\sqcup C_m,
+ \qquad\text{and}\qquad m\le r-1,
+\]
+where every $C_j$ is independent in $W$ and distinct $C_j,C_k$ are completely joined.
+
+If $h$ is supported on $C_j$ and has mean zero, then $Q_W(h)=0$.  By \cref{lem:null-polarization}, $T_Wh\in\operatorname{span}\{\one,c\}$.  The function $T_Wh$ vanishes on $Z$: the $W$-row into $C_j$ is constant on every class of $Z$.  Hence the constant coefficient is zero.  Also
+\[
+ \int T_Wh=\int d_Wh=0
+\]
+by \cref{eq:DL-def}, so the coefficient of $c$ is zero.  Thus $T_Wh=0$.  By \cref{lem:row-constancy}, $C_j$ is a \emph{global twin class}.
+
+Put $p_j\coloneqq\mu(C_j)$ and define the measurable normalized row average
+\[
+ W(y,C_j)\coloneqq\frac1{p_j}\int_{C_j}W(y,z)\,\dd z.
+\]
+The row-constancy lemma and the fact that $W$ is $\{0,1\}$-valued show that $W(y,C_j)\in\{0,1\}$ for almost every $y$.  Put
+\[
+ D_j\coloneqq\{y\in P\colon W(y,C_j)=0\},
+ \qquad\text{and}\qquad
+ q_j\coloneqq\mu(D_j).
+\]
+The degree of a point in $C_j$ gives
+\begin{equation}\label{eq:pqL}
+ p_j+q_j=L.
+\end{equation}
+For $y\in P$, let
+\[
+ M(y)\coloneqq\{j\colon y\in D_j\},
+ \qquad\text{and}\qquad
+ \overline d_P(y)\coloneqq\int_P(1-W(y,z))\dd z.
+\]
+The pointwise missing-degree identity is
+\begin{equation}\label{eq:point-defect}
+ \theta c(y)=L-\sum_{j\in M(y)}p_j-\overline d_P(y).
+\end{equation}
+Finally, with $\Delta_P\coloneqq\int_{P^2}(1-W)$,
+\begin{equation}\label{eq:global-defect}
+ \Delta=Lz+\sum_jp_jq_j+\Delta_P
+ =mL^2-\sum_jq_j^2+\Delta_P.
+\end{equation}
+
+The following uncrossing argument changes the base measure while preserving the total measure, cover weight, edge density, and degree relation.
+
+\begin{lemma}\label{lem:finite-uncrossing}
+Starting from any extremizer with a strict interior multiplier, finitely many changes of the base measure produce another extremizer with the same $x$, the same cover $c$, the same edge density, and the same degree relation in \cref{eq:DL-def}, for which the sets $D_j$ are linearly ordered modulo null sets.  After relabeling,
+\begin{equation}\label{eq:nested-defects}
+ D_1\subseteq D_2\subseteq\cdots\subseteq D_m.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Suppose that $D_j$ and $D_k$ cross, and put
+\[
+ A\coloneqq D_j\setminus D_k,
+ \qquad\text{and}\qquad
+ B\coloneqq D_k\setminus D_j.
+\]
+Thus $A$ and $B$ have positive measure.  Put
+\[
+ f_S\coloneqq\frac{\one_S}{\mu(S)},
+ \qquad
+ \alpha\coloneqq\int c f_A,
+ \qquad\text{and}\qquad
+ \beta\coloneqq\int c f_B,
+\]
+and define
+\begin{equation}\label{eq:weighted-flat-move}
+ h\coloneqq\beta(f_A-f_{C_j})+\alpha(f_{C_k}-f_B).
+\end{equation}
+We first prove
+\begin{equation}\label{eq:crossing-adjacencies}
+ W=1\quad\text{a.e. on }A\times B,
+ \qquad\text{and}\qquad
+ W=0\quad\text{a.e. on }A^2\cup B^2,
+\end{equation}
+and
+\begin{equation}\label{eq:flat-kernel}
+ \int h=\int ch=0,
+ \qquad\text{and}\qquad
+ T_Wh=0.
+\end{equation}
+Because $A,B\subseteq P$, one has $\alpha,\beta>0$.  By the definitions of $D_j,D_k$ and the common-row property of the classes $C_j,C_k$,
+\[
+ W(A,C_j)=W(B,C_k)=0,
+ \qquad\text{and}\qquad
+ W(A,C_k)=W(B,C_j)=W(C_j,C_k)=1
+\]
+almost everywhere, while $W=0$ on $C_j^2\cup C_k^2$.  Also
+\[
+ \int h=0,
+ \qquad\text{and}\qquad
+ \int ch=\beta\alpha-\alpha\beta=0.
+\]
+Write
+\[
+ w_{AB}\coloneqq\int_{A\times B}W f_Af_B,
+ \quad
+ w_{AA}\coloneqq Q_W(f_A),
+ \quad\text{and}\quad
+ w_{BB}\coloneqq Q_W(f_B).
+\]
+An exact expansion around the four classes gives
+\begin{equation}\label{eq:crossing-Q-expansion}
+ Q_W(h)
+ =\beta^2w_{AA}+\alpha^2w_{BB}
+   +2\alpha\beta(1-w_{AB}).
+\end{equation}
+Every term on the right is nonnegative.  On the other hand, $h$ belongs to the tangent space in \cref{eq:strict-tangent-negative}, so $Q_W(h)\le0$.  Hence all three terms vanish.  Since $W$ is $\{0,1\}$-valued, this proves \cref{eq:crossing-adjacencies} and also $Q_W(h)=0$.
+
+By \cref{lem:null-polarization}, $T_Wh\in\operatorname{span}\{\one,c\}$.  For a typical point of $C_j$, the contributions from $C_k$ and $B$ cancel and the other two contributions vanish; hence $T_Wh=0$ on $C_j$.  Similarly the contributions from $A$ and $C_j$ cancel on $C_k$, so $T_Wh=0$ there as well.  Since $c=0$ on both positive-measure classes, the constant coefficient in $T_Wh=a_0\one+b_0c$ is zero.  Finally,
+\[
+ b_0x=\int T_Wh=\int d_Wh
+ =(1-L)\int h+\theta\int ch=0.
+\]
+All transitions considered here have $x>0$, so $b_0=0$ and \cref{eq:flat-kernel} follows.
+
+We now use this local move to uncross the family.  Let
+\[
+ I\coloneqq\{t\in\R\colon 1+th\ge0\ \text{a.e.}\}=[t_-,t_+].
+\]
+The function $h$ is positive on $A\cup C_k$, negative on $C_j\cup B$, and zero elsewhere, so $t_-<0<t_+$ and at either endpoint at least one of the four sets $A,B,C_j,C_k$ becomes null.  Fix one endpoint $t\in\{t_-,t_+\}$ and put
+\[
+ \dd\mu_t\coloneqq(1+th)\dd\mu.
+\]
+This is again an atomless probability measure because it is absolutely continuous with respect to the atomless measure $\mu$ and $\int h=0$.  The old cover inequalities hold $\mu_t^r$-almost everywhere, and
+\[
+ \int c\,\dd\mu_t=x+t\int ch=x.
+\]
+Moreover, by \cref{eq:flat-kernel},
+\[
+ d_{W,\mu_t}=d_{W,\mu}+tT_Wh=d_{W,\mu},
+\]
+and
+\[
+ e(W,\mu_t)
+ =e(W,\mu)+t\int d_Wh+\frac{t^2}{2}Q_W(h)
+ =\Phi_r(x).
+\]
+Thus $\fcov(K_r,W,\mu_t)\le x$.  The density theorem and the strict monotonicity of $\Phi_r$ give
+\[
+ \Phi_r(x)=e(W,\mu_t)
+ \le \Phi_r\bigl(\fcov(K_r,W,\mu_t)\bigr)
+ \le \Phi_r(x),
+\]
+so the cover remains minimum and the new graphon remains extremal at $x$.  The displayed degree identity shows that the same $L$ and $\theta$ remain valid.  In particular, for every bounded $g$ satisfying
+\[
+ \int g\,\dd\mu_t=\int cg\,\dd\mu_t=0,
+\]
+a further two-sided base-measure perturbation gives $Q_{W,\mu_t}(g)\le0$.  Hence the same strict-multiplier assumptions hold for the new measure.
+
+Let $\mathcal P_{\mathrm{pat}}$ be the collection of positive-measure atoms of the Boolean algebra generated by $D_1,\ldots,D_m$ inside $P$, and define
+\[
+ \kappa\coloneqq m+|\mathcal P_{\mathrm{pat}}|.
+\]
+If the endpoint move makes $C_j$ or $C_k$ null, then $m$ decreases; deleting the corresponding set $D_j$ or $D_k$ can only merge old membership patterns.  If it makes $A$ or $B$ null, at least one positive membership atom disappears.  No new positive-measure pattern can appear because $\mu_t\ll\mu$.  Consequently $\kappa$ strictly decreases after every endpoint move.  Since $\kappa$ is a nonnegative integer, the process terminates.  At termination no two sets $D_j$ cross on sets of positive measure, so they are pairwise comparable modulo null sets and may be relabeled as in \cref{eq:nested-defects}.
+\end{proof}
+
+Apply \cref{lem:finite-uncrossing} and relabel the zero classes so that \cref{eq:nested-defects} holds.  We focus on the smallest set in this nested family.  Put
+\[
+ C\coloneqq C_1,
+ \quad D_0\coloneqq D_1,
+ \quad q\coloneqq\mu(D_0),
+ \quad p\coloneqq\mu(C)=L-q,
+ \quad a\coloneqq\int_{D_0}c,
+ \quad\text{and}\quad z\coloneqq\mu(Z).
+\]
+By nesting, every point of $D_0$ misses every class of $Z$.  Define
+\[
+ I\coloneqq\int_{D_0^2}(1-W),
+ \qquad\text{and}\qquad
+ \beta\coloneqq\int_{D_0\times(\Omega\setminus(C\cup D_0))}(1-W).
+\]
+Integrating \cref{eq:point-defect} over $D_0$ gives
+\begin{equation}\label{eq:q2identity}
+ q^2-\theta a=\beta+I.
+\end{equation}
+Since $D_0$ is anticomplete to $Z\setminus C$,
+\begin{equation}\label{eq:beta-lower}
+ \beta\ge q(z-p).
+\end{equation}
+
+We now peel off the zero-cover class $C$.  Let $R_0\coloneqq\Omega\setminus(C\cup D_0)$ and $\lambda\coloneqq\mu(R_0)=1-L$.  The class $C$ is complete to $R_0$.  By Fubini, for almost every $K_{r-1}$ tuple in the support of $W[R_0]$, adjoining almost every point of $C$ gives a $K_r$ tuple on which the cover inequality holds.  Since $c=0$ on $C$, the restriction of $c$ to $R_0$ is therefore a fractional $K_{r-1}$-cover.  After normalizing the measure on $R_0$, its weight is
+\[
+ y\coloneqq\frac{x-a}{\lambda}.
+\]
+At a $B_{r,j}$ endpoint the peel size is
+\[
+ L_j\coloneqq1-2B_{r,j}(x)+B_{r,j}'(x)x
+ =\frac{1-jx}{r-j},
+\]
+and
+\[
+ 1-(r-1)x-L_j
+ =\frac{(r-j-1)(1-rx)}{r-j}\ge0.
+\]
+At the $A$ endpoint of $B_1=A$, put $L_A\coloneqq1/(r-1)$.  Substituting $x=2/(4r-3)$ gives $L_A<1-(r-1)x$.  Since $L$ lies between the two endpoint values, $L\le1-(r-1)x$.  Consequently $0\le y\le1/(r-1)$.  Decomposing the edge density and using \cref{eq:q2identity} gives the identity
+\begin{equation}\label{eq:local-decomposition}
+ e(W)=L(1-L)+\lambda^2e(W[R_0]/\lambda)
+ +\frac{\theta a}{2}-\frac\beta2.
+\end{equation}
+The density theorem for $K_{r-1}$ therefore yields the local recursion
+\begin{equation}\label{eq:local-recursion}
+ \Phi_r(x)
+ \le L(1-L)+\lambda^2\Phi_{r-1}\left(\frac{x-a}{\lambda}\right)
+ +\frac{\theta a}{2}-\frac\beta2.
+\end{equation}
+
+Combining \cref{eq:q2identity}, \cref{eq:beta-lower}, and $z\ge\ell$ gives
+\[
+ \theta a\le q(L-z).
+\]
+If $L\ge\ell$ and $L-z\le0$, this already forces $a=0$ and $q(L-z)=0$; if $L-z>0$, use $q\le L$ and $L-z\le L-\ell$.  In both cases,
+\begin{equation}\label{eq:a-upper-general}
+ \theta a\le q(L-z)\le L(L-\ell).
+\end{equation}
+If $\ell>L$, the same inequalities force $q=0$.  Then $D_0$ is null, $C$ has measure $L$ and is an independent class complete to its complement, and
+\begin{equation}\label{eq:universal-peel}
+ \Phi_r(x)\le L(1-L)+(1-L)^2\Phi_{r-1}\left(\frac{x}{1-L}\right).
+\end{equation}
+
+\begin{lemma}\label{lem:Bellman-equality}
+At the first-order transition $B_{r,1}=A_r$ with $r\ge4$, and at the active transitions $B_{r,i}=B_{r,i+1}$ with $2\le i\le r-3$, the right-hand side of \cref{eq:universal-peel} is at most $\Phi_r(x)$.  Equality holds only when $L$ is one of the two endpoint peel sizes
+\[
+ L_-\coloneqq1-2\Phi_r(x)+m_-x,
+ \qquad\text{and}\qquad
+ L_+\coloneqq1-2\Phi_r(x)+m_+x.
+\]
+\end{lemma}
+
+\begin{proof}
+Set $u\coloneqq1-L$.  Then \cref{eq:universal-peel} is exactly the inequality in \cref{lem:clique-recursion}, with $q=u$.  The equality clause of that lemma leaves exactly the two maximizing values associated with the active branches.  Since
+\[
+ 1-q_j^*=\frac{1-jx}{r-j}
+ =1-2B_{r,j}(x)+B_{r,j}'(x)x,
+ \qquad\text{and}\qquad
+ 1-\frac{r-2}{r-1}
+ =1-2A_r(x)+A_r'(x)x,
+\]
+these two values of $u$ are equivalent to $L\in\{L_-,L_+\}$.
+\end{proof}
+
+\phantomsection\label{sec:transition-elimination}
+We now apply the preceding reduction to each remaining transition.  First consider $B_{r,1}=A_r$ with $r\ge4$.  Here
+\[
+ x=\frac2{4r-3},
+ \qquad\text{and}\qquad
+ \ell=\frac{2r-3}{4r-3}.
+\]
+The larger endpoint peel size is $L_A=1/(r-1)$, and
+\[
+ \ell-L_A
+ =\frac{2r^2-9r+6}{(4r-3)(r-1)}>0
+ \qquad\text{for }r\ge4.
+\]
+Thus $\ell>L$ for every strict interior multiplier.  \Cref{eq:universal-peel,lem:Bellman-equality} give a contradiction.
+
+Next consider $B_{r,i}=B_{r,i+1}$ with $2\le i\le r-3$, and put $s\coloneqq r-i\ge3$.  At the crossing there is $t>0$ such that
+\[
+ 1-ix=t\sqrt{s},
+ \qquad\text{and}\qquad
+ 1-(i+1)x=t\sqrt{s-1}.
+\]
+The endpoint peel sizes and the zero-set lower bound are
+\[
+ L_i\coloneqq\frac{t}{\sqrt{s}},
+ \qquad\text{and}\qquad
+ L_{i+1}\coloneqq\frac{t}{\sqrt{s-1}},
+\]
+\[
+ \ell=t\bigl(s\sqrt{s-1}-(s-1)\sqrt{s}\bigr).
+\]
+Moreover
+\[
+ \frac{\ell}{L_{i+1}}
+ =\frac{(s-1)\sqrt{s}}{\sqrt{s}+\sqrt{s-1}}>1.
+\]
+Again $\ell>L$ throughout the strict multiplier interval, and \cref{lem:Bellman-equality} gives a contradiction.
+
+For $r\ge5$, it remains to treat $B_{r,r-2}=B_{r,r-1}$.  Put $d\coloneqq r-2\ge3$, $\omega\coloneqq\sqrt2-1$, and
+\[
+ b\coloneqq\frac1{1+(d+1)\omega}.
+\]
+At the crossing,
+\[
+ x=\omega b,
+ \qquad
+ \Delta=b^2,
+ \qquad\text{and}\qquad
+ \ell=(2-\sqrt2)b,
+\]
+and the endpoint peel sizes are
+\[
+ L_0\coloneqq\frac b{\sqrt2},
+ \qquad\text{and}\qquad
+ L_1\coloneqq b.
+\]
+For $L_0<L<L_1$, put $\theta\coloneqq(L-b^2)/x$, $\lambda\coloneqq1-L$, and
+\[
+ A_*\coloneqq\frac{L(L-\ell)}{\theta}.
+\]
+Then \cref{eq:a-upper-general} gives
+\[
+ 0\le a\le A_*.
+\]
+The relevant part of $\Phi_{r-1}$ is
+\[
+ \max\{P_d(y),R_{r-1}(y)\},
+ \qquad\text{where}\qquad
+ P_d(y)\coloneqq dy-\frac{d^2y^2}{2}=B_{r-1,r-2}(y).
+\]
+The estimate in \cref{prop:last-general-transition-estimate} shows, for every $0\le a\le A_*$,
+\[
+ L(1-L)+\lambda^2\Phi_{r-1}\left(\frac{x-a}{\lambda}\right)
+ +\frac{\theta a}{2}<\Phi_r(x),
+\]
+contradicting \cref{eq:local-recursion} even after the nonpositive term $-\beta/2$ is discarded.
+
+Two low-dimensional transitions remain.  For $r=3$, the transition $B_{3,1}=A_3$ occurs at $x=2/9$.  The zero-cover set has at most two classes; the two-class case contradicts $L<1/2$, and the one-class case reduces through \cref{eq:local-recursion} to \cref{prop:r3-transition-estimate}.
+
+For $r=4$, the transition $B_{4,2}=B_{4,3}$ occurs at $x=(4-\sqrt2)/14$.  In the required range, $\Phi_3$ is the maximum of the $A_3$, $B_{3,2}$, and $R_3$ branches.  \Cref{prop:r4-transition-estimate} rules out every interior multiplier.
+
+We can now combine the preceding arguments with the transition-point analysis.
+
+\begin{proof}[Proof of \cref{thm:EC-main}]
+The inclusion $\cE_r^\star(x)\subseteq\cM_r(x)$ is \cref{lem:construction-validity}.  It remains to classify an arbitrary $W\in\cM_r(x)$.
+
+At $x=0$, one has $\til(K_r,W)=0$, so the set of clique tuples meeting $Z\coloneqq\Omega$ has measure zero.  Applying \cref{thm:ABHP-input} with $z=1$ gives the balanced complete $(r-1)$-partite graphon; the $B_1$ and $A$ descriptions coincide with this graphon.  At $x=1/r$, equality $e(W)=1/2$ forces the complete graphon, the final member of the $R$ family.
+
+When only one construction is active, apply part~\textup{(i)} of each of \cref{thm:B-classification,thm:A-classification,thm:R-classification}.  At $A=B_2$ use the tangential argument, and at $B_{r,r-1}=R$ use \cref{eq:BR-classification}.  At every remaining first-order transition, an endpoint multiplier gives a graphon from an active construction by part~\textup{(ii)} of \cref{thm:B-classification} or \cref{thm:A-classification}; the preceding argument rules out a strict interior multiplier.  The cases listed in \cref{lem:phase-diagram} cover all $x\in[0,1/r]$.
+\end{proof}
+
+\subsection{Stability}\label{sec:formal-stability}
+
+This section derives the graphon and finite stability theorems from the equality classification in \cref{eq:EC}; the details of the classification proof are no longer needed.  We first compare cut distance with $L^1$ distance for the bounded-step constructions and record their continuity in the parameter.  Compactness then gives uniform graphon stability, and a rounding lemma transfers it to finite graphs.
+
+\begin{lemma}\label{lem:cut-L1}
+Let $U$ be a $\{0,1\}$-valued step graphon with a partition into at most $M$ blocks.  Then
+\[
+ \distone(W,U)\le M^2\distsq(W,U).
+\]
+\end{lemma}
+
+\begin{proof}
+Fix $\gamma>0$ and choose a relabeling for which the cut norm is at most $\distsq(W,U)+\gamma$.  Let $P_1,\ldots,P_m$, $m\le M$, be the blocks of $U$.  On each rectangle $P_a\times P_b$, the function $W-U$ has a fixed sign because $U$ is identically $0$ or $1$ there.  Hence
+\[
+ \begin{aligned}
+ \|W-U\|_1
+ &=\sum_{a,b}\int_{P_a\times P_b}|W-U|\\
+ &=\sum_{a,b}\left|\int_{P_a\times P_b}(W-U)\right|\\
+ &\le m^2\|W-U\|_\square.
+ \end{aligned}
+\]
+Taking the infimum over relabelings and then letting $\gamma\downarrow0$ proves the claim.
+\end{proof}
+
+We also need the construction families to vary continuously with the parameter, including at their endpoints.
+
+\begin{lemma}\label{lem:construction-continuity}
+For fixed $r$, the construction families have the following properties.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item Every graphon in these families has at most $2r-1$ blocks.
+\item If $x_n\to x$ and $U_n\in\cE_{r,\tau}(x_n)$, a subsequence converges in $L^1$ to a member of $\cE_{r,\tau}(x)$ or to the adjacent degenerate construction at a domain endpoint.
+\item If $U\in\cE_r^\star(x)$ and $x_n\to x$, there are $\eta_n\to0$ and $U_n\in\cE_r(x_n;\eta_n)$ such that $\distone(U_n,U)\to0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+For $B_i$ and $A$, all block measures are continuous affine functions of $x$.  At $x=1/(2(r-1))$, the $Z$-block of the $A$ graphon disappears and the limit is the $B_2$ graphon.  For $R$, the parameter simplex
+\[
+ \{\vct z=(z_1,\ldots,z_{r-1})\in[0,\ell]^{r-1}\colon
+   \sum_jz_j=\ell\}
+\]
+is compact and depends continuously on $\ell=1-rx$.  Scaling the $z_j$ gives the required approximants when $\ell>0$; when $\ell\to0$, all members converge to the complete graphon.  At a transition point, an active construction on one side is automatically near-active on the other side because the construction density functions are continuous.
+\end{proof}
+
+The two preceding lemmas turn compactness in cut distance into the required uniform $L^1$ statement.
+
+\begin{theorem}\label{thm:uniform-graphon-stability}
+Fix $r\ge3$.  For every $\eps>0$ and $\eta>0$ there is $\delta>0$ such that, for every $x\in[0,1/r]$ and every graphon $W$ satisfying
+\[
+ \til(K_r,W)\le x,
+ \qquad\text{and}\qquad
+ e(W)\ge \Phi_r(x)-\delta,
+\]
+we have
+\[
+ \distone\bigl(W,\cE_r(x;\eta)\bigr)<\eps.
+\]
+Here $\cE_r(x;\eta)$ is the union of construction families whose density is within $\eta$ of $\Phi_r(x)$.
+\end{theorem}
+
+\begin{proof}[Proof of \cref{thm:uniform-graphon-stability} from \cref{eq:EC}]
+Suppose the theorem fails.  Then there are fixed $\eps,\eta>0$, parameters $x_n$, and graphons $W_n$ such that
+\[
+ \til(K_r,W_n)\le x_n,
+ \qquad\text{and}\qquad
+ e(W_n)\ge \Phi_r(x_n)-1/n,
+\]
+but $\distone(W_n,\cE_r(x_n;\eta))\ge\eps$.
+
+Take a subsequence with $x_n\to x$ and $W_n\to W$ in cut distance.  The density theorem gives $e(W_n)\le \Phi_r(x_n)$, so $e(W_n)\to \Phi_r(x)$.  Lower semicontinuity gives $\til(K_r,W)\le x$.  Hence $e(W)=\Phi_r(x)$ and, by \cref{eq:EC}, $W\in\cE_r^\star(x)$.
+
+By \cref{lem:construction-continuity}, choose $U_n\in\cE_r(x_n;\eta_n)$, $\eta_n\to0$, with $\distone(U_n,W)\to0$.  Then $\distsq(W_n,U_n)\to0$.  Since each $U_n$ has at most $2r-1$ blocks, \cref{lem:cut-L1} yields $\distone(W_n,U_n)\to0$.  For large $n$, $U_n\in\cE_r(x_n;\eta)$, a contradiction.
+\end{proof}
+
+To return to finite graphs, we round the blocks of a nearby step graphon to integer vertex classes.
+
+\begin{lemma}\label{lem:rounding}
+Let $U_n$ be $\{0,1\}$-valued step graphons with at most $M$ blocks, and let $G_n$ be $n$-vertex graphs.  If $\distone(W_{G_n},U_n)=o(1)$, then there are finite blow-ups $H_n$ of the templates $U_n$ such that
+\[
+ \edit(G_n,H_n)=o(n^2).
+\]
+If $U_n$ belongs to a construction family at $x_n=k_n/n$, then $H_n$ can be chosen as an integer rounding of the corresponding finite construction.
+\end{lemma}
+
+\begin{proof}
+After a relabeling, assume $\|W_{G_n}-U_n\|_1=o(1)$.  Let $P_1,\ldots,P_m$ be the blocks of $U_n$.  A vertex interval $I_v$ may intersect several $P_j$.  Put
+\[
+ \alpha_{v,j}\coloneqq n\mu(I_v\cap P_j),
+ \qquad\text{and}\qquad \sum_j\alpha_{v,j}=1.
+\]
+Independently assign $v$ to part $j$ with probability $\alpha_{v,j}$, and then impose the $\{0,1\}$-valued template.  The expected number of incorrect unordered pairs is
+\[
+ \frac{n^2}{2}\|W_{G_n}-U_n\|_1+O(n)=o(n^2).
+\]
+Write this expectation as $\eta_n n^2$, where $\eta_n\to0$.  Markov's inequality shows that the number of incorrect pairs is at most $\sqrt{\eta_n}\,n^2$ with probability $1-o(1)$.  Since the number of parts is bounded, Hoeffding's inequality and a union bound show that all part sizes differ from their expectations by $O_M(\sqrt n)$ with probability bounded away from zero.  The two events therefore intersect for all large $n$.  Moving $O_M(\sqrt n)$ vertices adjusts all parts to the prescribed integer sizes and costs $O_M(n^{3/2})=o(n^2)$ further edits.
+\end{proof}
+
+We can now deduce the finite stability theorem.
+
+\begin{proof}[Proof of \cref{thm:finite-stability} from \cref{eq:EC}]
+If the theorem fails, take a counterexample sequence $G_j,k_j$, where $n_j\coloneqq|V(G_j)|\to\infty$, with edge deficit $o(n_j^2)$ and edit distance at least $\eps n_j^2$ from every $\eta$-active construction.  Pass to a subsequence with $k_j/n_j\to x$ and $W_{G_j}\to W$ in cut distance.  The finite-to-graphon transference inequality in \cref{eq:finite-tiling-transference} gives
+\[
+ \til(K_r,W)\le\liminf_j\frac{\nu(K_r,G_j)}{n_j}\le x.
+\]
+Edge convergence and the density theorem yield $e(W)=\Phi_r(x)$.  By \cref{eq:EC}, $W$ belongs to an active construction family at $x$.  Use \cref{lem:construction-continuity} to choose $\eta$-active construction graphons $U_j$ at $k_j/n_j$ converging to $W$ in $L^1$.  Then $\distsq(W_{G_j},U_j)\to0$, hence $\distone(W_{G_j},U_j)\to0$ by \cref{lem:cut-L1}.  Apply \cref{lem:rounding}, contradicting the edit-distance assumption.
+\end{proof}
+
+We conclude with two useful forms of the stability theorem, collected in one statement.
+
+\begin{corollary}\label{cor:stability-forms}
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item Let $(G_m)_{m\ge1}$ be a sequence of graphs with $n_m\coloneqq|V(G_m)|\to\infty$, and let $k_m$ be integers satisfying $0\le k_m\le\lfloor n_m/r\rfloor$.  Put $x_m\coloneqq k_m/n_m$, and suppose that $\nu(K_r,G_m)\le k_m$ and
+\[
+ e(G_m)=\Phi_r(x_m)n_m^2-o(n_m^2).
+\]
+Then there are constructions $\tau_m$ and corresponding graphs $E_m$ such that
+\[
+ \frac{\edit(G_m,E_m)}{n_m^2}
+ +\Phi_r(x_m)-D_{r,\tau_m}(x_m)
+ \longrightarrow0.
+\]
+\item Let $J$ be a compact interval on which a unique construction $\tau_0$ satisfies $D_{r,\tau_0}=\Phi_r$.  For every $\eps>0$ there are $\delta>0,n_0$ such that every $n$-vertex graph $G$, with integers $n\ge n_0$ and $0\le k\le\lfloor n/r\rfloor$, $k/n\in J$, $\nu(K_r,G)\le k$, and
+\[
+ e(G)\ge\bigl(\Phi_r(k/n)-\delta\bigr)n^2,
+\]
+satisfies
+\[
+ \edit\bigl(G,\cE_{r,\tau_0}(n,k)\bigr)\le\eps n^2.
+\]
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+For \textup{(i)}, apply \cref{thm:finite-stability} with $\eps=\eta=1/q$ for each integer $q\ge1$, obtaining parameters $\delta_q,N_q$.  Choose a nondecreasing sequence $q(m)\to\infty$ so slowly that $n_m\ge N_{q(m)}$ and the edge deficit of $G_m$ is at most $\delta_{q(m)}n_m^2$.  The construction supplied by the theorem then satisfies
+\[
+ \frac{\edit(G_m,E_m)}{n_m^2}\le\frac1{q(m)},
+ \qquad\text{and}\qquad
+ \Phi_r(x_m)-D_{r,\tau_m}(x_m)\le\frac1{q(m)},
+\]
+which proves \textup{(i)}.
+
+For \textup{(ii)}, compactness of $J$ and continuity of the finitely many construction density functions give
+\[
+ \gamma_J\coloneqq\min_{x\in J}\min_{\tau\ne\tau_0}
+ \bigl(\Phi_r(x)-D_{r,\tau}(x)\bigr)>0.
+\]
+Apply \cref{thm:finite-stability} with any $\eta<\gamma_J$; then the selected construction must be $\tau_0$.
+\end{proof}
+
+\section{An application to rainbow clique tilings}\label{sec:rainbow}
+
+We now prove \cref{cor:rainbow-tiling}.  The main point is that \cref{thm:weighted-density} gives the sharp density estimate needed in a directed-graph reduction of Lo and Williams \cite{LW24}.
+
+A digraph may contain both arcs $uv$ and $vu$.  Its \emph{base graph} has an edge $uv$ whenever at least one of these arcs is present, while $D^\pm$ is the simple graph formed by the pairs for which both arcs are present.  Let $\mathcal K_{r,r-2}$ be the family of $r$-vertex digraphs whose base graph is complete and whose minimum out-degree is at least $r-2$.  A \emph{fractional $(r,r-2)$-tiling} in a digraph $D$ assigns a nonnegative weight $t_K$ to every copy $K\in\mathcal K_{r,r-2}(D)$ such that
+\[
+ \sum_{K\in\mathcal K_{r,r-2}(D)\colon v\in V(K)}t_K\le1
+ \qquad\text{for every }v\in V(D).
+\]
+Such a tiling is \emph{perfect} if equality holds for every vertex.
+
+We first identify the branch of the density function that is relevant at the new threshold.
+
+\begin{lemma}\label{lem:rainbow-branch}
+Let $r\ge4$, and let $\rho_r$ be defined by \cref{eq:rainbow-rho-intro}.  For every $\rho_r\le\rho\le1$,
+\begin{equation}\label{eq:rainbow-branch}
+ \Phi_{r-1}\left(\frac1{r\rho}\right)
+ =B_{r-1,r-2}\left(\frac1{r\rho}\right)
+ =\frac{r-2}{r\rho}-\frac{(r-2)^2}{2r^2\rho^2}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put $s\coloneqq r-1$ and $x\coloneqq1/(r\rho)$.  The formula for $\rho_r$ gives
+\[
+ \rho_r\ge\frac{2r-1}{2r},
+\]
+and hence
+\[
+ \frac1{s+1}\le x\le\frac2{2s+1}<\frac1s.
+\]
+For $1\le i\le s-1$, put $j\coloneqq s-i$.  Direct subtraction gives
+\[
+ B_{s,s-1}(x)-B_{s,i}(x)
+ =\frac{j-1}{2}
+ \left(x^2-\frac{(1-sx)^2}{j}\right)\ge0,
+\]
+because $0\le1-sx\le x$.  The function $A_s$ is outside its domain on this interval, except that for $s=3$ it is defined at $x=1/4$ and satisfies $A_3(1/4)=B_{3,2}(1/4)$.
+
+It remains to compare $B_{s,s-1}$ with $R_s$.  The difference
+\[
+ g_s(x)\coloneqq B_{s,s-1}(x)-R_s(x)
+ =-\frac{s-2}{2}+(s^2-s-1)x-\frac{(s-1)(s^2+s-1)}2x^2
+\]
+is concave, and
+\[
+ g_s\left(\frac1{s+1}\right)=\frac{s-1}{2(s+1)^2},
+ \qquad\text{and}\qquad
+ g_s\left(\frac2{2s+1}\right)=\frac{3(s-2)}{2(2s+1)^2}.
+\]
+Thus $g_s$ is nonnegative throughout the required interval.  The definition of $\Phi_s$ now gives \cref{eq:rainbow-branch}.
+\end{proof}
+
+The directed-graph part of the argument is the following consequence of the weighted inequality.
+
+\begin{proposition}\label{prop:digraph-fractional}
+For every integer $r\ge4$, every digraph $D$ on $N$ vertices with
+\[
+ \delta^+(D)\ge\rho_rN
+\]
+contains a perfect fractional $(r,r-2)$-tiling.
+\end{proposition}
+
+\begin{proof}
+Suppose otherwise.  The Farkas certificate for fractional tilings \cite[Corollary~6.3]{LW24} gives a function $c\colon V(D)\to[0,1]$ such that
+\begin{equation}\label{eq:rainbow-farkas}
+ c(K)\ge1\quad\text{for every }K\in\mathcal K_{r,r-2}(D),
+ \qquad
+ \min_{v\in V(D)}c_v=0,
+ \qquad\text{and}\qquad
+ c(V(D))<\frac Nr,
+\end{equation}
+where $c(S)\coloneqq\sum_{v\in S}c_v$.  Choose $v_0\in V(D)$ with $c_{v_0}=0$, and put
+\[
+ W\coloneqq N_D^+(v_0),\qquad m\coloneqq|W|,\qquad q\coloneqq\frac mN,\qquad\text{and}\qquad H\coloneqq D^\pm[W].
+\]
+Then $q\ge\rho_r$.  Every copy of $K_{r-1}$ in $H$, together with $v_0$, belongs to $\mathcal K_{r,r-2}(D)$.  Consequently, \cref{eq:rainbow-farkas} shows that $c|_W$ is a fractional $K_{r-1}$-cover of $H$.
+
+Give every vertex of $H$ weight $1/m$.  Since
+\[
+ \frac{c(W)}m<\frac1{rq}\le\frac1{r\rho_r}<\frac1{r-1},
+\]
+\cref{thm:weighted-density}, the monotonicity of $\Phi_{r-1}$ from \cref{lem:phase-diagram}, and \cref{lem:rainbow-branch} give
+\begin{equation}\label{eq:rainbow-upper}
+ \frac{e(H)}{m^2}
+ \le \Phi_{r-1}\left(\frac{c(W)}m\right)
+ \le \Phi_{r-1}\left(\frac1{rq}\right)
+ \le \Phi_{r-1}\left(\frac1{r\rho_r}\right).
+\end{equation}
+
+On the other hand, every $w\in W$ has at least $(\rho_r+q-1)N$ out-neighbours in $W$.  Each unordered pair in $W$ accounts for at most one arc, together with one additional arc precisely when it is an edge of $H$.  Therefore
+\[
+ \binom m2+e(H)
+ \ge\sum_{w\in W}d^+_{D[W]}(w)
+ \ge m(\rho_r+q-1)N.
+\]
+After division by $m^2$, and using $q\ge\rho_r$, this gives
+\begin{equation}\label{eq:rainbow-lower}
+ \frac{e(H)}{m^2}
+ \ge\frac12-\frac{1-\rho_r}{q}+\frac1{2m}
+ \ge\frac{3\rho_r-2}{2\rho_r}+\frac1{2m}.
+\end{equation}
+By \cref{lem:rainbow-branch},
+\[
+ \Phi_{r-1}\left(\frac1{r\rho_r}\right)
+ =\frac{r-2}{r\rho_r}-\frac{(r-2)^2}{2r^2\rho_r^2}.
+\]
+The number $\rho_r$ is the larger root of
+\begin{equation}\label{eq:rainbow-quadratic}
+ 3r^2\rho^2-4r(r-1)\rho+(r-2)^2=0,
+\end{equation}
+so the last display equals $(3\rho_r-2)/(2\rho_r)$.  This contradicts the strict gap between \cref{eq:rainbow-upper,eq:rainbow-lower}.
+\end{proof}
+
+\begin{proof}[Proof of \cref{cor:rainbow-tiling}]
+Lo and Williams reduce an almost perfect rainbow-$K_r$-tiling to a perfect fractional $(r,r-2)$-tiling in a reduced digraph and then use an absorbing set to cover the remaining vertices \cite[Sections~4--7]{LW24}.  Replace their fractional-tiling input with \cref{prop:digraph-fractional}; the usual hierarchy absorbs the losses from the directed-graph conversion and the regularity lemma into $\eps$.  Their absorption step applies because the formula in \cref{eq:rainbow-rho-intro} gives
+\[
+ \rho_r>1-\frac1{2(r-1)}.
+\]
+The resulting near-perfect rainbow tiling and the absorbing set together form a perfect rainbow-$K_r$-tiling.
+\end{proof}
+
+We finish by comparing the new threshold with the bounds of Lo and Williams.
+
+\begin{remark}\label{rem:rainbow-comparison}
+For $r=4$,
+\[
+ \rho_4=\frac{3+\sqrt6}{6}\approx0.908248,
+\]
+which is slightly smaller than their constant $(2+\sqrt{13/2})/5\approx0.909902$.  For $r\ge5$, it improves their general bound $1-1/(r(2r-3))$.  Indeed,
+\[
+ \rho_r
+ =1-\frac4{r\bigl(r+2+\sqrt{r^2+4r-8}\bigr)}
+ =1-\frac2{r^2}+O(r^{-3}),
+\]
+whereas their bound is $1-1/(2r^2)+O(r^{-3})$.  The case $r=3$ is excluded: applying $\Phi_2$ directly gives a weaker constant than the argument of Lo and Williams designed specifically for directed triangles.
+
+At the threshold, the active function is $B_{r-1,r-2}$.  Its extremal support is a split graph consisting of a clique joined completely to an independent set.  Thus any further improvement by this method would require information from the one-way arcs or from the edge colouring, rather than only the double-edge graph $D^\pm[N_D^+(v_0)]$.
+\end{remark}
+
+\appendix
+
+\section{Transition estimates}\label{app:transition-estimates}
+
+\subsection{The \texorpdfstring{$r=3$ transition $B_{3,1}=A_3$}
+{r = 3 transition B(3,1) = A(3)}}\label{app:r3-transition}
+
+We verify the strict inequality used for the exceptional transition in clique size three.
+
+\begin{proposition}\label{prop:r3-transition-estimate}
+At the transition $B_{3,1}=A_3$, no strict interior multiplier satisfies the local recursion in \cref{eq:local-recursion}.
+\end{proposition}
+
+\begin{proof}
+At $x=2/9$,
+\[
+ \Phi_3(x)=\frac{113}{324},
+ \qquad\text{and}\qquad
+ \Delta\coloneqq\frac{49}{162},
+\]
+and the endpoint slopes are $7/18$ and $8/9$.  Let a strict interior multiplier be given and put
+\[
+ L\coloneqq\Delta+\theta x,
+ \qquad
+ \frac7{18}<L<\frac12,
+ \qquad\text{and}\qquad
+ u\coloneqq18L-7\in(0,2).
+\]
+Let $c$ be the corresponding minimum cover, and put $P\coloneqq\{c>0\}$.
+Then
+\[
+ \frac\theta L=\frac{9u+14}{2u+14}>1.
+\]
+Thus the degree bound $1-L+\theta c\le1$ gives $c<1$, so every triangle contains at least two positive-cover points.  The zero-cover set has at most two complete-multipartite parts.
+
+If it has two parts, every positive point must miss at least one part; otherwise it forms a triangle with one zero point from each part.  If $q_1,q_2$ are the measures of the two nonneighbor sets, then
+\[
+ q_1+q_2\ge\mu(P).
+\]
+Using $p_j+q_j=L$ and $\mu(P)+\mu(Z)=1$ gives $2L\ge1$, a contradiction.
+
+Thus the zero-cover set has one part $C$, of measure $p\ge1-3x=1/3$.  Let $D_0\subseteq P$ be the set of points anticomplete to $C$, as in \cref{sec:defects}, and put $q\coloneqq L-p$, $a\coloneqq\int_{D_0}c$, and
+\[
+ A\coloneqq\frac{(L-1/3)^2}{\theta}.
+\]
+Then $0\le a\le A$.
+The local rank-two recursion requires
+\[
+ \frac{113}{324}
+ \le
+ \Psi(a)
+ \coloneqq
+ L(1-L)+(1-L)^2\Phi_2\left(\frac{2/9-a}{1-L}\right)+\frac{\theta a}{2}.
+\]
+In terms of $u$,
+\[
+ L\coloneqq\frac{u+7}{18},
+ \quad
+ \theta\coloneqq\frac{9u+14}{36},
+ \quad\text{and}\quad
+ A\coloneqq\frac{(u+1)^2}{9(9u+14)}.
+\]
+The rank-two branches meet at $y=2/5$, corresponding to
+\[
+ a_c\coloneqq\frac{u-1}{45}.
+\]
+Moreover
+\[
+ \frac25-\frac{2/9-A}{1-L}
+ =\frac{2(4u^2-5u-19)}{5(u-11)(9u+14)}>0
+ \qquad\text{for }0<u<2,
+\]
+so $a=A$ always lies on the Erd\H{o}s--Gallai star branch.  The only possible maxima are $a=0$, $a=A$, $a=a_c$, and the stationary point
+\[
+ a_*\coloneqq\frac{13u-14}{72}
+\]
+when it lies in the concave branch.  A direct calculation gives
+\[
+ \Psi(0)-\frac{113}{324}
+ =\begin{cases}
+ -u^2/324,&0<u\le1,\\
+ -(2-u)^2/324,&1\le u<2,
+ \end{cases}
+\]
+\[
+ \Psi(A)-\frac{113}{324}
+ =-
+ \frac{49u^4+230u^3+383u^2+352u+200}
+ {648(9u+14)^2},
+\]
+\[
+ \Psi(a_c)-\frac{113}{324}
+ =\frac{(u-11)(11u-6)}{16200}<0
+ \quad\text{for }u\ge1.
+\]
+The stationary point is feasible only when
+\[
+ \frac{62}{57}\le u\le
+ \frac{-20+2\sqrt{5659}}{109}<\frac65.
+\]
+On this interval,
+\[
+ \Psi(a_*)-\frac{113}{324}
+ =\frac{137u^2-364u+196}{10368}<0,
+\]
+because the two roots of the numerator are $(182\pm56\sqrt2)/137$, outside the displayed feasible interval.  Thus the local recursion is impossible.  Only endpoint multipliers remain, giving the two active constructions.
+\end{proof}
+
+\subsection{The \texorpdfstring{$r=4$ transition $B_{4,2}=B_{4,3}$}
+{r = 4 transition B(4,2) = B(4,3)}}\label{app:r4-transition}
+
+Here we carry out the corresponding calculation for the exceptional transition in clique size four.
+
+\begin{proposition}\label{prop:r4-transition-estimate}
+At the transition $B_{4,2}=B_{4,3}$, no strict interior multiplier satisfies the local recursion in \cref{eq:local-recursion}.
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+ x_0\coloneqq\frac{4-\sqrt2}{14},
+ \qquad\text{and}\qquad
+ F\coloneqq\frac{3(29-2\sqrt2)}{196},
+\]
+\[
+ \Delta\coloneqq1-2F=\frac{11+6\sqrt2}{98},
+ \qquad\text{and}\qquad
+ \ell\coloneqq1-4x_0=\frac{2\sqrt2-1}{7}.
+\]
+The endpoint slopes are
+\[
+ m_2\coloneqq\frac{3+\sqrt2}{7},
+ \qquad\text{and}\qquad
+ m_3\coloneqq\frac{3(2+3\sqrt2)}{14},
+\]
+and the endpoint peel sizes are
+\[
+ L_2\coloneqq\frac{3+\sqrt2}{14},
+ \qquad\text{and}\qquad
+ L_3\coloneqq\frac{2+3\sqrt2}{14}.
+\]
+Assume $L_2<L<L_3$, set $\theta\coloneqq(L-\Delta)/x_0$, $\lambda\coloneqq1-L$, and
+\[
+ A(L)\coloneqq\frac{L(L-\ell)}{\theta}.
+\]
+Define
+\[
+ \Phi_L(a)\coloneqq
+ L(1-L)+\lambda^2\Phi_3\left(\frac{x_0-a}{\lambda}\right)+\frac{\theta a}{2}
+\]
+for $0\le a\le A(L)$.  The local recursion would require $F\le\Phi_L(a)$ for some such $a$.  Put $y\coloneqq(x_0-a)/\lambda$ and
+\[
+ z\coloneqq\frac{L-L_2}{L_3-L_2}\in(0,1),
+ \qquad\text{and}\qquad
+ L=L_2+z(L_3-L_2).
+\]
+Since $0\le a\le A(L)$,
+\[
+ \frac{x_0-A(L)}{1-L}\le y\le\frac{x_0}{1-L}.
+\]
+A direct calculation gives
+\[
+ \frac{x_0-A(L)}{1-L}-\frac29
+ =\frac{(113\sqrt2-144)(1-z)^2}
+ {(504\sqrt2-1134)
+  (z+(2+3\sqrt2)/7)(z-1-3\sqrt2)}>0,
+\]
+and
+\[
+ \frac13-\frac{x_0}{1-L}
+ =\frac{(1-2\sqrt2)(z-1)}
+ {(3-6\sqrt2)(z-1-3\sqrt2)}>0.
+\]
+Thus $2/9<y<1/3$ throughout the strict multiplier region, so the only active branches of $\Phi_3$ are $A_3$, $B_{3,2}$, and $R_3$.  We also record the two endpoint inequalities needed below.  Since $L>L_2$,
+\[
+ \frac{x_0}{1-L}
+ >\frac{x_0}{1-L_2}
+ =\frac{6-\sqrt2}{17}>\frac14.
+\]
+Furthermore the function
+\[
+ y_A(L)\coloneqq\frac{x_0-A(L)}{1-L}
+\]
+is decreasing on $[L_2,L_3]$.  Indeed, after the substitution $L=L_2+z(L_3-L_2)$, direct differentiation gives
+\[
+ \frac{\dd y_A}{\dd z}
+ =\frac{(596-401\sqrt2)(z-1)(z+2\sqrt2+3)}
+ {(-28+7\sqrt2)^2
+  \left(z+\frac{2+3\sqrt2}{7}\right)^2
+  (z-3\sqrt2-1)^2}<0
+\]
+for $0<z<1$; here $596>401\sqrt2$.  Hence
+\[
+ y_A(L)\le y_A(L_2)
+ =\frac{5+2\sqrt2}{34}<\frac14.
+\]
+Consequently, whenever the $R_3$ branch is nonempty its feasible endpoints are $a=0$ and the boundary with $B_{3,2}$, while the $A_3$ branch has endpoints at the boundary with $B_{3,2}$ and at $a=A(L)$.
+
+The difference is
+\[
+ H_B(L,a)\coloneqq-(L-L_2)^2+C(L)a-2a^2,
+\]
+where
+\[
+ C(L)\coloneqq4x_0-2(1-L)+\frac\theta2.
+\]
+The affine function $2\sqrt2(L-L_2)-C(L)$ has endpoint values
+\[
+ \frac{3+\sqrt2}{14},
+ \qquad\text{and}\qquad
+ \frac{26-17\sqrt2}{28},
+\]
+which are positive.  Hence
+\[
+ C(L)<2\sqrt2(L-L_2).
+\]
+If $C(L)\le0$ the result is immediate; otherwise
+\[
+ \max_{a\ge0}(C(L)a-2a^2)=\frac{C(L)^2}{8}<(L-L_2)^2.
+\]
+Hence $H_B<0$.
+
+Define the difference on this branch by
+\[
+ H_R(L,a)\coloneqq
+ L(1-L)+\lambda^2R_3\left(\frac{x_0-a}{\lambda}\right)
+ +\frac{\theta a}{2}-F.
+\]
+It is convex in $a$, so its maximum on the branch occurs at $a=0$ or at the boundary with $B_{3,2}$.  The latter is already handled.  At $a=0$,
+\[
+ H_R(L,0)
+ =-\frac12\left(\frac{22-9\sqrt2}{14}-L\right)(L_3-L)<0.
+\]
+
+On $2/9\le y\le1/4$ use the chord
+\[
+ A_3(y)\le\frac5{36}+\frac{17}{18}y,
+\]
+since
+\[
+ \frac5{36}+\frac{17}{18}y-A_3(y)
+ =-\frac{(4y-1)(9y-2)}{18}\ge0.
+\]
+The resulting upper bound is affine in $a$, so it suffices to check the boundary with $B_{3,2}$ and $a=A(L)$.  The first is already handled.
+At $a=A(L)$ the difference is
+\[
+ -\frac{(173+81\sqrt2)Q(z)}
+ {49392(2\sqrt2-1)\left(z+\frac{2+3\sqrt2}{7}\right)},
+\]
+where
+\[
+ Q(z)\coloneqq q_0(1-z)^3+3q_1z(1-z)^2+3q_2z^2(1-z)+q_3z^3
+\]
+and
+\[
+ q_0\coloneqq\frac{4(177-122\sqrt2)}7,
+ \quad
+ q_1\coloneqq\frac{1101-724\sqrt2}{21},
+\]
+\[
+ q_2\coloneqq\frac{8(131\sqrt2-176)}{21},
+ \quad
+ q_3\coloneqq\frac{6(214\sqrt2-299)}7.
+\]
+All four Bernstein coefficients are positive: each assertion follows by squaring the corresponding positive rational comparison with $\sqrt2$ (for example, $177>122\sqrt2$ and $214\sqrt2>299$).  Thus $Q(z)>0$ and the difference is negative.  This completes the remaining $r=4$ transition calculation.
+\end{proof}
+
+\subsection{The transition
+\texorpdfstring{$B_{r,r-2}=B_{r,r-1}$ for $r\ge5$} {B(r,r-2) = B(r,r-1) for r at least 5}}\label{app:last-general-transition}
+
+We finish with the calculation for the last adjacent $B$-transition in all clique sizes $r\ge5$.  Retain $d\coloneqq r-2$, $\omega$, $b$, $x$, $\Delta$, $\ell$, $L_0$, and $L_1$ from \cref{sec:transition-elimination}.  For $L_0<L<L_1$, put
+\[
+ \theta\coloneqq\frac{L-\Delta}{x},
+ \qquad
+ \lambda\coloneqq1-L,
+ \qquad\text{and}\qquad
+ A_*\coloneqq\frac{L(L-\ell)}{\theta}.
+\]
+
+\begin{proposition}\label{prop:last-general-transition-estimate}
+For every $L_0<L<L_1$ and every $0\le a\le A_*$,
+\[
+ L(1-L)+(1-L)^2\Phi_{r-1}\left(\frac{x-a}{1-L}\right)
+ +\frac{\theta a}{2}<\Phi_r(x).
+\]
+\end{proposition}
+
+\begin{proof}
+The local recursion has an extra nonnegative penalty $\beta/2$, which we omit when proving a strict upper bound.  For $0\le a\le A_*$, put $y\coloneqq(x-a)/(1-L)$.  Then
+\begin{equation}\label{eq:last-y-range}
+ \frac{d}{(d+1)^2}\le y\le\frac1{d+1}.
+\end{equation}
+Indeed the upper bound follows from $a\ge0$, since $x/(1-L)$ is increasing in $L$ and equals $1/(d+1)$ at $L=L_1$.  For the lower bound, put
+\[
+ z\coloneqq\frac{L-L_0}{L_1-L_0}\in[0,1],
+ \qquad\text{and}\qquad
+ L=L_0+z(L_1-L_0).
+\]
+A direct calculation gives
+\begin{align*}
+ \frac{x-A_*}{1-L}-\frac{d}{(d+1)^2}
+ &=\frac{(338-239\sqrt2)(d-\sqrt2/2)(1-z)^2}
+ {(169\sqrt2-239)(d+1)^2}\\
+ &\quad\times
+ \frac1{(dz+d(1+\sqrt2)+z(\sqrt2+2))
+  (\sqrt2 d+\sqrt2+1-z)}\ge0.
+\end{align*}
+For $d\ge3$,
+\[
+ \frac{d}{(d+1)^2}>\frac1{d+1+\sqrt2},
+ \qquad\text{and}\qquad
+ \frac{d}{(d+1)^2}>\frac1{2d},
+\]
+so the interval in \cref{eq:last-y-range} lies strictly after the last adjacent $B$-crossing for clique size $d+1$, and it lies outside the $A_{d+1}$ domain.  Hence the only active branches of $\Phi_{r-1}=\Phi_{d+1}$ there are $P_d=B_{d+1,d}$ and $R_{d+1}$.
+
+Substitution gives
+\[
+ \begin{aligned}
+ &L(1-L)+\lambda^2P_d\left(\frac{x-a}{\lambda}\right)
+ +\frac{\theta a}{2}-\Phi_r(x)\\
+ &\qquad=-(L-L_0)^2+C_P(L)a-\frac{d^2a^2}{2},
+ \end{aligned}
+\]
+where
+\[
+ C_P(L)\coloneqq d^2x-d(1-L)+\frac\theta2.
+\]
+The function $C_P$ is affine increasing.  Direct simplification gives
+\[
+ C_P(L_0)=
+ -\frac{d\bigl((2+\sqrt2)d^3+(10+4\sqrt2)d^2
+ +(12+2\sqrt2)d+4\bigr)}{4(d^2+4d+2)^2}<0,
+\]
+and
+\[
+ \frac{C_P(L_1)}{d(L_1-L_0)}
+ =\frac{(2-\sqrt2)d+2+\sqrt2}{2d}<\sqrt2
+ \qquad\text{for }d\ge3.
+\]
+For a real number $u$, write $u_+\coloneqq\max\{u,0\}$.  Consequently
+\[
+ C_P(L)_+<\sqrt2\,d(L-L_0).
+\]
+Hence
+\[
+ \max_{a\ge0}\left(C_P(L)a-\frac{d^2a^2}{2}\right)
+ =\frac{C_P(L)_+^2}{2d^2}
+ <(L-L_0)^2.
+\]
+The branch is therefore strictly below $\Phi_r(x)$.
+
+Write
+\[
+ \begin{aligned}
+ &L(1-L)+\lambda^2R_{r-1}\left(\frac{x-a}{\lambda}\right)
+ +\frac{\theta a}{2}-\Phi_r(x)\\
+ &\qquad=G_0(L)+C_R(L)a+Ka^2,
+ \end{aligned}
+\]
+where
+\[
+ K\coloneqq\frac{d(d+1)^2}{2},
+\]
+\[
+ C_R(L)\coloneqq(d+1)\bigl(d(b-L)-(1-L)\bigr)+\frac\theta2.
+\]
+The constant term factors as
+\[
+ G_0(L)=
+ \frac{(3-2\sqrt2)(L-L_1)H_d(L)}
+ {2(\sqrt2-1)^2(d+\sqrt2+2)},
+\]
+with
+\[
+ H_d(L)\coloneqq\bigl(d^2+d(\sqrt2-1)-6-3\sqrt2\bigr)L
+ +d(1-\sqrt2)+\sqrt2+3.
+\]
+The coefficient of $L$ in $H_d$ is
+\[
+ (d-3)(d+\sqrt2+2),
+\]
+and
+\[
+ H_d(L_0)=\frac{4d-\sqrt2(d+1)}2>0.
+\]
+Thus $H_d(L)>0$ and $G_0(L)<0$ for $L_0<L<L_1$.
+
+The affine identities $\theta(L_0)=dL_0$ and $\theta(L_1)=(d+1)L_1$ imply $dL<\theta<(d+1)L$ in the open interval.  Together with $0\le a\le A_*=L(L-\ell)/\theta$, this gives
+\[
+ C_R(L)+KA_*<0.
+\]
+For completeness, an upper bound is
+\[
+ C_R(L)+KA_*
+ \le(d+1)\left[db-1+\frac{4-d}{2}L-\frac{d+1}{2}\ell\right].
+\]
+The bracket is increasing in $L$ for $d=3$, constant for $d=4$, and decreasing for $d\ge5$.  After multiplication by $d+1$, its maximum is respectively
+\[
+ \frac{2(5-4\sqrt2)}{-3+4\sqrt2},
+ \qquad
+ \frac{5(6-5\sqrt2)}{2(-4+5\sqrt2)},
+\]
+and
+\[
+ \frac{(4-3\sqrt2)(d+1)(d+2+2\sqrt2)}
+ {4(\sqrt2-1)(d+\sqrt2+2)},
+\]
+all of which are negative.  Therefore
+\[
+ C_R(L)a+Ka^2\le a\bigl(C_R(L)+KA_*\bigr)\le0,
+\]
+and the branch is strictly below $\Phi_r(x)$.
+\end{proof}
+
+\section*{Acknowledgements}
+
+X.L. was supported by the Excellent Young Talents Program (Overseas) of the National Natural Science Foundation of China.
+
+\section*{Declaration on the use of AI}
+
+The authors used generative AI tools to assist in discussing proof strategies, checking proofs, and improving exposition.
+
+\bibliographystyle{abbrv}
+\bibliography{HSdensity}
+
+\end{document}

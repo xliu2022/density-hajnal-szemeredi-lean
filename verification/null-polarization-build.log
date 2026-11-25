@@ -1,0 +1,11 @@
+✖ [3164/3164] Building DensityHS.Analysis.NullPolarization (11s)
+trace: .> LEAN_PATH=/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/Cli/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/batteries/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/Qq/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/aesop/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/importGraph/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/plausible/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/mathlib/.lake/build/lib/lean:/workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean /workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/lean /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/DensityHS/Analysis/NullPolarization.lean -o /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean/DensityHS/Analysis/NullPolarization.olean -i /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean/DensityHS/Analysis/NullPolarization.ilean -c /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/ir/DensityHS/Analysis/NullPolarization.c --setup /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/ir/DensityHS/Analysis/NullPolarization.setup.json --json
+error: DensityHS/Analysis/NullPolarization.lean:29:63: unsolved goals
+case e'_8
+a b : ℝ
+h : ∀ (t : ℝ), a * t + b * t ^ 2 ≤ 0
+hmax : IsLocalMax (fun t => a * t + b * t ^ 2) 0
+⊢ (fun t => a * t + b * t ^ 2) = (fun y => a * y) + fun y => b * y ^ 2
+Some required targets logged failures:
+- DensityHS.Analysis.NullPolarization
+error: build failed

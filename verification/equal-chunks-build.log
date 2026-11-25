@@ -1,0 +1,68 @@
+✖ [3094/3094] Building DensityHS.Finite.EqualChunks (2.0s)
+trace: .> LEAN_PATH=/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/Cli/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/batteries/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/Qq/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/aesop/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/importGraph/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/plausible/.lake/build/lib/lean:/workspace/scratch/ec525e9616f4/recovered_turing/turan-universality-lean/.lake/packages/mathlib/.lake/build/lib/lean:/workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean /workspace/scratch/ec525e9616f4/toolchains/lean-4.35.0-rc2-linux/bin/lean /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/DensityHS/Finite/EqualChunks.lean -o /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean/DensityHS/Finite/EqualChunks.olean -i /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/lib/lean/DensityHS/Finite/EqualChunks.ilean -c /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/ir/DensityHS/Finite/EqualChunks.c --setup /workspace/scratch/d491ee3405ff/density-hajnal-szemeredi-lean/.lake/build/ir/DensityHS/Finite/EqualChunks.setup.json --json
+error: DensityHS/Finite/EqualChunks.lean:40:10: Type mismatch: After simplification, term
+  hsmall
+ has type
+  True
+but is expected to have type
+  ∑ A ∈ {S} with #A < m, #A < m
+error: DensityHS/Finite/EqualChunks.lean:44:8: Tactic `apply` failed: could not unify the type of `card_ne_zero.mp`
+  #?m.166 ≠ 0 → Finset.Nonempty ?m.166
+with the goal
+  A ≠ ∅
+
+V : Type u_1
+inst✝ : DecidableEq V
+m : ℕ
+hm : 0 < m
+n : ℕ
+ih : ∀ m_1 < n, ∀ (S : Finset V), #S = m_1 → ∃ P, (∀ A ∈ P.parts, #A ≤ m) ∧ ∑ A ∈ P.parts with #A < m, #A < m
+S : Finset V
+hS : #S = n
+hsmall : ¬#S < m
+hsize : m ≤ #S
+A : Finset V
+hAS : A ⊆ S
+hAm : #A = m
+⊢ A ≠ ∅
+error: DensityHS/Finite/EqualChunks.lean:60:8: Type mismatch: After simplification, term
+  hPrem
+ has type
+  ∑ A ∈ P.parts with #A < m, #A < m
+but is expected to have type
+  ∑ B ∈ insert A P.parts with #B < m, #B < m
+error: DensityHS/Finite/EqualChunks.lean:79:67: Type mismatch
+  #A
+has type
+  ℕ
+but is expected to have type
+  Prop
+error: DensityHS/Finite/EqualChunks.lean:79:12: failed to synthesize instance of type class
+  AddCommMonoid Prop
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+error: DensityHS/Finite/EqualChunks.lean:78:33: unsolved goals
+V : Type u_1
+inst✝ : DecidableEq V
+S : Finset V
+P : Finpartition S
+m : ℕ
+hsize : ∀ A ∈ P.parts, #A ≤ m
+⊢ ∑ A ∈ P.parts with #A = m, #A + ∑ A ∈ P.parts with #A < m, #A = ∑ A ∈ P.parts, #A
+error: DensityHS/Finite/EqualChunks.lean:100:4: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  d ≥ 0
+  c ≥ 0
+  c - d ≥ 0
+  b ≥ 0
+  b - c ≤ 0
+  a ≥ 1
+  a + b - c ≥ 1
+where
+ a := ↑m
+ b := ↑(#({A ∈ P.parts | #A = m})) * ↑m
+ c := ↑(#S)
+ d := ↑(#({A ∈ P.parts | #A = m}) + 1) * ↑m
+Some required targets logged failures:
+- DensityHS.Finite.EqualChunks
+error: build failed

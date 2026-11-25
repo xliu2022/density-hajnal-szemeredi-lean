@@ -1,0 +1,236 @@
+⚠ [3111/3262] Replayed DensityHS.Basic.WeightedGraph
+warning: DensityHS/Basic/WeightedGraph.lean:62:0: automatically included section variable(s) unused in theorem `DensityHS.constant_clique_cover`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/WeightedGraph.lean:72:0: automatically included section variable(s) unused in theorem `DensityHS.IsCliqueCover.truncate`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/WeightedGraph.lean:103:0: automatically included section variable(s) unused in theorem `DensityHS.isCompact_coverCube`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3114/3262] Replayed DensityHS.Rainbow.ColoredGraph
+warning: DensityHS/Rainbow/ColoredGraph.lean:90:13: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3572/3682] Replayed DensityHS.Rainbow.AbsorberSelection
+warning: DensityHS/Rainbow/AbsorberSelection.lean:52:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.selectedCount_nonneg`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:86:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.selectedConflictCount_nonneg`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:122:53: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:131:71: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:146:73: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:252:67: This simp argument is unused:
+  h₁
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [selectionCoin, h₂]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:252:71: This simp argument is unused:
+  h₂
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [selectionCoin, h₁]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:276:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.exists_conflict_free_subselection`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/AbsorberSelection.lean:296:0: automatically included section variable(s) unused in theorem `DensityHS.Rainbow.inter_card_le_subselection_add`:
+  [Fintype I]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype I] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3573/3682] Replayed DensityHS.Rainbow.Absorption
+warning: DensityHS/Rainbow/Absorption.lean:89:39: Variable name `hr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3574/3682] Replayed DensityHS.Basic.FiniteDuality
+warning: DensityHS/Basic/FiniteDuality.lean:61:8: automatically included section variable(s) unused in theorem `DensityHS.finiteLoadMap_apply`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/FiniteDuality.lean:79:0: automatically included section variable(s) unused in theorem `DensityHS.functional_nonneg_of_orthant_lowerBound`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/FiniteDuality.lean:106:8: automatically included section variable(s) unused in theorem `DensityHS.finiteLoadMap_single`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Basic/FiniteDuality.lean:127:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: DensityHS/Basic/FiniteDuality.lean:282:0: automatically included section variable(s) unused in theorem `DensityHS.IsOptimalCover.cost_eq_number`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [3575/3682] Replayed DensityHS.Basic.UniformHypergraph
+warning: DensityHS/Basic/UniformHypergraph.lean:93:0: automatically included section variable(s) unused in theorem `DensityHS.normalize_family_cover`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8938/8945] Replayed DensityHS.Basic.Envelope
+warning: DensityHS/Basic/Envelope.lean:228:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Basic/Envelope.lean:322:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8939/8945] Replayed DensityHS.Weighted.Peeling
+warning: DensityHS/Weighted/Peeling.lean:35:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:62:13: Variable name `hx0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: DensityHS/Weighted/Peeling.lean:88:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:129:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:137:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:171:10: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: DensityHS/Weighted/Peeling.lean:171:10: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: DensityHS/Weighted/Peeling.lean:223:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: DensityHS/Weighted/Peeling.lean:379:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: DensityHS/Weighted/Peeling.lean:379:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8940/8945] Replayed DensityHS.Weighted.UniversalPeeling
+warning: DensityHS/Weighted/UniversalPeeling.lean:33:0: automatically included section variable(s) unused in theorem `DensityHS.deleteWeight_nonneg`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Weighted/UniversalPeeling.lean:135:0: automatically included section variable(s) unused in theorem `DensityHS.universal_zero_cover_restrict`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8941/8945] Replayed DensityHS.Rainbow.Digraph
+warning: DensityHS/Rainbow/Digraph.lean:63:8: automatically included section variable(s) unused in theorem `DensityHS.Digraph.mem_outNeighbors`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/Digraph.lean:75:0: automatically included section variable(s) unused in theorem `DensityHS.Digraph.outDegree_eq_sum`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/Digraph.lean:85:0: automatically included section variable(s) unused in theorem `DensityHS.Digraph.induce_outDegree_eq_sum`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/Digraph.lean:118:22: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: DensityHS/Rainbow/Digraph.lean:148:8: automatically included section variable(s) unused in theorem `DensityHS.Digraph.mem_tileFamily`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: DensityHS/Rainbow/Digraph.lean:158:0: automatically included section variable(s) unused in theorem `DensityHS.Digraph.insert_isTile`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8944/8945] Replayed DensityHS.Rainbow.ColorDigraph
+warning: DensityHS/Rainbow/ColorDigraph.lean:78:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8945/8945] Built DensityHS.Rainbow.Restriction (3.7s)
+warning: DensityHS/Rainbow/Restriction.lean:33:21: This simp argument is unused:
+  SimpleGraph.induce_adj
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [edgeColor, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: DensityHS/Rainbow/Restriction.lean:108:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Build completed successfully (8945 jobs).

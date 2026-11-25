@@ -1,0 +1,66 @@
+{
+  "kind": "standalone local replay; not official Comparator acceptance",
+  "official_comparator_acceptance": false,
+  "solution_module": "Solution",
+  "selected_declarations": [
+    "DensityHSSubmission.weighted_matching_base",
+    "DensityHSSubmission.weighted_clique_density",
+    "DensityHSSubmission.finite_clique_density_upper",
+    "DensityHSSubmission.finite_density_theorem",
+    "DensityHSSubmission.rainbow_clique_factor",
+    "DensityHSSubmission.finite_stability",
+    "DensityHSSubmission.graphon_density_theorem",
+    "DensityHSSubmission.graphon_equality_classification",
+    "DensityHSSubmission.graphon_L1_stability"
+  ],
+  "export_bytes": 536320658,
+  "export_sha256": "be7f436fab361b5c683278b21ab0033fc7f48bfde9cc9bba0a8093006b1828d2",
+  "exporter_metadata": {
+    "meta": {
+      "exporter": {
+        "name": "lean4export",
+        "version": "3.1.0"
+      },
+      "format": {
+        "version": "3.1.0"
+      },
+      "lean": {
+        "githash": "11acb17ec6b07a8f9e9173e6845197929540936b",
+        "version": "4.35.0-rc2"
+      }
+    }
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "tool_sha256": {
+    "leanexport": "c5bc1a10a21e22cbb3671d65987cdef2076833b14182d823ccb2153adf2fa954",
+    "leanchecker": "9e36e955a251b1313c8eb5b7fa101282d51df109d34d8bb7c1cfdf51985aba29",
+    "nanoda_bin": "8241c5e6baa29490aa118d382f97961b208ae730fdb96545c2abed74c9ece5a8",
+    "con-ron": "4e5616d94374cae37324dad2594f6230c2bb2297240249fc78ff508f3bc5acef"
+  },
+  "export_seconds": 85.0325476049984,
+  "kernels": {
+    "lean": {
+      "exit_code": 0,
+      "accepted": true,
+      "seconds": 119.46294221300195,
+      "log": "lean.log"
+    },
+    "nanoda": {
+      "exit_code": 0,
+      "accepted": true,
+      "seconds": 81.00718753299952,
+      "log": "nanoda.log"
+    },
+    "con_ron": {
+      "exit_code": 0,
+      "accepted": true,
+      "seconds": 91.48369701499905,
+      "log": "con_ron.log"
+    }
+  },
+  "all_replays_accepted": true
+}

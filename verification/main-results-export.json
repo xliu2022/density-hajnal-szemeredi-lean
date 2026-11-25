@@ -1,0 +1,65 @@
+{
+  "file_name": "main-results.ndjson",
+  "bytes": 537021829,
+  "sha256": "d26f3159d9fd0500197012843086ab50e0f1aab91eeffed22fc426d246321d29",
+  "exporter_metadata": {
+    "meta": {
+      "exporter": {
+        "name": "lean4export",
+        "version": "3.1.0"
+      },
+      "format": {
+        "version": "3.1.0"
+      },
+      "lean": {
+        "githash": "11acb17ec6b07a8f9e9173e6845197929540936b",
+        "version": "4.35.0-rc2"
+      }
+    }
+  },
+  "selected_declarations": [
+    "DensityHS.density_hajnal_szemeredi",
+    "DensityHS.weighted_clique_cover_bound",
+    "DensityHS.Graphon.kernel_tilingNumber_density_bound",
+    "DensityHS.Graphon.graphonSpace_extremal_iff_active",
+    "DensityHS.Stability.finite_stability",
+    "DensityHS.Stability.graphon_L1_stability",
+    "DensityHS.Stability.finite_stability_sequence_unconditional",
+    "DensityHS.Stability.finite_stability_unique_range_unconditional",
+    "DensityHS.Rainbow.rainbow_clique_factor"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "official_comparator_acceptance": false,
+  "standalone_replays": {
+    "nanoda": {
+      "exit_code": 0,
+      "declarations_checked": 62329,
+      "typechecker_errors": 0,
+      "note": "The success message reports one pretty-printer diagnostic (Unable to print axioms); the typechecker reported zero errors and returned success.",
+      "log": "verification/nanoda-replay.log"
+    },
+    "lean": {
+      "exit_code": 0,
+      "verdict": "Lean default kernel accepts the solution",
+      "log": "verification/lean-kernel-replay.log"
+    },
+    "con_ron": {
+      "exit_code": 0,
+      "mode": "verified",
+      "jobs": 2,
+      "declarations_accepted": 60116,
+      "verdict": "accepted",
+      "log": "verification/con-ron-replay.log"
+    }
+  },
+  "local_tool_sha256": {
+    "leanexport": "c5bc1a10a21e22cbb3671d65987cdef2076833b14182d823ccb2153adf2fa954",
+    "leanchecker": "9e36e955a251b1313c8eb5b7fa101282d51df109d34d8bb7c1cfdf51985aba29",
+    "nanoda_bin": "8241c5e6baa29490aa118d382f97961b208ae730fdb96545c2abed74c9ece5a8",
+    "con-ron": "4e5616d94374cae37324dad2594f6230c2bb2297240249fc78ff508f3bc5acef"
+  }
+}

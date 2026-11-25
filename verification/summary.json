@@ -1,0 +1,55 @@
+{
+  "author": "Xizhi Liu",
+  "responsible_maintainer": "Xizhi Liu",
+  "mathematical_scope": "All principal manuscript results and their supporting proof chains are proved.",
+  "build": {
+    "command": "lake build DensityHS Challenge Solution",
+    "exit_code": 0,
+    "jobs": 9229
+  },
+  "axiom_audit": {
+    "project_declarations": 4305,
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "passed": true
+  },
+  "proof_development_sorry_count": 0,
+  "solution_sorry_count": 0,
+  "intentional_challenge_holes": 9,
+  "registered_declarations": [
+    "DensityHSSubmission.weighted_matching_base",
+    "DensityHSSubmission.weighted_clique_density",
+    "DensityHSSubmission.finite_clique_density_upper",
+    "DensityHSSubmission.finite_density_theorem",
+    "DensityHSSubmission.rainbow_clique_factor",
+    "DensityHSSubmission.finite_stability",
+    "DensityHSSubmission.graphon_density_theorem",
+    "DensityHSSubmission.graphon_equality_classification",
+    "DensityHSSubmission.graphon_L1_stability"
+  ],
+  "standalone_registered_replay": {
+    "lean_exit_code": 0,
+    "nanoda_exit_code": 0,
+    "nanoda_declarations_checked": 62396,
+    "nanoda_typechecker_errors": 0,
+    "nanoda_pretty_printer_diagnostics": 1,
+    "con_ron_exit_code": 0,
+    "con_ron_mode": "verified",
+    "con_ron_declarations_accepted": 60175,
+    "report": "registered-replay/report.json"
+  },
+  "official_comparator": {
+    "attempted": true,
+    "exit_code": 1,
+    "accepted": false,
+    "block": "bubblewrap could not create the NETLINK_ROUTE socket for its isolated network namespace",
+    "log": "comparator-final.log"
+  },
+  "public_repository": null,
+  "palomar_registration": null,
+  "human_mathematical_review": "not recorded",
+  "automated_statement_review": "docs/STATEMENT_REVIEW.md"
+}

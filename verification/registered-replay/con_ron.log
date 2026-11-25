@@ -1,0 +1,19 @@
+con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
+con-ron: 2 declarations hoisted ahead of the pinned Nat operations they ground: Nat.mul._f, Nat.mul
+con-ron: parse done: 60205 fold records — 60197 declarations after the 8 built-in prelude records (8 stream copies of prelude records dropped) t=2.511s (parse 2.511s)
+con-ron: install 0/60205 basis t=2.511s
+con-ron: install 10000/60205 thm le_iff_exists_add t=6.867s
+con-ron: install 20000/60205 thm Ordinal.canonicallyOrderedAdd t=9.067s
+con-ron: install 30000/60205 thm CharacterModule.uncurry._proof_2 t=12.253s
+con-ron: install 40000/60205 thm MeasureTheory.iSup_lintegral_measurable_le_eq_lintegral t=14.527s
+con-ron: install 50000/60205 thm Submodule.normedAddCommGroup._proof_2 t=18.549s
+con-ron: install 60000/60205 thm DensityHS.Graphon.final_crossing_classification t=23.258s
+con-ron: install done: 60205/60205 declarations installed, 59139 checks pending t=23.343s (install 20.832s)
+con-ron: check 10000/59139 definition instInhabitedPUnit t=26.464s
+con-ron: check 20000/59139 theorem Cardinal.mk_range_eq_of_injective t=30.717s
+con-ron: check 30000/59139 theorem Submodule.moduleSubmodule._proof_5 t=46.249s
+con-ron: check 40000/59139 theorem measurable_of_continuousOn_compl_singleton t=58.872s
+con-ron: check 50000/59139 theorem DensityHS.Vendor.Graphon.rectIntegralDiff_triangle t=69.569s
+con-ron: check done: 59139/59139 t=90.427s (check 67.084s)
+con-ron: done: parse 2.511s, install 20.832s, check 67.084s, 2 workers t=90.427s
+con-ron: accepted 60175 declarations (--verified)

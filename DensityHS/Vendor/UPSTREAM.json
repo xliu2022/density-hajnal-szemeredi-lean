@@ -1,0 +1,86 @@
+{
+  "repository": "https://github.com/cameronfreer/graphon",
+  "commit": "9f7be59fa754d260a544b4cfd83d6a5b94f7552e",
+  "original_toolchain": "leanprover/lean4:v4.32.0",
+  "port_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "copyright": "2026 Cameron Freer",
+  "port_maintainer": "Xizhi Liu",
+  "changes": [
+    "namespace prefix DensityHS.Vendor",
+    "Lean module visibility syntax",
+    "Architect blueprint metadata removed; mathematical proof bodies retained for compatibility port",
+    "Measure.isProbabilityMeasure_map replaced by current automatic instance",
+    "measurable_pi_lambda replaced by Measurable.of_eval",
+    "ordered real product bound uses prod_le_one₀",
+    "map_smul receives explicit a.e. measurability proof",
+    "energyRect made public for the current Lean module visibility rules",
+    "Counting a.e. weighted two-coordinate lemma exposed for reuse"
+  ],
+  "files": [
+    {
+      "path": "DensityHS/Vendor/Graphon/Compactness.lean",
+      "upstream_path": "Graphon/Compactness.lean",
+      "upstream_blob_sha": "0c3cb7d6ffc3fe04b566202ee9d3b713d24e640c"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/GraphonSpace.lean",
+      "upstream_path": "Graphon/GraphonSpace.lean",
+      "upstream_blob_sha": "ad651b2a663140ffc3012fb8df462177d5060da2"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/CutDistance.lean",
+      "upstream_path": "Graphon/CutDistance.lean",
+      "upstream_blob_sha": "fc46e6a392510b381481c2541fd529cd487f8245"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/Regularity.lean",
+      "upstream_path": "Graphon/Regularity.lean",
+      "upstream_blob_sha": "6a5cc193a6ce178b60b62562b4aaf8d90bedb625"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/Overlay.lean",
+      "upstream_path": "Graphon/Overlay.lean",
+      "upstream_blob_sha": "78e0f9adb63a4fbf02e76aa3aeda299c12d1e3d5"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/CutNorm.lean",
+      "upstream_path": "Graphon/CutNorm.lean",
+      "upstream_blob_sha": "08123714abb312a598a06478b6de1322c0578cda"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/Pullback.lean",
+      "upstream_path": "Graphon/Pullback.lean",
+      "upstream_blob_sha": "578f7aa8b1194872c13f7b9bae65d20c9fb6e073"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/MeasureIso.lean",
+      "upstream_path": "Graphon/MeasureIso.lean",
+      "upstream_blob_sha": "b7de3d43ad7333415ce7eb0f0953a31401b1f4e4"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/Approximation.lean",
+      "upstream_path": "Graphon/Approximation.lean",
+      "upstream_blob_sha": "9fe401e27393404d3e5ddeea4d15d048039cfa6e"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/Basic.lean",
+      "upstream_path": "Graphon/Basic.lean",
+      "upstream_blob_sha": "48f8ed3e4c09963aee4c8ab75ef3d73214fe97ea"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/HomDensity.lean",
+      "upstream_path": "Graphon/HomDensity.lean",
+      "upstream_blob_sha": "ce3759eea65c7918347288186415662d33a25f14"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/Step.lean",
+      "upstream_path": "Graphon/Step.lean",
+      "upstream_blob_sha": "b46bbe00a21351d36c8e4359ea6cfd824099f6db"
+    },
+    {
+      "path": "DensityHS/Vendor/Graphon/Counting.lean",
+      "upstream_path": "Graphon/Counting.lean",
+      "upstream_blob_sha": "fdd0981722526e996f754d8ed01dba14fea0ea85"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "local preparation check; not official Palomar acceptance",
+  "passed": true,
+  "source_bytes_excluding_caches": 8458403,
+  "lean_file_count": 298,
+  "maximum_lean_lines": 5476,
+  "challenge_bytes": 21084,
+  "challenge_lines": 433,
+  "registered_declarations": [
+    "DensityHSSubmission.weighted_matching_base",
+    "DensityHSSubmission.weighted_clique_density",
+    "DensityHSSubmission.finite_clique_density_upper",
+    "DensityHSSubmission.finite_density_theorem",
+    "DensityHSSubmission.rainbow_clique_factor",
+    "DensityHSSubmission.finite_stability",
+    "DensityHSSubmission.graphon_density_theorem",
+    "DensityHSSubmission.graphon_equality_classification",
+    "DensityHSSubmission.graphon_L1_stability"
+  ],
+  "errors": [],
+  "warnings": [
+    "Challenge exceeds the soft 32 KiB / 300-line readability threshold"
+  ]
+}

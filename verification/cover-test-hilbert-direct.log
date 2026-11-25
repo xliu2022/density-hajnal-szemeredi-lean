@@ -1,0 +1,18 @@
+DensityHS/Graphon/CoverTestHilbert.lean:69:17: warning: This simp argument is unused:
+  rectangleCliqueWeight
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Set.indicator_of_mem ht, Real.norm_eq_abs, abs_of_nonneg (cliqueWeight_mem_Icc r W t).1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+DensityHS/Graphon/CoverTestHilbert.lean:72:12: warning: This simp argument is unused:
+  rectangleCliqueWeight
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ht]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+DensityHS/Graphon/CoverTestHilbert.lean:149:32: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+
+Hint: Replace the deprecated name:
+  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲

@@ -1,0 +1,21 @@
+Density Hajnal–Szemerédi formalization
+Copyright 2026 Xizhi Liu
+
+Formalization author and responsible maintainer: Xizhi Liu.
+
+The Lean proof development is licensed under Apache-2.0. The manuscript
+in source/manuscript.tex is supplied as mathematical source material.
+The repository license does not assert a new license for that manuscript.
+
+The proof development uses Lean and mathlib, under their respective licenses.
+scripts/verify-comparator.sh is obtained from PalomarRegistry/PalomarTemplate.
+AI-assisted implementation used ChatGPT (GPT-6 Astra Pro) and collaborating
+agents. Source attribution and the formalization maintainer are separate roles.
+
+The files under DensityHS/Vendor/Graphon are adapted from Cameron Freer’s
+Apache-2.0 graphon library, commit 9f7be59fa754d260a544b4cfd83d6a5b94f7552e.
+Original copyright and author headers are retained. Xizhi Liu maintains the
+compatibility port. The upstream license is in DensityHS/Vendor/LICENSE.upstream.
+DensityHS/Graphon/WeightedCounting.lean adapts its counting factorization
+argument to concrete kernels and diagonal prefix factors; its source credit
+is retained in that file.

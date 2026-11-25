@@ -1,0 +1,333 @@
+version: v0.4
+project:
+  name: Density Hajnal–Szemerédi formalization
+  description: 'Lean formalization of the density Hajnal–Szemerédi theorem: uniform finite integral extremal
+    density, weighted and graphon density, the complete B/A/R equality classification including every
+    transition and endpoint, uniform finite and graphon stability with its corollaries, and perfect rainbow
+    clique factors. All principal mathematical results are proved; official Palomar verification and registration
+    remain pending.'
+  authors:
+  - Xizhi Liu
+  license: Apache-2.0
+  responsible_maintainers:
+  - Xizhi Liu
+classification:
+  arxiv:
+  - math.CO
+  msc2020:
+  - 05C35
+  - 05C70
+sources:
+- title: The density Hajnal–Szemerédi theorem
+  type: paper
+  location: source/manuscript.tex
+  relationship: formalizes
+  note: User-supplied manuscript uploaded 2026-11-25, retained as source/manuscript.tex. The development
+    proves all principal results. The independent Challenge states the selected claims explicitly.
+  license: unknown
+related_formalizations:
+- id: https://github.com/cameronfreer/graphon/tree/9f7be59fa754d260a544b4cfd83d6a5b94f7552e
+  relationship: adapts
+  note: >-
+    This project adapts the compactness, metric quotient, overlay, and related proofs from
+    Cameron Freer’s “Graphon: a Lean library for graph limits” (Apache-2.0).
+    DensityHS/Vendor/UPSTREAM.json records the upstream commit and tree.
+    See docs/graphon-dependency-audit.md for the local adaptations.
+status:
+  scope: 'All principal mathematical results and their supporting proof chains are complete and compiled:
+    the uniform finite integral density theorem, the weighted density theorem for every r at least two,
+    genuine graphon tiling-cover strong duality and density, complete B/A/R equality including both endpoints
+    and every transition, unconditional uniform finite and graphon L1 stability, sequence and compact
+    unique-range stability, and the perfect rainbow clique-factor theorem. Actual compactness, lower semicontinuity,
+    finite transference, prescribed integer realization/edit rounding, nonsmooth variation, terminating
+    uncrossing, phase diagram, and all appendix estimates are supplied. General external results cited
+    by the manuscript are replaced where appropriate by proofs of the precise consequences needed. Official
+    Comparator acceptance, public repository registration, and human mathematical review remain pending.'
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+automation:
+  methods:
+  - method: agent
+    models:
+    - GPT-6 Astra Pro
+    framework: ChatGPT
+    tool_setup: Parallel proof development with Lean compilation, mathlib source inspection, exact rational
+      and polynomial tactics, and axiom audits.
+    cost:
+      wall_time: not tracked
+      spend_usd: not tracked
+      hardware: managed Linux workspace
+    prompting_notes: Formalize the supplied manuscript, with Xizhi Liu as author and maintainer, and satisfy
+      current Palomar requirements.
+  spend_usd: not tracked
+  notes: All principal proofs and the independent statement bridges were developed by parallel proof agents
+    with repeated Lean compilation and transitive axiom audits. A separate read-only automated review
+    checked the manuscript/statement correspondence. No human mathematical review is recorded. The official
+    sandboxed Comparator is blocked by the workspace network-namespace restriction; standalone kernel
+    replay is recorded separately.
+fidelity:
+  divergences: 'Several finite arguments are reproved directly: matching via extreme half-integral covers;
+    complete support via a one-level extreme-cover characterization; support classification via finite
+    quadratic witnesses and a dominating edge, without spectral interlacing; the terminal bound via a
+    finite marked-set inequality. The finite integral upper bound uses actual Szemeredi regularity and
+    rounding instead of graphon transfer. B and A lower constructions use equal-sized core parts and fewer
+    than r isolated remainders, preserving the required uniform asymptotic value. Kernel density uses
+    support sampling and infimum continuity. No graphon or rainbow theorem is inferred from unproved external
+    results. Graphon strong duality is proved by actual Hilbert separation and explicit marginal trimming.
+    The compactness port preserves the upstream proofs and adapts namespace/module visibility and changed
+    mathlib APIs. The final B/R crossing is proved directly by marked-region, shifted-neighbor, and residual-integral
+    arguments rather than assuming an external marked Turan equality theorem. The rainbow argument replaces
+    an overstrong quoted blow-up assertion with explicit bad-map counting and the exact rainbow extraction
+    theorem required; the source counterexample and repair are documented in docs/rainbow-source-audit.md.
+    The independent graphon statement surface uses the standard unit-interval model. Graphon.UnitRepresentation
+    formally proves the measure-preserving reduction from every standard Borel atomless probability space
+    and exact preservation of density and all positive-order tiling numbers. The registered weighted result
+    uses the arbitrary feasible-cover formulation; optimal-cover attainment and duality supply the optimum-value
+    formulation.'
+review:
+  status: principal mathematical results machine-checked; official submission verification pending
+  reviewers:
+  - none
+  notes: All nine independent Challenge/Solution statements and the full mathematical root compile. Solution
+    never imports Challenge. Nine deliberate Challenge proof holes are excluded from the zero proof-development
+    sorry counts. A read-only automated statement-fidelity review found no material mismatch; this is
+    not human review. Standalone kernel replays and namespace axiom evidence are recorded in verification/REPORT.md.
+    The official sandboxed Comparator was retried but cannot create a network namespace in this workspace;
+    no official acceptance or registration is claimed.
+alignment:
+  namespace: DensityHS
+  statements:
+  - source: 'Weighted density theorem: matching base case r=2'
+    lean: DensityHSSubmission.weighted_matching_base
+    module: Solution
+    status: proved
+    note: Positive finite probability weights and an arbitrary feasible cover of cost at most 1/2.
+  - source: 'Proposition: complete-support bound'
+    lean: DensityHS.weighted_complete_cover_bound
+    module: DensityHS.Weighted.Clique
+    status: proved
+    note: All clique sizes r at least two, positive probability weights.
+  - source: 'Lemma: P3 support'
+    lean: DensityHS.Weighted.Support.complete_or_cliquePathBlowup
+    module: DensityHS.Weighted.SupportP3
+    status: proved
+    note: Saturation and tangent negativity are derived for selected extrema in Reduction.
+  - source: Weighted density theorem, all r
+    lean: DensityHSSubmission.weighted_clique_density
+    module: Solution
+    status: proved
+    note: All r at least two; all finite nonnegative probability weights; arbitrary feasible cover.
+  - source: 'Theorem 1.1: finite density, uniformly in k'
+    lean: DensityHSSubmission.finite_density_theorem
+    module: Solution
+    status: proved
+    note: Both bounds; actual integral clique packings and attained finite extremal number.
+  - source: Kernel density at the fractional cover number
+    lean: DensityHS.Graphon.kernel_coverNumber_density_bound
+    module: DensityHS.Graphon.CoverNumber
+    status: proved
+    note: The independent tiling supremum is also proved equal to this cover infimum in Graphon.Duality.
+  - source: 'Graphon input: existence of a minimum fractional cover'
+    lean: DensityHS.Graphon.exists_minimum_kernel_cover
+    module: DensityHS.Graphon.CoverAttainment
+    status: proved
+    note: All probability spaces; measurable representative valued in the closed unit interval.
+  - source: 'Proposition 5.2: perfect fractional directed tiling'
+    lean: DensityHS.Digraph.perfect_fractional_tiling_of_outDegree
+    module: DensityHS.Rainbow.Fractional
+    status: proved
+    note: The actual regularity conversion and absorption application are proved in Rainbow.NearPerfect
+      and Rainbow.Main.
+  - source: Finite tiling-cover linear programs
+    lean: DensityHS.fractional_strong_duality
+    module: DensityHS.Basic.FiniteDuality
+    status: proved
+    note: Actual finite separation proof, with attained equal optima.
+  - source: Graphon fractional tiling-cover strong duality
+    lean: DensityHS.Graphon.kernel_tiling_cover_duality
+    module: DensityHS.Graphon.Duality
+    status: proved
+    note: Actual nonnegative integrable clique tuple densities; capacity is equivalent to summed marginal-measure
+      domination.
+  - source: Graphon density theorem
+    lean: DensityHS.Graphon.kernel_tilingNumber_density_bound
+    module: DensityHS.Graphon.Duality
+    status: proved
+    note: All probability spaces; genuine independently defined tiling supremum.
+  - source: Graphon compactness input
+    lean: DensityHS.Vendor.GraphonSpace.instCompactSpace
+    module: DensityHS.Vendor.Graphon.GraphonSpace
+    status: proved
+    note: Compatible port of Cameron Freer’s actual compactness proof, immutable upstream commit and Apache-2.0
+      attribution in DensityHS/Vendor/UPSTREAM.json.
+  - source: 'Appendix: transition estimates r=3, r=4, and r>=5'
+    lean: DensityHS.Appendix.last_transition_estimate
+    module: DensityHS.Appendix.LastTransition
+    status: proved
+    note: The r=3 and r=4 proofs are in R3Transition and R4Transition respectively; full restricted Phi
+      inequalities.
+  - source: Graphon tiling lower semicontinuity
+    lean: DensityHS.Graphon.lowerSemicontinuous_graphonSpaceTilingNumber
+    module: DensityHS.Graphon.MetricTilings
+    status: proved
+    note: Independently defined integral tiling number; actual cut metric quotient and measure-preserving
+      overlays.
+  - source: Binary-step cut-to-L1 estimate
+    lean: DensityHS.Graphon.binary_step_relabelL1_le_card_sq_mul_cutDistance
+    module: DensityHS.Graphon.RelabelL1
+    status: proved
+    note: Both distances include actual measure-preserving relabelings.
+  - source: Rainbow extraction from regular directed constraints
+    lean: DensityHS.Rainbow.exists_regular_rainbow_transversal
+    module: DensityHS.Rainbow.RegularCounting
+    status: proved
+    note: Actual clique embeddings, bad-map count, and palette-preserving digraph reduction; used in the
+      completed near-perfect packing and absorption application.
+  - source: Unique B-branch equality on normalized measurable regions
+    lean: DensityHS.Graphon.B_classification_unique_cond
+    module: DensityHS.Graphon.OrdinaryEquality
+    status: proved
+    note: Actual equal independent classes and clique remainder; all analytic hypotheses discharged in
+      the stated ambient setting.
+  - source: Simultaneous directed regularity
+    lean: DensityHS.MatrixRegularity.simultaneous_matrix_regularity
+    module: DensityHS.Finite.SimultaneousRegularity
+    status: proved
+    note: All finite collections of bounded nonsymmetric matrices; constants uniform in the finite vertex
+      set.
+  - source: Rank-two extremal equality
+    lean: DensityHS.Graphon.rank_two_equality
+    module: DensityHS.Graphon.RankTwo
+    status: proved
+    note: Actual measurable clique of mass 2y with isolated remainder, for 2/5<y<=1/2.
+  - source: Open exceptional phase equality
+    lean: DensityHS.Graphon.A_classification_interior
+    module: DensityHS.Graphon.ExceptionalEquality
+    status: proved
+    note: Actual exceptional partition from the minimum cover, variations, recursive class peeling, and
+      proved rank-two base.
+  - source: Finite-to-graphon tiling transference
+    lean: DensityHS.Graphon.finite_graphon_tiling_transference
+    module: DensityHS.Graphon.FiniteTransference
+    status: proved
+    note: Actual normalized integral finite packing bounds pass to the actual compact cut-metric quotient;
+      no fractional finite bound is assumed.
+  - source: Rainbow absorbing lemma
+    lean: DensityHS.Rainbow.rainbow_absorbing_lemma
+    module: DensityHS.Rainbow.AbsorbingLemma
+    status: proved
+    note: Uniform actual small absorbing set from colour degree, with local abundance, probability selection,
+      and all parameter choices proved.
+  - source: Finite integer construction rounding
+    lean: DensityHS.Constructions.exists_construction_integer_sizes
+    module: DensityHS.Constructions.IntegerRealizations
+    status: proved
+    note: Exact integer clique sizes, balanced largest Turan part for A, and exact R mass constraints;
+      each cell differs from its real target by at most one.
+  - source: Finite cut-to-edit construction transfer
+    lean: DensityHS.Stability.finite_construction_edit_rounding
+    module: DensityHS.Stability.ConstructionRounding
+    status: proved
+    note: Uniform in the packing parameter and every branch/simplex vector; actual finite output on the
+      original vertex set with prescribed integer sizes.
+  - source: Rainbow fractional-to-integer rounding
+    lean: DensityHS.Rainbow.round_perfect_fractional_tiles
+    module: DensityHS.Rainbow.Rounding
+    status: proved
+    note: A proved general rounding implication; its local rainbow extractor is supplied by the actual
+      regular-state model in the final application.
+  - source: Perfect rainbow clique-factor theorem
+    lean: DensityHS.Rainbow.rainbow_clique_factor
+    module: DensityHS.Rainbow.Main
+    status: proved
+    note: All r at least four, every positive colour-degree margin, actual rainbow factors on all sufficiently
+      large divisible vertex sets.
+  - source: Open final-phase equality
+    lean: DensityHS.Graphon.R_classification_interior
+    module: DensityHS.Graphon.FinalEquality
+    status: proved
+    note: Actual measurable final partition with exact simplex masses and all kernel identities.
+  - source: Zero-cover endpoint equality
+    lean: DensityHS.Graphon.zero_endpoint_classification
+    module: DensityHS.Graphon.EndpointEquality
+    status: proved
+    note: Actual ordinary partition from the original tiling and density hypotheses.
+  - source: Full-cover endpoint equality
+    lean: DensityHS.Graphon.full_endpoint_classification
+    module: DensityHS.Graphon.EndpointEquality
+    status: proved
+    note: Actual final partition at x=1/r from maximal density.
+  - source: Finite stability transfer from equality classification
+    lean: DensityHS.Stability.finite_stability_from_equality
+    module: DensityHS.Stability.ClassificationTransfer
+    status: proved
+    note: This intermediate transfer has a classification input; the final unconditional theorem Stability.finite_stability
+      supplies it from the proved complete equality classification.
+  - source: Complete equality-set identity, thm:EC-main
+    lean: DensityHS.Graphon.graphonSpace_extremal_iff_active
+    module: DensityHS.Graphon.Classification
+    status: proved
+    note: Both directions on the actual compact cut-metric quotient, every parameter of [0,1/r], all transitions
+      and endpoints.
+  - source: Uniform finite stability, thm:finite-stability
+    lean: DensityHS.Stability.finite_stability
+    module: DensityHS.Stability.Main
+    status: proved
+    note: Unconditional; uniform in k; actual integer B/A/R model on the original vertex set, near-active
+      at k/n, with edit distance less than epsilon n squared.
+  - source: Uniform graphon L1 stability, thm:uniform-graphon-stability
+    lean: DensityHS.Stability.graphon_L1_stability
+    module: DensityHS.Stability.Main
+    status: proved
+    note: Unconditional; actual relabeled L1 distance and a concrete canonical model at the original parameter.
+  - source: Sequence form, cor:stability-forms
+    lean: DensityHS.Stability.finite_stability_sequence_unconditional
+    module: DensityHS.Stability.Main
+    status: proved
+    note: Actual model sequence with normalized edit error plus branch deficit tending to zero.
+  - source: Compact unique-range form, cor:stability-forms
+    lean: DensityHS.Stability.finite_stability_unique_range_unconditional
+    module: DensityHS.Stability.Main
+    status: proved
+    note: Uniform stability on any compact parameter set on which the construction branch is unique.
+  - source: Independent registered rainbow factor theorem
+    lean: DensityHSSubmission.rainbow_clique_factor
+    module: Solution
+    status: proved
+    note: Self-contained incident-colour degree and actual integral perfect rainbow packing, with complete
+      equivalence bridges.
+  - source: Independent finite stability statement
+    lean: DensityHSSubmission.finite_stability
+    module: Solution
+    status: proved
+    note: Explicit integer B/A/R families, exact cardinality conditions, original vertex set, and unordered-edge
+      edit distance; no project imports in Challenge.
+  - source: Independent graphon density statement
+    lean: DensityHSSubmission.graphon_density_theorem
+    module: Solution
+    status: proved
+    note: Actual nonnegative L1 clique-tuple tiling with marginal-capacity tests, on the canonical unit
+      probability space.
+  - source: Independent full graphon equality statement
+    lean: DensityHSSubmission.graphon_equality_classification
+    module: Solution
+    status: proved
+    note: Complete iff with actual finite measurable B/A/R models, exact masses and zero two-sided cut
+      distance.
+  - source: Independent uniform graphon L1 stability statement
+    lean: DensityHSSubmission.graphon_L1_stability
+    module: Solution
+    status: proved
+    note: Actual measure-preserving measurable relabelings and near-active model at the original parameter.
+  - source: Canonical representation of arbitrary standard atomless spaces
+    lean: DensityHS.Graphon.Kernel.exists_unit_representation
+    module: DensityHS.Graphon.UnitRepresentation
+    status: proved
+    note: Actual measurable probability-space equivalence; density and all positive-order actual tiling
+      values are preserved, without extra topology or complement-cardinality assumptions.
+acknowledgements: Lean, mathlib, the PalomarRegistry template and verification tooling, and Cameron Freer’s
+  Apache-2.0 graphon library (pinned at 9f7be59fa754d260a544b4cfd83d6a5b94f7552e).

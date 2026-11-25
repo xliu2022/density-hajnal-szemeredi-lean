@@ -1,0 +1,8 @@
+Exporting 9 registered declarations to /workspace/scratch/d491ee3405ff/density_hs_registered_replay
+Checking lean
+lean: {'exit_code': 0, 'accepted': True, 'seconds': 119.46294221300195, 'log': 'lean.log'}
+Checking nanoda
+nanoda: {'exit_code': 0, 'accepted': True, 'seconds': 81.00718753299952, 'log': 'nanoda.log'}
+Checking con_ron
+con_ron: {'exit_code': 0, 'accepted': True, 'seconds': 91.48369701499905, 'log': 'con_ron.log'}
+Replay evidence: /workspace/scratch/d491ee3405ff/density_hs_registered_replay/report.json
