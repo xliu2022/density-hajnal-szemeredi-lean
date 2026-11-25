@@ -1,7 +1,9 @@
 # Final local verification — 2026-11-25
 
 **All principal mathematical results are proved and locally verified.**
-**Official Palomar Comparator acceptance and registration remain pending.**
+At the time of this local check, Palomar mechanical verification was pending.
+Palomar subsequently verified commit `a5920fc397ac727bc603bbd027cb8b4d700c98b6`.
+[Public verification run](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/45581673183)
 
 Author and responsible maintainer: **Xizhi Liu**.
 
@@ -93,6 +95,5 @@ acceptance: the canonical Challenge/Solution comparison did not run.
 
 Standalone replay does not replace Palomar's authenticated source closure,
 canonical statement build, Comparator comparison, sandbox, or editorial
-review. A public GitHub repository, immutable commit, successful official
-verification, and registry review are still required. No publication,
-registration, or human mathematical review is claimed.
+review. At the time of this local check, publication and official verification
+were pending. The local records below `verification/` refer to that checkpoint.

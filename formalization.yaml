@@ -4,8 +4,8 @@ project:
   description: 'Lean formalization of the density Hajnal–Szemerédi theorem: uniform finite integral extremal
     density, weighted and graphon density, the complete B/A/R equality classification including every
     transition and endpoint, uniform finite and graphon stability with its corollaries, and perfect rainbow
-    clique factors. All principal mathematical results are proved; official Palomar verification and registration
-    remain pending.'
+    clique factors. Palomar mechanically verified commit a5920fc397ac727bc603bbd027cb8b4d700c98b6
+    in run 45581673183 on 2026-11-25.'
   authors:
   - Xizhi Liu
   license: Apache-2.0
@@ -41,8 +41,9 @@ status:
     unique-range stability, and the perfect rainbow clique-factor theorem. Actual compactness, lower semicontinuity,
     finite transference, prescribed integer realization/edit rounding, nonsmooth variation, terminating
     uncrossing, phase diagram, and all appendix estimates are supplied. General external results cited
-    by the manuscript are replaced where appropriate by proofs of the precise consequences needed. Official
-    Comparator acceptance, public repository registration, and human mathematical review remain pending.'
+    by the manuscript are replaced where appropriate by proofs of the precise consequences needed. Palomar
+    completed mechanical verification of the nine selected declarations at commit
+    a5920fc397ac727bc603bbd027cb8b4d700c98b6 in run 45581673183.'
   sorry_count: 0
   sorry_in_definitions: 0
   axioms:
@@ -66,8 +67,8 @@ automation:
   spend_usd: not tracked
   notes: All principal proofs and the independent statement bridges were developed by parallel proof agents
     with repeated Lean compilation and transitive axiom audits. A separate read-only automated review
-    checked the manuscript/statement correspondence. No human mathematical review is recorded. The official
-    sandboxed Comparator is blocked by the workspace network-namespace restriction; standalone kernel
+    checked the manuscript/statement correspondence. No human mathematical review is recorded. The local
+    sandbox blocked the earlier Comparator attempt during network namespace setup. The standalone kernel
     replay is recorded separately.
 fidelity:
   divergences: 'Several finite arguments are reproved directly: matching via extreme half-integral covers;
@@ -89,15 +90,16 @@ fidelity:
     uses the arbitrary feasible-cover formulation; optimal-cover attainment and duality supply the optimum-value
     formulation.'
 review:
-  status: principal mathematical results machine-checked; official submission verification pending
+  status: Agent-reviewed. Palomar mechanical verification passed for commit a5920fc397ac727bc603bbd027cb8b4d700c98b6 in run 45581673183.
   reviewers:
   - none
   notes: All nine independent Challenge/Solution statements and the full mathematical root compile. Solution
     never imports Challenge. Nine deliberate Challenge proof holes are excluded from the zero proof-development
     sorry counts. A read-only automated statement-fidelity review found no material mismatch; this is
     not human review. Standalone kernel replays and namespace axiom evidence are recorded in verification/REPORT.md.
-    The official sandboxed Comparator was retried but cannot create a network namespace in this workspace;
-    no official acceptance or registration is claimed.
+    The earlier local Comparator run stopped during network namespace setup. Palomar completed the
+    mechanical check for the submitted commit on 2026-11-25. The public run is
+    https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/45581673183
 alignment:
   namespace: DensityHS
   statements:

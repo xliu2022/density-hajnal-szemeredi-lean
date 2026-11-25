@@ -1,4 +1,4 @@
-# Final scope — 2026-11-25
+# Local verification checkpoint — 2026-11-25
 
 The mathematical development is complete at the level of every principal
 manuscript result and its supporting proof chains. The full root and all
@@ -20,8 +20,7 @@ The independent Challenge has 433 lines and explicit definitions, with
 nine intentional statement holes. Its only imports are Mathlib. The full
 verification evidence and exact distinctions are in `verification/REPORT.md`.
 
-The official Comparator cannot create its bubblewrap network namespace in
-this workspace. Its final retry exited 1 before the canonical comparison.
-Public repository publication, an immutable submitted commit, official
-acceptance, and Palomar registration remain outstanding. No human review
-or official acceptance is claimed, and the sandbox has not been bypassed.
+The earlier local Comparator run exited 1 during network namespace setup,
+before comparing the declarations. Palomar subsequently verified commit
+`a5920fc397ac727bc603bbd027cb8b4d700c98b6` on 2026-11-25.
+[Public verification run](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/45581673183)

@@ -9,11 +9,9 @@ graphon density theorem, complete equality classification, uniform finite
 and graphon stability, stability corollaries, and perfect rainbow
 clique-factor theorem are proved and compile.
 
-**Palomar registration and official Comparator acceptance are still pending.**
-The official sandboxed verifier was attempted in this workspace but could
-not create its isolated network namespace. Successful Lean compilation,
-axiom auditing, and any separately recorded kernel replay are reported
-individually; none is presented as an official registry acceptance.
+Palomar completed mechanical verification of the nine selected declarations at
+commit `a5920fc397ac727bc603bbd027cb8b4d700c98b6` on 2026-11-25.
+[Public verification run](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/45581673183)
 
 ## Principal mathematical results
 
@@ -143,12 +141,11 @@ Apache-2.0 attribution, and dependency audit are recorded in
 `DensityHS/Vendor/UPSTREAM.json`, `NOTICE`, and
 `docs/graphon-dependency-audit.md`.
 
-The official local verification attempt stopped with:
+The earlier local Comparator attempt stopped during network namespace setup.
 
 ```text
 bwrap: loopback: Failed to create NETLINK_ROUTE socket: Operation not permitted
 ```
 
-The sandbox was not disabled. A public pinned repository, successful
-registry mechanical verification, and editorial acceptance remain required
-before the project can be described as an accepted Palomar entry.
+The reports under `verification/` and `docs/STATUS.md` describe this local
+checkpoint. The public Palomar run cited above took place afterwards.
